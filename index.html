@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
         :root {
             --primary: #ff6b9d;
             --secondary: #c44569;
@@ -15,7 +14,6 @@
             --dark: #1a1a2e;
             --darker: #16213e;
         }
-        
         body {
             font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 50%, #0f3460 100%);
@@ -23,8 +21,6 @@
             color: #fff;
             overflow-x: hidden;
         }
-        
-        /* 浮动粒子背景 */
         .particles {
             position: fixed;
             top: 0;
@@ -35,7 +31,6 @@
             overflow: hidden;
             z-index: 0;
         }
-        
         .particle {
             position: absolute;
             width: 4px;
@@ -44,15 +39,12 @@
             border-radius: 50%;
             animation: float 15s infinite;
         }
-        
         @keyframes float {
             0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
             10% { opacity: 1; }
             90% { opacity: 1; }
             100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
         }
-        
-        /* 头部 */
         .header {
             position: relative;
             z-index: 1;
@@ -60,7 +52,6 @@
             padding: 80px 20px 60px;
             background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 100%);
         }
-        
         .header h1 {
             font-size: 4em;
             font-weight: 700;
@@ -72,12 +63,10 @@
             text-shadow: 0 0 60px rgba(255, 107, 157, 0.5);
             animation: shimmer 3s ease-in-out infinite;
         }
-        
         @keyframes shimmer {
             0%, 100% { filter: brightness(1); }
             50% { filter: brightness(1.2); }
         }
-        
         .header .subtitle {
             font-size: 1.4em;
             opacity: 0.9;
@@ -85,13 +74,11 @@
             font-weight: 300;
             letter-spacing: 3px;
         }
-        
         .header .desc {
             font-size: 1em;
             opacity: 0.7;
             margin-bottom: 30px;
         }
-        
         .stats {
             display: inline-flex;
             gap: 30px;
@@ -101,24 +88,19 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
         }
-        
         .stat-item {
             text-align: center;
         }
-        
         .stat-item .number {
             font-size: 2em;
             font-weight: 700;
             color: var(--accent);
         }
-        
         .stat-item .label {
             font-size: 0.9em;
             opacity: 0.7;
             margin-top: 5px;
         }
-        
-        /* 筛选标签 */
         .filters {
             position: relative;
             z-index: 1;
@@ -128,7 +110,6 @@
             padding: 30px;
             flex-wrap: wrap;
         }
-        
         .filter-btn {
             padding: 12px 25px;
             background: rgba(255,255,255,0.1);
@@ -139,14 +120,11 @@
             transition: all 0.3s;
             font-size: 0.95em;
         }
-        
         .filter-btn:hover, .filter-btn.active {
             background: var(--primary);
             border-color: var(--primary);
             transform: translateY(-2px);
         }
-        
-        /* 瀑布流布局 */
         .gallery {
             position: relative;
             z-index: 1;
@@ -156,11 +134,9 @@
             margin: 0 auto;
             padding: 40px;
         }
-        
         @media (max-width: 1400px) { .gallery { column-count: 3; } }
         @media (max-width: 1024px) { .gallery { column-count: 2; padding: 20px; } }
         @media (max-width: 600px) { .gallery { column-count: 1; } }
-        
         .photo-card {
             break-inside: avoid;
             margin-bottom: 20px;
@@ -172,24 +148,20 @@
             border: 1px solid rgba(255,255,255,0.1);
             cursor: pointer;
         }
-        
         .photo-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 25px 60px rgba(0,0,0,0.4);
             border-color: rgba(255,255,255,0.3);
         }
-        
         .photo-card img {
             width: 100%;
             height: auto;
             display: block;
             transition: transform 0.5s;
         }
-        
         .photo-card:hover img {
             transform: scale(1.05);
         }
-        
         .photo-info {
             padding: 20px;
             background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
@@ -197,21 +169,18 @@
             position: relative;
             z-index: 2;
         }
-        
         .photo-info h3 {
             font-size: 1.2em;
             margin-bottom: 8px;
             color: var(--accent);
             font-weight: 500;
         }
-        
         .photo-info .tags {
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
             margin-bottom: 10px;
         }
-        
         .photo-info .tag {
             font-size: 0.75em;
             padding: 4px 10px;
@@ -219,13 +188,10 @@
             border-radius: 12px;
             opacity: 0.9;
         }
-        
         .photo-info .dims {
             font-size: 0.85em;
             opacity: 0.6;
         }
-        
-        /* 灯箱 */
         .lightbox {
             display: none;
             position: fixed;
@@ -238,18 +204,15 @@
             justify-content: center;
             align-items: center;
         }
-        
         .lightbox.active {
             display: flex;
         }
-        
         .lightbox img {
             max-width: 90%;
             max-height: 90%;
             object-fit: contain;
             border-radius: 8px;
         }
-        
         .lightbox .close {
             position: absolute;
             top: 30px;
@@ -260,12 +223,9 @@
             opacity: 0.7;
             transition: opacity 0.3s;
         }
-        
         .lightbox .close:hover {
             opacity: 1;
         }
-        
-        /* 页脚 */
         .footer {
             position: relative;
             z-index: 1;
@@ -275,17 +235,14 @@
             border-top: 1px solid rgba(255,255,255,0.1);
             margin-top: 40px;
         }
-        
         .footer p {
             margin: 10px 0;
         }
-        
         .heart {
             color: var(--primary);
             animation: heartbeat 1.5s ease-in-out infinite;
             display: inline-block;
         }
-        
         @keyframes heartbeat {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.2); }
@@ -293,10 +250,8 @@
     </style>
 </head>
 <body>
-    <!-- 粒子背景 -->
     <div class="particles" id="particles"></div>
     
-    <!-- 头部 -->
     <div class="header">
         <h1>💕 迪丽热巴写真 Gallery</h1>
         <p class="subtitle">DILRABA DILMURAT</p>
@@ -304,7 +259,7 @@
         
         <div class="stats">
             <div class="stat-item">
-                <div class="number" id="count">15</div>
+                <div class="number" id="count">11</div>
                 <div class="label">高清写真</div>
             </div>
             <div class="stat-item">
@@ -312,38 +267,33 @@
                 <div class="label">最大分辨率</div>
             </div>
             <div class="stat-item">
-                <div class="number" class="heart">💕</div>
+                <div class="number">💕</div>
                 <div class="label">专属收藏</div>
             </div>
         </div>
     </div>
     
-    <!-- 筛选标签 -->
     <div class="filters">
         <button class="filter-btn active" data-filter="all">全部</button>
         <button class="filter-btn" data-filter="elegant">优雅</button>
         <button class="filter-btn" data-filter="sexy">性感</button>
         <button class="filter-btn" data-filter="sweet">甜美</button>
-        <button class="filter-btn" data-filter="avatar">头像</button>
+        <button class="filter-btn" data-filter="street">街拍</button>
     </div>
     
-    <!-- 瀑布流画廊 -->
     <div class="gallery" id="gallery"></div>
     
-    <!-- 灯箱 -->
     <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
         <span class="close">&times;</span>
         <img src="" alt="" id="lightbox-img">
     </div>
     
-    <!-- 页脚 -->
     <div class="footer">
         <p>© 2026 迪丽热巴粉丝收藏站 | 仅供欣赏收藏</p>
         <p>Made with <span class="heart">💕</span> for 春山</p>
     </div>
     
     <script>
-        // 创建粒子背景
         const particlesContainer = document.getElementById('particles');
         for (let i = 0; i < 50; i++) {
             const particle = document.createElement('div');
@@ -354,26 +304,20 @@
             particlesContainer.appendChild(particle);
         }
         
-        // 照片数据
         const photos = [
-            { src: 'reba_hd_1.jpg', title: '蝴蝶仙子', tags: ['elegant', 'sweet'], dims: '1920×1080', desc: '梦幻翅膀 · 亮片礼服' },
+            { src: 'reba_hd_1.jpg', title: '蝴蝶仙子 · 高清版', tags: ['elegant', 'sweet'], dims: '1920×1080', desc: '梦幻翅膀 · 亮片礼服 · 1.4M超清' },
+            { src: 'reba_butterfly_hd.jpg', title: '蝴蝶仙子 · 备用版', tags: ['elegant', 'sweet'], dims: '1920×1080', desc: '不同角度 · 330KB' },
             { src: 'reba_sexy_1.jpg', title: '深V吊带', tags: ['sexy', 'elegant'], dims: '690×1227', desc: '优雅性感 · 红唇金饰' },
-            { src: 'reba_butterfly_avatar.jpg', title: '蝴蝶仙子头像', tags: ['avatar', 'sweet'], dims: '1080×1080', desc: '正方形裁剪' },
-            { src: 'reba_sexy_avatar.jpg', title: '深V吊带头像', tags: ['avatar', 'sexy'], dims: '690×690', desc: '正方形' },
-            { src: 'reba_avatar.jpg', title: '复古绿裙头像', tags: ['avatar', 'elegant'], dims: '240×240', desc: '经典' },
-            { src: 'reba_lemeitu_1.jpg', title: '黑金优雅', tags: ['elegant'], dims: '高清', desc: '成熟大气 · 黑色礼服' },
-            { src: 'reba_lemeitu_2.jpg', title: '甜美少女', tags: ['sweet'], dims: '高清', desc: '粉色梦幻 · 托腮可爱' },
-            { src: 'reba_lemeitu_3.jpg', title: '复古港风', tags: ['sexy', 'elegant'], dims: '高清', desc: '绿裙红唇 · 性感妩媚' },
-            { src: 'reba_lemeitu_4.jpg', title: '甜酷芭比', tags: ['sweet', 'sexy'], dims: '高清', desc: '玫粉套装 · 冷艳甜美' },
-            { src: 'reba_lemeitu_5.jpg', title: '明艳红裙', tags: ['sexy', 'elegant'], dims: '高清', desc: '红色纱裙 · 慵懒性感' },
-            { src: 'reba_flickr_3.jpg', title: 'InStyle牛仔', tags: ['sweet'], dims: '高清', desc: '杂志街拍 · 街头蹲坐' },
-            { src: 'reba_flickr_4.jpg', title: '白色蕾丝', tags: ['elegant'], dims: '高清', desc: '街拍风 · 抬手遮阳' },
-            { src: 'reba_instyle_avatar.jpg', title: 'InStyle头像', tags: ['avatar', 'sweet'], dims: '240×240', desc: '牛仔风' },
-            { src: 'reba_instyle_original.jpg', title: 'InStyle原图', tags: ['sweet'], dims: '240×360', desc: '杂志风' },
-            { src: 'reba_butterfly_hd.jpg', title: '蝴蝶仙子备用', tags: ['elegant', 'sweet'], dims: '高清', desc: '原图备份' }
+            { src: 'reba_lemeitu_1.jpg', title: '黑金优雅', tags: ['elegant'], dims: '258×360', desc: '成熟大气 · 黑色礼服' },
+            { src: 'reba_lemeitu_2.jpg', title: '甜美少女', tags: ['sweet'], dims: '263×360', desc: '粉色梦幻 · 托腮可爱' },
+            { src: 'reba_lemeitu_3.jpg', title: '复古港风', tags: ['sexy', 'elegant'], dims: '240×360', desc: '绿裙红唇 · 性感妩媚' },
+            { src: 'reba_lemeitu_4.jpg', title: '甜酷芭比', tags: ['sweet', 'sexy'], dims: '473×360', desc: '玫粉套装 · 冷艳甜美' },
+            { src: 'reba_lemeitu_5.jpg', title: '明艳红裙', tags: ['sexy', 'elegant'], dims: '258×360', desc: '红色纱裙 · 慵懒性感' },
+            { src: 'reba_flickr_3.jpg', title: 'InStyle牛仔', tags: ['street', 'sweet'], dims: '240×307', desc: '杂志街拍 · 街头蹲坐' },
+            { src: 'reba_flickr_4.jpg', title: '白色蕾丝', tags: ['street', 'elegant'], dims: '640×427', desc: '街拍风 · 抬手遮阳' },
+            { src: 'reba_instyle_original.jpg', title: 'InStyle原图', tags: ['sweet'], dims: '240×307', desc: '杂志风 · 牛仔外套' }
         ];
         
-        // 渲染画廊
         const gallery = document.getElementById('gallery');
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
@@ -411,7 +355,6 @@
             document.getElementById('count').textContent = count;
         }
         
-        // 筛选功能
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.onclick = () => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -420,7 +363,6 @@
             };
         });
         
-        // 初始渲染
         renderGallery();
     </script>
 </body>
