@@ -98,7 +98,7 @@
         <h1>💕 迪丽热巴写真 Gallery</h1>
         <p>Dilraba Dilmurat · 高清精选收藏</p>
         <div class="stats">
-            📸 共 <span id="count">20</span> 张高清写真 | 持续更新中...
+            📸 共 <span id="count">15</span> 张高清写真 | 原图无重复
         </div>
     </div>
     
@@ -111,8 +111,11 @@
     
     <script>
         const photos = [
-            { src: 'reba_hd_1_compressed.jpg', title: '蝴蝶仙子', desc: '梦幻翅膀 · 亮片礼服 · 1920x1080' },
-            { src: 'reba_sexy_1_compressed.jpg', title: '深V吊带', desc: '优雅性感 · 红唇金饰 · 690x1227' },
+            { src: 'reba_hd_1.jpg', title: '蝴蝶仙子原图', desc: '梦幻翅膀 · 亮片礼服 · 1920x1080' },
+            { src: 'reba_sexy_1.jpg', title: '深V吊带原图', desc: '优雅性感 · 红唇金饰 · 690x1227' },
+            { src: 'reba_butterfly_avatar.jpg', title: '蝴蝶仙子头像', desc: '1080x1080 · 正方形裁剪' },
+            { src: 'reba_sexy_avatar.jpg', title: '深V吊带头像', desc: '690x690 · 正方形' },
+            { src: 'reba_avatar.jpg', title: '复古绿裙头像', desc: '240x240' },
             { src: 'reba_lemeitu_1.jpg', title: '黑金优雅', desc: '成熟大气 · 黑色礼服' },
             { src: 'reba_lemeitu_2.jpg', title: '甜美少女', desc: '粉色梦幻 · 托腮可爱' },
             { src: 'reba_lemeitu_3.jpg', title: '复古港风', desc: '绿裙红唇 · 性感妩媚' },
@@ -120,27 +123,14 @@
             { src: 'reba_lemeitu_5.jpg', title: '明艳红裙', desc: '红色纱裙 · 慵懒性感' },
             { src: 'reba_flickr_3.jpg', title: 'InStyle牛仔', desc: '杂志街拍 · 街头蹲坐' },
             { src: 'reba_flickr_4.jpg', title: '白色蕾丝', desc: '街拍风 · 抬手遮阳' },
-            { src: 'reba_butterfly_hd.jpg', title: '蝴蝶仙子原图', desc: '1920x1080 · 高清' },
-            { src: 'reba_butterfly_face.jpg', title: '蝴蝶仙子头像', desc: '800x800 · 脸部特写' },
-            { src: 'reba_avatar.jpg', title: '复古绿裙头像', desc: '240x240' },
-            { src: 'reba_sexy_avatar.jpg', title: '深V吊带头像', desc: '690x690 · 正方形' },
             { src: 'reba_instyle_avatar.jpg', title: 'InStyle头像', desc: '240x240 · 牛仔风' },
-            { src: 'reba_instyle_original.jpg', title: 'InStyle原图', desc: '240x360' }
+            { src: 'reba_instyle_original.jpg', title: 'InStyle原图', desc: '240x360' },
+            { src: 'reba_butterfly_hd.jpg', title: '蝴蝶仙子备用', desc: '高清原图备份' }
         ];
         
-        // 动态加载更多
-        const morePhotos = [];
-        for (let i = 1; i <= 100; i++) {
-            if (i <= 5) {
-                morePhotos.push({ src: `reba_new_${String(i).padStart(3, '0')}.jpg`, title: `写真 #${i}`, desc: '高清精选' });
-            }
-        }
-        
-        const allPhotos = [...photos, ...morePhotos];
-        document.getElementById('count').textContent = allPhotos.length;
-        
         const gallery = document.getElementById('gallery');
-        allPhotos.forEach((photo, index) => {
+        
+        photos.forEach((photo, index) => {
             const card = document.createElement('div');
             card.className = 'photo-card';
             card.innerHTML = `
