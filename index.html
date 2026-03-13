@@ -76,7 +76,7 @@
 <body>
     <div class="header">
         <h1>💕 迪丽热巴写真 Gallery</h1>
-        <p class="count">97张高清写真</p>
+        <p class="count">96张高清写真</p>
         <p>已去重 · 高清精选 · 定制化标题</p>
     </div>
     
@@ -150,8 +150,9 @@
             '自然风装 · 自然风', '气质型装 · 气质型', '可人装 · 可人风', '宠儿穿搭 · 宠儿风', '笑容装 · 治愈风'
         ];
         
-        // 填充到97张
-        for (let i = 21; i <= 97; i++) {
+        // 填充到96张（跳过被删除的096）
+        for (let i = 21; i <= 96; i++) {
+            if (i === 96) continue; // 跳过096（霍思燕）
             const titleIndex = (i - 21) % titles.length;
             const descIndex = (i - 21) % descs.length;
             photoData.push({
