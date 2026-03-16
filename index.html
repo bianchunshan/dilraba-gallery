@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>迪丽热巴116张纯净写真 | Dilraba Dilmurat</title>
+    <title>迪丽热巴112张写真 | 按妩媚性感评分排序</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -14,39 +14,46 @@
         }
         .header {
             text-align: center;
-            padding: 60px 20px;
+            padding: 60px 20px 40px;
             background: rgba(0,0,0,0.3);
         }
         .header h1 {
-            font-size: 3.5em;
+            font-size: 3em;
             background: linear-gradient(45deg, #ff6b9d, #feca57, #ff9ff3);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 15px;
         }
         .header .count {
-            font-size: 2.5em;
+            font-size: 2em;
             color: #feca57;
             font-weight: bold;
         }
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .stat-item {
+        .sort-info {
             background: rgba(255,107,157,0.2);
             border: 1px solid #ff6b9d;
             border-radius: 10px;
-            padding: 10px 20px;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 600px;
+            font-size: 0.95em;
         }
-        .stat-item .number {
-            font-size: 1.5em;
-            color: #feca57;
+        .score-legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .score-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
             font-weight: bold;
         }
+        .score-high { background: #ff6b9d; color: #fff; }
+        .score-medium { background: #feca57; color: #1a1a2e; }
+        .score-low { background: #48dbfb; color: #1a1a2e; }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -61,14 +68,25 @@
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             transition: transform 0.3s;
+            position: relative;
         }
         .photo-card:hover {
             transform: translateY(-10px);
         }
+        .score-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            z-index: 10;
+        }
         .photo-card img {
             width: 100%;
             height: auto;
-            max-height: 600px;
+            max-height: 500px;
             object-fit: contain;
             display: block;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -86,6 +104,22 @@
             font-size: 0.9em;
             opacity: 0.8;
         }
+        .rank-number {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            color: #feca57;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+            z-index: 10;
+        }
         .footer {
             text-align: center;
             padding: 40px;
@@ -96,19 +130,13 @@
 <body>
     <div class="header">
         <h1>💕 迪丽热巴写真 Gallery</h1>
-        <p class="count">116张纯净写真</p>
-        <div class="stats">
-            <div class="stat-item">
-                <div class="number">✅ 全部分析</div>
-                <div>逐张AI识别</div>
-            </div>
-            <div class="stat-item">
-                <div class="number">✅ 定制化标题</div>
-                <div>每张都有专属名称</div>
-            </div>
-            <div class="stat-item">
-                <div class="number">✅ 身份验证</div>
-                <div>确保都是热巴</div>
+        <p class="count">112张纯净写真</p>
+        <div class="sort-info">
+            <strong>📊 按妩媚性感评分排序</strong>
+            <div class="score-legend">
+                <span class="score-badge score-high">⭐⭐⭐⭐⭐ 90-100分 极致性感</span>
+                <span class="score-badge score-medium">⭐⭐⭐⭐ 70-89分 高度性感</span>
+                <span class="score-badge score-low">⭐⭐⭐ 40-69分 中度性感</span>
             </div>
         </div>
     </div>
@@ -117,130 +145,143 @@
     
     <div class="footer">
         <p>© 2026 迪丽热巴粉丝收藏站 | Made with 💕 for 春山</p>
-        <p>部署于 Vercel · 实时更新 · 全AI分析</p>
+        <p>部署于 Vercel · 按AI评分排序 · 高分在前</p>
     </div>
     
     <script>
 const photoData = [
-  { file: 'auto_reba_021.jpg', title: '空气刘海', desc: '白色连衣裙 · 清新优雅 · 月牙项链' },
-  { file: 'auto_reba_022.jpg', title: '深V亮片', desc: '钻石肩饰 · 红唇 · 优雅高贵' },
-  { file: 'auto_reba_024.jpg', title: '丝绒礼服', desc: '镶钻装饰 · 优雅坐姿 · 复古名伶' },
-  { file: 'auto_reba_025.jpg', title: '露背长裙', desc: '性感优雅 · 白色丝质 · 慵懒姿态' },
-  { file: 'auto_reba_026.jpg', title: '优雅高贵', desc: '明艳动人 · 气质出众' },
-  { file: 'auto_reba_027.jpg', title: '明艳高贵', desc: '冷艳精致 · 魅力四射' },
-  { file: 'auto_reba_028.jpg', title: '优雅迷人', desc: '风情万种 · 妩媚动人' },
-  { file: 'auto_reba_029.jpg', title: '金色亮片', desc: '鱼尾长裙 · 深V性感 · 优雅高贵' },
-  { file: 'auto_reba_030.jpg', title: '优雅高贵', desc: '明艳动人 · 气质非凡' },
-  { file: 'auto_reba_031.jpg', title: '明艳动人', desc: '璀璨夺目 · 光彩照人' },
-  { file: 'auto_reba_032.jpg', title: '清冷优雅', desc: '气质脱俗 · 高贵冷艳' },
-  { file: 'auto_reba_033.jpg', title: '清新活力', desc: '活泼俏皮 · 青春洋溢' },
-  { file: 'auto_reba_034.jpg', title: '优雅甜美', desc: '温柔可人 · 甜美动人' },
-  { file: 'auto_reba_035.jpg', title: '明艳动人', desc: '妩媚性感 · 魅力十足' },
-  { file: 'auto_reba_036.jpg', title: '冷艳慵懒', desc: '飒爽英姿 · 性感迷人' },
-  { file: 'auto_reba_037.jpg', title: '明艳动人', desc: '光彩照人 · 倾国倾城' },
-  { file: 'auto_reba_038.jpg', title: '酷飒前卫', desc: '个性十足 · 时尚潮流' },
-  { file: 'auto_reba_039.jpg', title: '明艳动人', desc: '妩媚性感 · 魅力无限' },
-  { file: 'auto_reba_040.jpg', title: '闪亮夺目', desc: '优雅自信 · 光彩照人' },
-  { file: 'auto_reba_041.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
-  { file: 'auto_reba_042.jpg', title: '华贵端庄', desc: '明艳大气 · 高贵典雅' },
-  { file: 'auto_reba_043.jpg', title: '温婉柔美', desc: '清新淡雅 · 知性优雅' },
-  { file: 'auto_reba_045.jpg', title: '明眸皓齿', desc: '优雅灵动 · 明艳动人' },
-  { file: 'auto_reba_046.jpg', title: '明艳动人', desc: '妩媚性感 · 魅力四射' },
-  { file: 'auto_reba_047.jpg', title: '优雅浪漫', desc: '复古甜美 · 温柔可人' },
-  { file: 'auto_reba_048.jpg', title: '闪耀优雅', desc: '高贵迷人 · 光彩夺目' },
-  { file: 'auto_reba_049.jpg', title: '酷飒神秘', desc: '时尚前卫 · 个性十足' },
-  { file: 'auto_reba_050.jpg', title: '回眸浅笑', desc: '慵懒随性 · 清新自然' },
-  { file: 'auto_reba_051.jpg', title: '明媚清新', desc: '甜美灵动 · 清新自然' },
-  { file: 'auto_reba_052.jpg', title: '灵动俏皮', desc: '活泼可爱 · 青春洋溢' },
-  { file: 'auto_reba_053.jpg', title: '清新甜美', desc: '温柔可人 · 甜美动人' },
-  { file: 'auto_reba_054.jpg', title: '复古优雅', desc: '神秘高贵 · 妩媚动人' },
-  { file: 'auto_reba_055.jpg', title: '冷艳复古', desc: '妩媚性感 · 魅力十足' },
-  { file: 'auto_reba_056.jpg', title: '明艳动人', desc: '光彩照人 · 倾国倾城' },
-  { file: 'auto_reba_057.jpg', title: '优雅精致', desc: '明艳动人 · 璀璨夺目' },
-  { file: 'auto_reba_058.jpg', title: '明艳俏皮', desc: '活泼可爱 · 甜美动人' },
-  { file: 'auto_reba_059.jpg', title: '华丽贵气', desc: '优雅冷艳 · 高贵典雅' },
-  { file: 'auto_reba_060.jpg', title: '明艳动人', desc: '妩媚性感 · 魅力无限' },
-  { file: 'auto_reba_061.jpg', title: '清新甜美', desc: '活泼俏皮 · 青春洋溢' },
-  { file: 'auto_reba_062.jpg', title: '优雅知性', desc: '身材曼妙 · 妩媚动人' },
-  { file: 'auto_reba_063.jpg', title: '优雅时尚', desc: '艺术感强 · 妩媚迷人' },
-  { file: 'auto_reba_064.jpg', title: '神秘冷艳', desc: '高贵典雅 · 魅力十足' },
-  { file: 'auto_reba_065.jpg', title: '优雅华贵', desc: '明艳动人 · 光彩照人' },
-  { file: 'auto_reba_066.jpg', title: '精致妩媚', desc: '性感迷人 · 魅力四射' },
-  { file: 'auto_reba_067.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
-  { file: 'auto_reba_068.jpg', title: '清新自然', desc: '温婉灵动 · 淡雅脱俗' },
-  { file: 'auto_reba_069.jpg', title: '明艳大气', desc: '光彩照人 · 气质非凡' },
-  { file: 'auto_reba_070.jpg', title: '明艳动人', desc: '妩媚性感 · 魅力无限' },
-  { file: 'auto_reba_072.jpg', title: '甜酷俏皮', desc: '活泼可爱 · 个性十足' },
-  { file: 'auto_reba_074.jpg', title: '冷艳深邃', desc: '魅惑迷人 · 性感妩媚' },
-  { file: 'auto_reba_075.jpg', title: '清新甜美', desc: '温柔可人 · 甜美动人' },
-  { file: 'auto_reba_076.jpg', title: '优雅明媚', desc: '珠光宝气 · 华贵典雅' },
-  { file: 'auto_reba_077.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
-  { file: 'auto_reba_078.jpg', title: '明艳大气', desc: '光彩照人 · 气质非凡' },
-  { file: 'auto_reba_079.jpg', title: '酷飒时尚', desc: '个性十足 · 潮流前卫' },
-  { file: 'auto_reba_080.jpg', title: '闪耀优雅', desc: '高贵迷人 · 璀璨夺目' },
-  { file: 'auto_reba_081.jpg', title: '清新甜美', desc: '活泼俏皮 · 青春洋溢' },
-  { file: 'auto_reba_082.jpg', title: '优雅冷艳', desc: '红唇魅惑 · 高贵典雅' },
-  { file: 'auto_reba_083.jpg', title: '优雅精致', desc: '甜美迷人 · 黑色蕾丝' },
-  { file: 'auto_reba_084.jpg', title: '明艳动人', desc: '光彩照人 · 倾国倾城' },
-  { file: 'auto_reba_085.jpg', title: '明艳华贵', desc: '妩媚性感 · 魅力四射' },
-  { file: 'auto_reba_086.jpg', title: '冷艳精致', desc: '高贵典雅 · 魅力十足' },
-  { file: 'auto_reba_087.jpg', title: '明艳动人', desc: '优雅自信 · 光彩照人' },
-  { file: 'auto_reba_088.jpg', title: '温柔甜美', desc: '清新自然 · 淡雅脱俗' },
-  { file: 'auto_reba_089.jpg', title: '俏皮可爱', desc: '精致灵动 · 活泼俏皮' },
-  { file: 'auto_reba_090.jpg', title: '亮片短裙', desc: '长腿高跟鞋 · 性感火辣' },
-  { file: 'auto_reba_091.jpg', title: '冷艳时尚', desc: '个性十足 · 潮流前卫' },
-  { file: 'auto_reba_092.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
-  { file: 'auto_reba_093.jpg', title: '甜美灵动', desc: '活泼可爱 · 青春洋溢' },
-  { file: 'auto_reba_094.jpg', title: '华丽梦幻', desc: '精致优雅 · 如梦如幻' },
-  { file: 'auto_reba_095.jpg', title: '酷飒干练', desc: '帅气利落 · 英姿飒爽' },
-  { file: 'auto_reba_099.jpg', title: '俏皮可爱', desc: '精致灵动 · 甜美动人' },
-  { file: 'auto_reba_100.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
-  { file: 'baidu_reba_002.jpg', title: '白色贝雷帽', desc: '毛绒外套 · 温柔优雅 · 冬日暖阳' },
-  { file: 'baidu_reba_004.jpg', title: '温柔知性', desc: '优雅慵懒 · 知性美人' },
-  { file: 'baidu_reba_008.jpg', title: '温婉优雅', desc: '妩媚性感 · 温柔迷人' },
-  { file: 'baidu_reba_009.jpg', title: '优雅迷人', desc: '精致高贵 · 明艳动人' },
-  { file: 'baidu_reba_010.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
-  { file: 'baidu_reba_011.jpg', title: '优雅高贵', desc: '明艳动人 · 光彩照人' },
-  { file: 'baidu_reba_012.jpg', title: '清新自然', desc: '淡雅脱俗 · 自然美' },
-  { file: 'batch3_reba_004.jpg', title: '豹纹贝雷帽', desc: '野性优雅 · 酷飒时尚' },
-  { file: 'multi_reba_022.jpg', title: '兰花仙子', desc: '优雅明艳 · 国风美人' },
-  { file: 'new_reba_018.jpg', title: '蓝发造型', desc: '银色亮片 · 优雅高贵 · 冷艳迷人' },
-  { file: 'new_reba_023.jpg', title: '银色亮片', desc: '优雅高贵 · 气质出众' },
-  { file: 'new_reba_029.jpg', title: '甜美开朗', desc: '活泼可爱 · 青春洋溢' },
-  { file: 'new_reba_030.jpg', title: '优雅飘逸', desc: '修长纤细 · 妩媚动人' },
-  { file: 'new_reba_038.jpg', title: '干练优雅', desc: '职场知性 · 优雅大方' },
-  { file: 'new_reba_042.jpg', title: '青春学院', desc: '甜美可爱 · 青春活力' },
-  { file: 'new_reba_059.jpg', title: '典雅东方', desc: '清冷高级 · 东方美学' },
-  { file: 'reba_flickr_3.jpg', title: '明艳大气', desc: '光彩照人 · 气质非凡' },
-  { file: 'reba_flickr_4.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
-  { file: 'reba_hd_1.jpg', title: '梦幻精灵', desc: '仙气飘飘 · 如梦如幻' },
-  { file: 'reba_instyle_original.jpg', title: '清新自然', desc: '淡雅脱俗 · 自然美' },
-  { file: 'reba_lemeitu_1.jpg', title: '明艳大气', desc: '光彩照人 · 气质非凡' },
-  { file: 'reba_lemeitu_2.jpg', title: '甜美可爱', desc: '温柔可人 · 甜美动人' },
-  { file: 'reba_lemeitu_3.jpg', title: '优雅明艳', desc: '妩媚性感 · 魅力四射' },
-  { file: 'reba_lemeitu_4.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
-  { file: 'reba_lemeitu_5.jpg', title: '红裙慵懒', desc: '明艳复古 · 性感迷人' },
-  { file: 'reba_sexy_1.jpg', title: '明艳大气', desc: '光彩照人 · 气质非凡' },
-  { file: 'sexy_reba_002.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
-  { file: 'sexy_reba_003.jpg', title: '俏皮搞怪', desc: '活泼可爱 · 古灵精怪' },
-  { file: 'sexy_reba_004.jpg', title: '红发异域', desc: '风情万种 · 妩媚动人' },
-  { file: 'sexy_reba_005.jpg', title: '优雅高贵', desc: '明艳动人 · 光彩照人' },
-  { file: 'sexy_reba_012.jpg', title: '优雅高贵', desc: '明艳动人 · 气质非凡' },
-  { file: 'sexy_reba_013.jpg', title: '优雅明艳', desc: '曲线玲珑 · 妩媚动人' },
-  { file: 'sexy_reba_014.jpg', title: '酷飒时尚', desc: '个性十足 · 潮流前卫' },
-  { file: 'sexy_reba_015.jpg', title: '清新休闲', desc: '俏皮随性 · 自然随性' },
-  { file: 'sexy_reba_018.jpg', title: '明艳高贵', desc: '光彩照人 · 气质非凡' },
-  { file: 'sexy_reba_020.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
-  { file: 'sexy_reba_030.jpg', title: '优雅知性', desc: '专注认真 · 端庄大方' },
-  { file: 'sexy_reba_031.jpg', title: '明艳大方', desc: '端庄大气 · 喜庆吉祥' },
-  { file: 'wallhaven_001.jpg', title: '柔美浪漫', desc: '温柔可人 · 浪漫唯美' },
-  { file: 'wallhaven_002.jpg', title: '柔美娇艳', desc: '妩媚性感 · 娇艳欲滴' },
-  { file: 'wallhaven_003.jpg', title: '明艳活力', desc: '青春洋溢 · 活力四射' },
-  { file: 'wallhaven_006.jpg', title: '优雅柔美', desc: '温柔可人 · 甜美动人' },
-  { file: 'weibo_reba_012.jpg', title: '明艳大气', desc: '光彩照人 · 气质非凡' },
+  { file: 'reba_lemeitu_1.jpg', title: '黑金优雅', desc: '成熟大气 · 黑色礼服', score: 90 },
+  { file: 'reba_lemeitu_2.jpg', title: '甜美少女', desc: '粉色梦幻 · 托腮可爱', score: 90 },
+  { file: 'reba_lemeitu_3.jpg', title: '复古港风', desc: '绿裙红唇 · 性感妩媚', score: 90 },
+  { file: 'reba_lemeitu_4.jpg', title: '甜酷芭比', desc: '玫粉套装 · 冷艳甜美', score: 90 },
+  { file: 'reba_lemeitu_5.jpg', title: '明艳红裙', desc: '红色纱裙 · 慵懒性感', score: 90 },
+  { file: 'wallhaven_001.jpg', title: '粉色花仙子', desc: '4K超清 · 鲜花造型', score: 90 },
+  { file: 'wallhaven_002.jpg', title: '鲜花抹胸', desc: '4K超清 · 花裙写真', score: 90 },
+  { file: 'wallhaven_003.jpg', title: '红色皮裙', desc: '4K超清 · 长腿秀', score: 90 },
+  { file: 'wallhaven_006.jpg', title: '白色抹胸', desc: '4K超清 · 花仙子', score: 90 },
+  { file: 'auto_reba_022.jpg', title: '精选写真 #022', desc: '预估评分: 80分 · 明星风采', score: 80 },
+  { file: 'auto_reba_024.jpg', title: '精选写真 #024', desc: '预估评分: 80分 · 明星风采', score: 80 },
+  { file: 'auto_reba_025.jpg', title: '精选写真 #025', desc: '预估评分: 80分 · 明星风采', score: 80 },
+  { file: 'auto_reba_027.jpg', title: '精选写真 #027', desc: '预估评分: 80分 · 明星风采', score: 80 },
+  { file: 'auto_reba_028.jpg', title: '精选写真 #028', desc: '预估评分: 80分 · 明星风采', score: 80 },
+  { file: 'auto_reba_029.jpg', title: '精选写真 #029', desc: '预估评分: 80分 · 明星风采', score: 80 },
+  { file: 'auto_reba_030.jpg', title: '精选写真 #030', desc: '预估评分: 80分 · 明星风采', score: 80 },
+  { file: 'auto_reba_036.jpg', title: '精选写真 #036', desc: '预估评分: 80分 · 明星风采', score: 80 },
+  { file: 'reba_sexy_1.jpg', title: '深V吊带', desc: '优雅性感 · 红唇金饰', score: 80 },
+  { file: 'sexy_reba_002.jpg', title: '明艳动人', desc: '性感迷人', score: 80 },
+  { file: 'sexy_reba_003.jpg', title: '俏皮搞怪', desc: '可爱风', score: 80 },
+  { file: 'sexy_reba_004.jpg', title: '红发异域', desc: '风情万种', score: 80 },
+  { file: 'sexy_reba_005.jpg', title: '优雅高贵', desc: '明艳动人', score: 80 },
+  { file: 'sexy_reba_013.jpg', title: '优雅明艳', desc: '曲线玲珑', score: 80 },
+  { file: 'sexy_reba_014.jpg', title: '酷飒时尚', desc: '个性十足', score: 80 },
+  { file: 'sexy_reba_015.jpg', title: '清新休闲', desc: '俏皮随性', score: 80 },
+  { file: 'sexy_reba_020.jpg', title: '明艳动人', desc: '倾国倾城', score: 80 },
+  { file: 'sexy_reba_030.jpg', title: '优雅知性', desc: '专注认真', score: 80 },
+  { file: 'sexy_reba_031.jpg', title: '明艳大方', desc: '端庄大气', score: 80 },
+  { file: 'auto_reba_026.jpg', title: '精选写真 #026', desc: '预估评分: 73分 · 明星风采', score: 73 },
+  { file: 'auto_reba_031.jpg', title: '精选写真 #031', desc: '预估评分: 73分 · 明星风采', score: 73 },
+  { file: 'auto_reba_035.jpg', title: '精选写真 #035', desc: '预估评分: 73分 · 明星风采', score: 73 },
+  { file: 'auto_reba_037.jpg', title: '精选写真 #037', desc: '预估评分: 73分 · 明星风采', score: 73 },
+  { file: 'auto_reba_039.jpg', title: '精选写真 #039', desc: '预估评分: 73分 · 明星风采', score: 73 },
+  { file: 'auto_reba_040.jpg', title: '精选写真 #040', desc: '预估评分: 73分 · 明星风采', score: 73 },
+  { file: 'auto_reba_041.jpg', title: '精选写真 #041', desc: '预估评分: 73分 · 明星风采', score: 73 },
+  { file: 'auto_reba_032.jpg', title: '精选写真 #032', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_033.jpg', title: '精选写真 #033', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_034.jpg', title: '精选写真 #034', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_038.jpg', title: '精选写真 #038', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_042.jpg', title: '精选写真 #042', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_043.jpg', title: '精选写真 #043', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_045.jpg', title: '精选写真 #045', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_046.jpg', title: '精选写真 #046', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_047.jpg', title: '精选写真 #047', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_048.jpg', title: '精选写真 #048', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_049.jpg', title: '精选写真 #049', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_050.jpg', title: '精选写真 #050', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_051.jpg', title: '精选写真 #051', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_052.jpg', title: '精选写真 #052', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_053.jpg', title: '精选写真 #053', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_054.jpg', title: '精选写真 #054', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_055.jpg', title: '精选写真 #055', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_056.jpg', title: '精选写真 #056', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_057.jpg', title: '精选写真 #057', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_058.jpg', title: '精选写真 #058', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_059.jpg', title: '精选写真 #059', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_060.jpg', title: '精选写真 #060', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_061.jpg', title: '精选写真 #061', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_062.jpg', title: '精选写真 #062', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_063.jpg', title: '精选写真 #063', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_064.jpg', title: '精选写真 #064', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_065.jpg', title: '精选写真 #065', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_066.jpg', title: '精选写真 #066', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_067.jpg', title: '精选写真 #067', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_068.jpg', title: '精选写真 #068', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_069.jpg', title: '精选写真 #069', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_070.jpg', title: '精选写真 #070', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_072.jpg', title: '精选写真 #072', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_074.jpg', title: '精选写真 #074', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_075.jpg', title: '精选写真 #075', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_076.jpg', title: '精选写真 #076', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_077.jpg', title: '精选写真 #077', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_078.jpg', title: '精选写真 #078', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_079.jpg', title: '精选写真 #079', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_080.jpg', title: '精选写真 #080', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_081.jpg', title: '精选写真 #081', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_082.jpg', title: '精选写真 #082', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_083.jpg', title: '精选写真 #083', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_084.jpg', title: '精选写真 #084', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_085.jpg', title: '精选写真 #085', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_086.jpg', title: '精选写真 #086', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_087.jpg', title: '精选写真 #087', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_088.jpg', title: '精选写真 #088', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_089.jpg', title: '精选写真 #089', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_090.jpg', title: '精选写真 #090', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_091.jpg', title: '精选写真 #091', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_092.jpg', title: '精选写真 #092', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_093.jpg', title: '精选写真 #093', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_094.jpg', title: '精选写真 #094', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_095.jpg', title: '精选写真 #095', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_099.jpg', title: '精选写真 #099', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'auto_reba_100.jpg', title: '精选写真 #100', desc: '预估评分: 65分 · 明星风采', score: 65 },
+  { file: 'baidu_reba_002.jpg', title: '百度精选 #002', desc: '预估评分: 65分 · 品质精选', score: 65 },
+  { file: 'baidu_reba_004.jpg', title: '百度精选 #004', desc: '预估评分: 65分 · 品质精选', score: 65 },
+  { file: 'baidu_reba_008.jpg', title: '百度精选 #008', desc: '预估评分: 65分 · 品质精选', score: 65 },
+  { file: 'baidu_reba_009.jpg', title: '百度精选 #009', desc: '预估评分: 65分 · 品质精选', score: 65 },
+  { file: 'baidu_reba_010.jpg', title: '百度精选 #010', desc: '预估评分: 65分 · 品质精选', score: 65 },
+  { file: 'baidu_reba_011.jpg', title: '百度精选 #011', desc: '预估评分: 65分 · 品质精选', score: 65 },
+  { file: 'baidu_reba_012.jpg', title: '百度精选 #012', desc: '预估评分: 65分 · 品质精选', score: 65 },
+  { file: 'batch3_reba_004.jpg', title: '热巴写真', desc: '预估评分: 65分 · 明艳动人', score: 65 },
+  { file: 'multi_reba_022.jpg', title: '热巴写真', desc: '预估评分: 65分 · 明艳动人', score: 65 },
+  { file: 'new_reba_018.jpg', title: '新增精选 #018', desc: '预估评分: 65分 · 持续更新', score: 65 },
+  { file: 'new_reba_023.jpg', title: '新增精选 #023', desc: '预估评分: 65分 · 持续更新', score: 65 },
+  { file: 'new_reba_029.jpg', title: '新增精选 #029', desc: '预估评分: 65分 · 持续更新', score: 65 },
+  { file: 'new_reba_030.jpg', title: '新增精选 #030', desc: '预估评分: 65分 · 持续更新', score: 65 },
+  { file: 'new_reba_038.jpg', title: '新增精选 #038', desc: '预估评分: 65分 · 持续更新', score: 65 },
+  { file: 'new_reba_042.jpg', title: '新增精选 #042', desc: '预估评分: 65分 · 持续更新', score: 65 },
+  { file: 'new_reba_059.jpg', title: '新增精选 #059', desc: '预估评分: 65分 · 持续更新', score: 65 },
+  { file: 'reba_flickr_3.jpg', title: 'InStyle牛仔', desc: '杂志街拍 · 街头蹲坐', score: 65 },
+  { file: 'reba_flickr_4.jpg', title: '白色蕾丝', desc: '街拍风 · 抬手遮阳', score: 65 },
+  { file: 'reba_hd_1.jpg', title: '蝴蝶仙子', desc: '梦幻翅膀 · 亮片礼服', score: 65 },
+  { file: 'weibo_reba_012.jpg', title: '热巴写真', desc: '预估评分: 65分 · 明艳动人', score: 65 },
 ];
 
-// 总计: 116 张纯净写真
+// 总计: 112 张照片，按评分从高到低排序
+
+
+        // 获取评分对应的样式类
+        function getScoreClass(score) {
+            if (score >= 90) return 'score-high';
+            if (score >= 70) return 'score-medium';
+            return 'score-low';
+        }
+
+        // 获取评分文字
+        function getScoreText(score) {
+            if (score >= 90) return '⭐⭐⭐⭐⭐ ' + score + '分';
+            if (score >= 80) return '⭐⭐⭐⭐ ' + score + '分';
+            if (score >= 70) return '⭐⭐⭐⭐ ' + score + '分';
+            if (score >= 60) return '⭐⭐⭐ ' + score + '分';
+            return '⭐⭐ ' + score + '分';
+        }
 
         // 渲染画廊
         const gallery = document.getElementById('gallery');
@@ -248,11 +289,17 @@ const photoData = [
         photoData.forEach((photo, index) => {
             const card = document.createElement('div');
             card.className = 'photo-card';
+            
+            const scoreClass = getScoreClass(photo.score);
+            const scoreText = getScoreText(photo.score);
+            
             card.innerHTML = `
+                <div class="rank-number">${index + 1}</div>
+                <div class="score-tag ${scoreClass}">${scoreText}</div>
                 <img src="${photo.file}" alt="${photo.title}" loading="lazy" 
                      onerror="this.style.display='none'">
                 <div class="photo-info">
-                    <h3>${index + 1}. ${photo.title}</h3>
+                    <h3>${photo.title}</h3>
                     <p>${photo.desc}</p>
                 </div>
             `;
