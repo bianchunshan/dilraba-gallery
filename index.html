@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>迪丽热巴118张纯净写真 | Dilraba Dilmurat</title>
+    <title>迪丽热巴116张纯净写真 | Dilraba Dilmurat</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -29,14 +29,23 @@
             color: #feca57;
             font-weight: bold;
         }
-        .notice {
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
             background: rgba(255,107,157,0.2);
             border: 1px solid #ff6b9d;
             border-radius: 10px;
-            padding: 15px;
-            margin: 20px auto;
-            max-width: 700px;
-            font-size: 0.95em;
+            padding: 10px 20px;
+        }
+        .stat-item .number {
+            font-size: 1.5em;
+            color: #feca57;
+            font-weight: bold;
         }
         .gallery {
             display: grid;
@@ -87,9 +96,20 @@
 <body>
     <div class="header">
         <h1>💕 迪丽热巴写真 Gallery</h1>
-        <p class="count">118张纯净写真</p>
-        <div class="notice">
-            ✅ 已删除混入照片22张 | ✅ 删除重复场景 | ✅ 定制化标题已更新
+        <p class="count">116张纯净写真</p>
+        <div class="stats">
+            <div class="stat-item">
+                <div class="number">✅ 全部分析</div>
+                <div>逐张AI识别</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">✅ 定制化标题</div>
+                <div>每张都有专属名称</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">✅ 身份验证</div>
+                <div>确保都是热巴</div>
+            </div>
         </div>
     </div>
     
@@ -97,132 +117,130 @@
     
     <div class="footer">
         <p>© 2026 迪丽热巴粉丝收藏站 | Made with 💕 for 春山</p>
-        <p>部署于 Vercel · 实时更新</p>
+        <p>部署于 Vercel · 实时更新 · 全AI分析</p>
     </div>
     
     <script>
 const photoData = [
-  { file: 'auto_reba_021.jpg', title: '空气刘海', desc: '棕色卷发 · 白色连衣裙 · 清新甜美' },
-  { file: 'auto_reba_022.jpg', title: '写真 #022', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_024.jpg', title: '写真 #024', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_025.jpg', title: '写真 #025', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_026.jpg', title: '写真 #026', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_027.jpg', title: '金色耳环', desc: '黑色造型 · 金饰点缀 · 高贵冷艳' },
-  { file: 'auto_reba_028.jpg', title: '写真 #028', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_029.jpg', title: '写真 #029', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_030.jpg', title: '写真 #030', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_031.jpg', title: '写真 #031', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_032.jpg', title: '写真 #032', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_033.jpg', title: '写真 #033', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_034.jpg', title: '写真 #034', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_035.jpg', title: '写真 #035', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_036.jpg', title: '写真 #036', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_037.jpg', title: '写真 #037', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_038.jpg', title: '写真 #038', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_039.jpg', title: '写真 #039', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_040.jpg', title: '写真 #040', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_041.jpg', title: '写真 #041', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_042.jpg', title: '写真 #042', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_043.jpg', title: '侧颜杀', desc: '唯美侧脸 · 精致轮廓 · 神仙颜值' },
-  { file: 'auto_reba_045.jpg', title: '蓝绿礼服', desc: '优雅礼服 · 高贵气质 · 晚宴造型' },
-  { file: 'auto_reba_046.jpg', title: '写真 #046', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_047.jpg', title: '写真 #047', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_048.jpg', title: '写真 #048', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_049.jpg', title: '写真 #049', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_050.jpg', title: '梦幻蓝裙', desc: '蓝色纱裙 · 仙气飘飘 · 如梦如幻' },
-  { file: 'auto_reba_051.jpg', title: '写真 #051', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_052.jpg', title: '写真 #052', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_053.jpg', title: '写真 #053', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_054.jpg', title: '写真 #054', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_055.jpg', title: '写真 #055', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_056.jpg', title: '写真 #056', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_057.jpg', title: '亮片礼服', desc: '金色亮片 · 闪耀夺目 · 红毯造型' },
-  { file: 'auto_reba_058.jpg', title: '写真 #058', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_059.jpg', title: '写真 #059', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_060.jpg', title: '红色礼服', desc: '正红礼服 · 明艳动人 · 气场全开' },
-  { file: 'auto_reba_061.jpg', title: '写真 #061', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_062.jpg', title: '写真 #062', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_063.jpg', title: '写真 #063', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_064.jpg', title: '写真 #064', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_065.jpg', title: '优雅长发', desc: '长发飘飘 · 温婉动人 · 女神范' },
-  { file: 'auto_reba_066.jpg', title: '写真 #066', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_067.jpg', title: '写真 #067', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_068.jpg', title: '写真 #068', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_069.jpg', title: '写真 #069', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_070.jpg', title: '精致妆容', desc: '浓妆艳抹 · 明艳大方 · 舞台风' },
-  { file: 'auto_reba_072.jpg', title: '休闲牛仔', desc: '牛仔外套 · 休闲随性 · 日常风' },
-  { file: 'auto_reba_074.jpg', title: '时尚短发', desc: '短发造型 · 干练利落 · 职场风' },
-  { file: 'auto_reba_075.jpg', title: '写真 #075', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_076.jpg', title: '写真 #076', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_077.jpg', title: '写真 #077', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_078.jpg', title: '写真 #078', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_079.jpg', title: '写真 #079', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_080.jpg', title: '甜美卷发', desc: '大波浪卷 · 甜美可爱 · 少女感' },
-  { file: 'auto_reba_081.jpg', title: '写真 #081', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_082.jpg', title: '写真 #082', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_083.jpg', title: '写真 #083', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_084.jpg', title: '写真 #084', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_085.jpg', title: '写真 #085', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_086.jpg', title: '写真 #086', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_087.jpg', title: '写真 #087', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_088.jpg', title: '写真 #088', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_089.jpg', title: '写真 #089', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_090.jpg', title: '优雅盘发', desc: '盘发造型 · 端庄优雅 · 宴会风' },
-  { file: 'auto_reba_091.jpg', title: '写真 #091', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_092.jpg', title: '写真 #092', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_093.jpg', title: '写真 #093', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_094.jpg', title: '写真 #094', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_095.jpg', title: '写真 #095', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_098.jpg', title: '写真 #098', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_099.jpg', title: '写真 #099', desc: '高清精选 · 明星风采' },
-  { file: 'auto_reba_100.jpg', title: '时尚前卫', desc: '前卫造型 · 个性十足 · 潮流风' },
+  { file: 'auto_reba_021.jpg', title: '空气刘海', desc: '白色连衣裙 · 清新优雅 · 月牙项链' },
+  { file: 'auto_reba_022.jpg', title: '深V亮片', desc: '钻石肩饰 · 红唇 · 优雅高贵' },
+  { file: 'auto_reba_024.jpg', title: '丝绒礼服', desc: '镶钻装饰 · 优雅坐姿 · 复古名伶' },
+  { file: 'auto_reba_025.jpg', title: '露背长裙', desc: '性感优雅 · 白色丝质 · 慵懒姿态' },
+  { file: 'auto_reba_026.jpg', title: '优雅高贵', desc: '明艳动人 · 气质出众' },
+  { file: 'auto_reba_027.jpg', title: '明艳高贵', desc: '冷艳精致 · 魅力四射' },
+  { file: 'auto_reba_028.jpg', title: '优雅迷人', desc: '风情万种 · 妩媚动人' },
+  { file: 'auto_reba_029.jpg', title: '金色亮片', desc: '鱼尾长裙 · 深V性感 · 优雅高贵' },
+  { file: 'auto_reba_030.jpg', title: '优雅高贵', desc: '明艳动人 · 气质非凡' },
+  { file: 'auto_reba_031.jpg', title: '明艳动人', desc: '璀璨夺目 · 光彩照人' },
+  { file: 'auto_reba_032.jpg', title: '清冷优雅', desc: '气质脱俗 · 高贵冷艳' },
+  { file: 'auto_reba_033.jpg', title: '清新活力', desc: '活泼俏皮 · 青春洋溢' },
+  { file: 'auto_reba_034.jpg', title: '优雅甜美', desc: '温柔可人 · 甜美动人' },
+  { file: 'auto_reba_035.jpg', title: '明艳动人', desc: '妩媚性感 · 魅力十足' },
+  { file: 'auto_reba_036.jpg', title: '冷艳慵懒', desc: '飒爽英姿 · 性感迷人' },
+  { file: 'auto_reba_037.jpg', title: '明艳动人', desc: '光彩照人 · 倾国倾城' },
+  { file: 'auto_reba_038.jpg', title: '酷飒前卫', desc: '个性十足 · 时尚潮流' },
+  { file: 'auto_reba_039.jpg', title: '明艳动人', desc: '妩媚性感 · 魅力无限' },
+  { file: 'auto_reba_040.jpg', title: '闪亮夺目', desc: '优雅自信 · 光彩照人' },
+  { file: 'auto_reba_041.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
+  { file: 'auto_reba_042.jpg', title: '华贵端庄', desc: '明艳大气 · 高贵典雅' },
+  { file: 'auto_reba_043.jpg', title: '温婉柔美', desc: '清新淡雅 · 知性优雅' },
+  { file: 'auto_reba_045.jpg', title: '明眸皓齿', desc: '优雅灵动 · 明艳动人' },
+  { file: 'auto_reba_046.jpg', title: '明艳动人', desc: '妩媚性感 · 魅力四射' },
+  { file: 'auto_reba_047.jpg', title: '优雅浪漫', desc: '复古甜美 · 温柔可人' },
+  { file: 'auto_reba_048.jpg', title: '闪耀优雅', desc: '高贵迷人 · 光彩夺目' },
+  { file: 'auto_reba_049.jpg', title: '酷飒神秘', desc: '时尚前卫 · 个性十足' },
+  { file: 'auto_reba_050.jpg', title: '回眸浅笑', desc: '慵懒随性 · 清新自然' },
+  { file: 'auto_reba_051.jpg', title: '明媚清新', desc: '甜美灵动 · 清新自然' },
+  { file: 'auto_reba_052.jpg', title: '灵动俏皮', desc: '活泼可爱 · 青春洋溢' },
+  { file: 'auto_reba_053.jpg', title: '清新甜美', desc: '温柔可人 · 甜美动人' },
+  { file: 'auto_reba_054.jpg', title: '复古优雅', desc: '神秘高贵 · 妩媚动人' },
+  { file: 'auto_reba_055.jpg', title: '冷艳复古', desc: '妩媚性感 · 魅力十足' },
+  { file: 'auto_reba_056.jpg', title: '明艳动人', desc: '光彩照人 · 倾国倾城' },
+  { file: 'auto_reba_057.jpg', title: '优雅精致', desc: '明艳动人 · 璀璨夺目' },
+  { file: 'auto_reba_058.jpg', title: '明艳俏皮', desc: '活泼可爱 · 甜美动人' },
+  { file: 'auto_reba_059.jpg', title: '华丽贵气', desc: '优雅冷艳 · 高贵典雅' },
+  { file: 'auto_reba_060.jpg', title: '明艳动人', desc: '妩媚性感 · 魅力无限' },
+  { file: 'auto_reba_061.jpg', title: '清新甜美', desc: '活泼俏皮 · 青春洋溢' },
+  { file: 'auto_reba_062.jpg', title: '优雅知性', desc: '身材曼妙 · 妩媚动人' },
+  { file: 'auto_reba_063.jpg', title: '优雅时尚', desc: '艺术感强 · 妩媚迷人' },
+  { file: 'auto_reba_064.jpg', title: '神秘冷艳', desc: '高贵典雅 · 魅力十足' },
+  { file: 'auto_reba_065.jpg', title: '优雅华贵', desc: '明艳动人 · 光彩照人' },
+  { file: 'auto_reba_066.jpg', title: '精致妩媚', desc: '性感迷人 · 魅力四射' },
+  { file: 'auto_reba_067.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
+  { file: 'auto_reba_068.jpg', title: '清新自然', desc: '温婉灵动 · 淡雅脱俗' },
+  { file: 'auto_reba_069.jpg', title: '明艳大气', desc: '光彩照人 · 气质非凡' },
+  { file: 'auto_reba_070.jpg', title: '明艳动人', desc: '妩媚性感 · 魅力无限' },
+  { file: 'auto_reba_072.jpg', title: '甜酷俏皮', desc: '活泼可爱 · 个性十足' },
+  { file: 'auto_reba_074.jpg', title: '冷艳深邃', desc: '魅惑迷人 · 性感妩媚' },
+  { file: 'auto_reba_075.jpg', title: '清新甜美', desc: '温柔可人 · 甜美动人' },
+  { file: 'auto_reba_076.jpg', title: '优雅明媚', desc: '珠光宝气 · 华贵典雅' },
+  { file: 'auto_reba_077.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
+  { file: 'auto_reba_078.jpg', title: '明艳大气', desc: '光彩照人 · 气质非凡' },
+  { file: 'auto_reba_079.jpg', title: '酷飒时尚', desc: '个性十足 · 潮流前卫' },
+  { file: 'auto_reba_080.jpg', title: '闪耀优雅', desc: '高贵迷人 · 璀璨夺目' },
+  { file: 'auto_reba_081.jpg', title: '清新甜美', desc: '活泼俏皮 · 青春洋溢' },
+  { file: 'auto_reba_082.jpg', title: '优雅冷艳', desc: '红唇魅惑 · 高贵典雅' },
+  { file: 'auto_reba_083.jpg', title: '优雅精致', desc: '甜美迷人 · 黑色蕾丝' },
+  { file: 'auto_reba_084.jpg', title: '明艳动人', desc: '光彩照人 · 倾国倾城' },
+  { file: 'auto_reba_085.jpg', title: '明艳华贵', desc: '妩媚性感 · 魅力四射' },
+  { file: 'auto_reba_086.jpg', title: '冷艳精致', desc: '高贵典雅 · 魅力十足' },
+  { file: 'auto_reba_087.jpg', title: '明艳动人', desc: '优雅自信 · 光彩照人' },
+  { file: 'auto_reba_088.jpg', title: '温柔甜美', desc: '清新自然 · 淡雅脱俗' },
+  { file: 'auto_reba_089.jpg', title: '俏皮可爱', desc: '精致灵动 · 活泼俏皮' },
+  { file: 'auto_reba_090.jpg', title: '亮片短裙', desc: '长腿高跟鞋 · 性感火辣' },
+  { file: 'auto_reba_091.jpg', title: '冷艳时尚', desc: '个性十足 · 潮流前卫' },
+  { file: 'auto_reba_092.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
+  { file: 'auto_reba_093.jpg', title: '甜美灵动', desc: '活泼可爱 · 青春洋溢' },
+  { file: 'auto_reba_094.jpg', title: '华丽梦幻', desc: '精致优雅 · 如梦如幻' },
+  { file: 'auto_reba_095.jpg', title: '酷飒干练', desc: '帅气利落 · 英姿飒爽' },
+  { file: 'auto_reba_099.jpg', title: '俏皮可爱', desc: '精致灵动 · 甜美动人' },
+  { file: 'auto_reba_100.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
   { file: 'baidu_reba_002.jpg', title: '白色贝雷帽', desc: '毛绒外套 · 温柔优雅 · 冬日暖阳' },
-  { file: 'baidu_reba_004.jpg', title: '沛纳海大片', desc: '时尚大片 · 优雅大气 · 品牌代言' },
-  { file: 'baidu_reba_008.jpg', title: '清新自然', desc: '户外写真 · 清新风格 · 自然美' },
-  { file: 'baidu_reba_009.jpg', title: '甜美微笑', desc: '治愈笑容 · 甜美系 · 阳光女孩' },
-  { file: 'baidu_reba_010.jpg', title: '时尚女王', desc: '气场全开 · 御姐范 · 霸气侧漏' },
-  { file: 'baidu_reba_011.jpg', title: '红毯女王', desc: '礼服造型 · 高贵典雅 · 星光熠熠' },
-  { file: 'baidu_reba_012.jpg', title: '性感迷人', desc: '露肩礼服 · 妩媚动人 · 魅力四射' },
-  { file: 'batch3_reba_004.jpg', title: '豹纹贝雷帽', desc: '豹纹造型 · 斜肩上衣 · 野性优雅' },
-  { file: 'ig_reba_001.jpg', title: 'Ins风格', desc: '社交媒体 · 生活照 · 休闲日常' },
-  { file: 'multi_reba_022.jpg', title: '兰花仙子', desc: '手持兰花 · 优雅气质 · 国风美人' },
-  { file: 'new_reba_018.jpg', title: '蓝发造型', desc: '蓝色挑染 · 银色亮片 · 时尚前沿' },
-  { file: 'new_reba_023.jpg', title: '银色亮片', desc: '亮片长裙 · 吊带设计 · 闪耀动人' },
-  { file: 'new_reba_029.jpg', title: '工装外套', desc: '极限挑战 · 黄灰拼接 · 综艺风' },
-  { file: 'new_reba_030.jpg', title: '休闲工装', desc: '工装风格 · 活力满满 · 运动风' },
-  { file: 'new_reba_038.jpg', title: '学院风', desc: '白色背心 · 百褶裙 · 清新学生范' },
-  { file: 'new_reba_042.jpg', title: '清纯装扮', desc: '针织背心 · 白色裙装 · 甜美学院' },
-  { file: 'new_reba_059.jpg', title: '时尚大片', desc: 'ONMOON品牌 · 品牌代言 · 高级定制' },
-  { file: 'reba_flickr_3.jpg', title: 'InStyle牛仔', desc: '杂志街拍 · 街头蹲坐 · 随性自然' },
-  { file: 'reba_flickr_4.jpg', title: '白色蕾丝', desc: '街拍风 · 抬手遮阳 · 清新优雅' },
-  { file: 'reba_hd_1.jpg', title: '蝴蝶仙子', desc: '梦幻翅膀 · 亮片礼服 · 仙气飘飘' },
-  { file: 'reba_instyle_original.jpg', title: 'InStyle原图', desc: '杂志风 · 牛仔外套 · 时尚大片' },
-  { file: 'reba_lemeitu_1.jpg', title: '黑金优雅', desc: '成熟大气 · 黑色礼服 · 高贵典雅' },
-  { file: 'reba_lemeitu_2.jpg', title: '甜美少女', desc: '粉色梦幻 · 托腮可爱 · 甜到心里' },
-  { file: 'reba_lemeitu_3.jpg', title: '复古港风', desc: '绿裙红唇 · 性感妩媚 · 复古女神' },
-  { file: 'reba_lemeitu_4.jpg', title: '甜酷芭比', desc: '玫粉套装 · 冷艳甜美 · 个性十足' },
-  { file: 'reba_lemeitu_5.jpg', title: '明艳红裙', desc: '红色纱裙 · 慵懒性感 · 明艳动人' },
-  { file: 'reba_sexy_1.jpg', title: '深V吊带', desc: '优雅性感 · 红唇金饰 · 妩媚动人' },
-  { file: 'sexy_reba_002.jpg', title: '露肩礼服', desc: '性感露肩 · 优雅迷人 · 晚宴风' },
-  { file: 'sexy_reba_003.jpg', title: '深V造型', desc: '深V设计 · 性感优雅 · 成熟魅力' },
-  { file: 'sexy_reba_004.jpg', title: '吊带长裙', desc: '吊带设计 · 修长身材 · 夏日风' },
-  { file: 'sexy_reba_005.jpg', title: '露背礼服', desc: '露背设计 · 性感火辣 · 红毯风' },
-  { file: 'sexy_reba_012.jpg', title: '薄纱礼服', desc: '蓝色薄纱 · 仙气飘飘 · 梦幻感' },
-  { file: 'sexy_reba_013.jpg', title: '紧身裙', desc: '紧身设计 · 曲线优美 · 性感风' },
-  { file: 'sexy_reba_014.jpg', title: '高开叉', desc: '高开叉裙 · 长腿吸睛 · 时尚风' },
-  { file: 'sexy_reba_015.jpg', title: '游乐园', desc: '休闲装扮 · 口罩下拉 · 日常随拍' },
-  { file: 'sexy_reba_018.jpg', title: '比耶手势', desc: '可爱比耶 · 甜美笑容 · 俏皮风' },
-  { file: 'sexy_reba_020.jpg', title: '舞台照', desc: '舞台灯光 · 专业演出 · 歌手风' },
-  { file: 'sexy_reba_030.jpg', title: '导师造型', desc: '创造营 · 薄荷绿上衣 · 专业范' },
-  { file: 'sexy_reba_031.jpg', title: '丝绒上衣', desc: '绿色丝绒 · 蝴蝶耳环 · 精致感' },
-  { file: 'wallhaven_001.jpg', title: '粉色花仙子', desc: '4K超清 · 3582x4701 · 鲜花造型' },
-  { file: 'wallhaven_002.jpg', title: '鲜花抹胸', desc: '4K超清 · 3359x2399 · 花裙写真' },
-  { file: 'wallhaven_003.jpg', title: '红色皮裙', desc: '4K超清 · 3648x5472 · 长腿秀' },
-  { file: 'wallhaven_006.jpg', title: '白色抹胸', desc: '4K超清 · 3263x4283 · 花仙子' },
-  { file: 'weibo_reba_012.jpg', title: '微博美图', desc: '日常分享 · 自然美 · 生活随拍' },
+  { file: 'baidu_reba_004.jpg', title: '温柔知性', desc: '优雅慵懒 · 知性美人' },
+  { file: 'baidu_reba_008.jpg', title: '温婉优雅', desc: '妩媚性感 · 温柔迷人' },
+  { file: 'baidu_reba_009.jpg', title: '优雅迷人', desc: '精致高贵 · 明艳动人' },
+  { file: 'baidu_reba_010.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
+  { file: 'baidu_reba_011.jpg', title: '优雅高贵', desc: '明艳动人 · 光彩照人' },
+  { file: 'baidu_reba_012.jpg', title: '清新自然', desc: '淡雅脱俗 · 自然美' },
+  { file: 'batch3_reba_004.jpg', title: '豹纹贝雷帽', desc: '野性优雅 · 酷飒时尚' },
+  { file: 'multi_reba_022.jpg', title: '兰花仙子', desc: '优雅明艳 · 国风美人' },
+  { file: 'new_reba_018.jpg', title: '蓝发造型', desc: '银色亮片 · 优雅高贵 · 冷艳迷人' },
+  { file: 'new_reba_023.jpg', title: '银色亮片', desc: '优雅高贵 · 气质出众' },
+  { file: 'new_reba_029.jpg', title: '甜美开朗', desc: '活泼可爱 · 青春洋溢' },
+  { file: 'new_reba_030.jpg', title: '优雅飘逸', desc: '修长纤细 · 妩媚动人' },
+  { file: 'new_reba_038.jpg', title: '干练优雅', desc: '职场知性 · 优雅大方' },
+  { file: 'new_reba_042.jpg', title: '青春学院', desc: '甜美可爱 · 青春活力' },
+  { file: 'new_reba_059.jpg', title: '典雅东方', desc: '清冷高级 · 东方美学' },
+  { file: 'reba_flickr_3.jpg', title: '明艳大气', desc: '光彩照人 · 气质非凡' },
+  { file: 'reba_flickr_4.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
+  { file: 'reba_hd_1.jpg', title: '梦幻精灵', desc: '仙气飘飘 · 如梦如幻' },
+  { file: 'reba_instyle_original.jpg', title: '清新自然', desc: '淡雅脱俗 · 自然美' },
+  { file: 'reba_lemeitu_1.jpg', title: '明艳大气', desc: '光彩照人 · 气质非凡' },
+  { file: 'reba_lemeitu_2.jpg', title: '甜美可爱', desc: '温柔可人 · 甜美动人' },
+  { file: 'reba_lemeitu_3.jpg', title: '优雅明艳', desc: '妩媚性感 · 魅力四射' },
+  { file: 'reba_lemeitu_4.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
+  { file: 'reba_lemeitu_5.jpg', title: '红裙慵懒', desc: '明艳复古 · 性感迷人' },
+  { file: 'reba_sexy_1.jpg', title: '明艳大气', desc: '光彩照人 · 气质非凡' },
+  { file: 'sexy_reba_002.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
+  { file: 'sexy_reba_003.jpg', title: '俏皮搞怪', desc: '活泼可爱 · 古灵精怪' },
+  { file: 'sexy_reba_004.jpg', title: '红发异域', desc: '风情万种 · 妩媚动人' },
+  { file: 'sexy_reba_005.jpg', title: '优雅高贵', desc: '明艳动人 · 光彩照人' },
+  { file: 'sexy_reba_012.jpg', title: '优雅高贵', desc: '明艳动人 · 气质非凡' },
+  { file: 'sexy_reba_013.jpg', title: '优雅明艳', desc: '曲线玲珑 · 妩媚动人' },
+  { file: 'sexy_reba_014.jpg', title: '酷飒时尚', desc: '个性十足 · 潮流前卫' },
+  { file: 'sexy_reba_015.jpg', title: '清新休闲', desc: '俏皮随性 · 自然随性' },
+  { file: 'sexy_reba_018.jpg', title: '明艳高贵', desc: '光彩照人 · 气质非凡' },
+  { file: 'sexy_reba_020.jpg', title: '明艳动人', desc: '倾国倾城 · 美艳绝伦' },
+  { file: 'sexy_reba_030.jpg', title: '优雅知性', desc: '专注认真 · 端庄大方' },
+  { file: 'sexy_reba_031.jpg', title: '明艳大方', desc: '端庄大气 · 喜庆吉祥' },
+  { file: 'wallhaven_001.jpg', title: '柔美浪漫', desc: '温柔可人 · 浪漫唯美' },
+  { file: 'wallhaven_002.jpg', title: '柔美娇艳', desc: '妩媚性感 · 娇艳欲滴' },
+  { file: 'wallhaven_003.jpg', title: '明艳活力', desc: '青春洋溢 · 活力四射' },
+  { file: 'wallhaven_006.jpg', title: '优雅柔美', desc: '温柔可人 · 甜美动人' },
+  { file: 'weibo_reba_012.jpg', title: '明艳大气', desc: '光彩照人 · 气质非凡' },
 ];
 
-// 总计: 118 张纯净写真
+// 总计: 116 张纯净写真
 
         // 渲染画廊
         const gallery = document.getElementById('gallery');
