@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>迪丽热巴108张写真 | 按妩媚氛围排序</title>
+    <title>迪丽热巴107张写真 | 按妩媚氛围排序</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -125,12 +125,43 @@
             padding: 40px;
             opacity: 0.6;
         }
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.88);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            z-index: 9999;
+        }
+        .lightbox.open { display: flex; }
+        .lightbox img {
+            max-width: 92vw;
+            max-height: 88vh;
+            object-fit: contain;
+            border-radius: 14px;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.45);
+            background: #111;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            font-size: 40px;
+            line-height: 1;
+            color: #fff;
+            cursor: pointer;
+            user-select: none;
+        }
+        .photo-card img { cursor: zoom-in; }
+
     </style>
 </head>
 <body>
     <div class="header">
         <h1>💕 迪丽热巴写真 Gallery</h1>
-        <p class="count">108张精选写真</p>
+        <p class="count">107张精选写真</p>
         <div class="sort-info">
             <strong>📊 按妩媚氛围评分排序</strong>
             <div class="score-legend">
@@ -142,6 +173,11 @@
     </div>
     
     <div class="gallery" id="gallery"></div>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">×</span>
+        <img id="lightboxImage" src="" alt="放大查看">
+    </div>
     
     <div class="footer">
         <p>© 2026 迪丽热巴粉丝收藏站 | Made with 💕 for 春山</p>
@@ -235,7 +271,6 @@ const photoData = [
   { file: 'auto_reba_090.jpg', title: '亮片璀璨', desc: '短裙修身 · 长腿吸睛 · 气场全开', score: 65 },
   { file: 'auto_reba_092.jpg', title: '紫韵东方', desc: '旗袍优雅 · 兰花相伴 · 温婉动人', score: 65 },
   { file: 'auto_reba_093.jpg', title: '高马尾', desc: '侧颜精致 · 耳饰独特 · 笑容明媚', score: 65 },
-  { file: 'auto_reba_094.jpg', title: '蝶翼仙子', desc: '金鳞缀身 · 对镜自拍 · 梦幻华丽', score: 65 },
   { file: 'auto_reba_095.jpg', title: '酷飒舞姿', desc: '皮衣干练 · urban律动 · 活力四射', score: 65 },
   { file: 'auto_reba_100.jpg', title: '薄荷仙子', desc: '浅绿纱裙 · 清透妆容 · 高马尾辫', score: 65 },
   { file: 'baidu_reba_002.jpg', title: '银绣华服', desc: '银色刺绣礼服 · 优雅端庄 · 红唇黑长发', score: 65 },
