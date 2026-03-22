@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>迪丽热巴69张写真 | 按妩媚氛围排序</title>
+    <title>迪丽热巴215张写真</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -29,87 +29,51 @@
             color: #feca57;
             font-weight: bold;
         }
-        .sort-info {
-            background: rgba(255,107,157,0.2);
-            border: 1px solid #ff6b9d;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px auto;
-            max-width: 600px;
-            font-size: 0.95em;
-        }
-        .score-legend {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-        .score-badge {
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: bold;
-        }
-        .score-high { background: #ff6b9d; color: #fff; }
-        .score-medium { background: #feca57; color: #1a1a2e; }
-        .score-low { background: #48dbfb; color: #1a1a2e; }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
+            padding: 40px;
             max-width: 1600px;
             margin: 0 auto;
-            padding: 40px;
         }
         .photo-card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 16px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-            transition: transform 0.3s;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
             position: relative;
         }
         .photo-card:hover {
             transform: translateY(-10px);
-        }
-        .score-tag {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
-            z-index: 10;
+            box-shadow: 0 20px 40px rgba(255,107,157,0.3);
         }
         .photo-card img {
             width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: contain;
+            height: 400px;
+            object-fit: cover;
             display: block;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         }
         .photo-info {
-            padding: 15px;
-            text-align: center;
+            padding: 20px;
         }
         .photo-info h3 {
-            color: #feca57;
+            color: #fff;
+            margin-bottom: 10px;
             font-size: 1.1em;
-            margin-bottom: 5px;
         }
         .photo-info p {
+            color: rgba(255,255,255,0.7);
             font-size: 0.9em;
-            opacity: 0.8;
         }
         .rank-number {
             position: absolute;
             top: 10px;
             left: 10px;
-            background: rgba(0,0,0,0.7);
-            color: #feca57;
+            background: linear-gradient(45deg, #ff6b9d, #ff9ff3);
+            color: white;
             width: 30px;
             height: 30px;
             border-radius: 50%;
@@ -118,179 +82,35 @@
             justify-content: center;
             font-weight: bold;
             font-size: 0.9em;
-            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         .footer {
             text-align: center;
-            padding: 40px;
-            opacity: 0.6;
+            padding: 40px 20px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9em;
         }
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.88);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            z-index: 9999;
-        }
-        .lightbox.open { display: flex; }
-        .lightbox img {
-            max-width: 92vw;
-            max-height: 88vh;
-            object-fit: contain;
-            border-radius: 14px;
-            box-shadow: 0 20px 80px rgba(0,0,0,0.45);
-            background: #111;
-        }
-        .lightbox-close {
-            position: absolute;
-            top: 18px;
-            right: 22px;
-            font-size: 40px;
-            line-height: 1;
-            color: #fff;
-            cursor: pointer;
-            user-select: none;
-        }
-        .photo-card img { cursor: zoom-in; }
-
     </style>
 </head>
 <body>
     <div class="header">
         <h1>💕 迪丽热巴写真 Gallery</h1>
-        <p class="count">70张精选写真</p>
-        <div class="sort-info">
-            <strong>📊 按妩媚氛围评分排序</strong>
-            <div class="score-legend">
-                <span class="score-badge score-high">⭐⭐⭐⭐⭐ 85-100分 华丽妩媚</span>
-                <span class="score-badge score-medium">⭐⭐⭐⭐ 70-84分 成熟明艳</span>
-                <span class="score-badge score-low">⭐⭐⭐ 55-69分 清新灵动</span>
-            </div>
-        </div>
+        <div class="count">215 张精选</div>
+        <p style="margin-top: 15px; color: rgba(255,255,255,0.7);">Made with 💕 for 春山</p>
     </div>
-    
     <div class="gallery" id="gallery"></div>
-
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" id="lightboxClose">×</span>
-        <img id="lightboxImage" src="" alt="放大查看">
-    </div>
-    
     <div class="footer">
-        <p>© 2026 迪丽热巴粉丝收藏站 | Made with 💕 for 春山</p>
-        <p>部署于 Vercel · 人工复核后按妩媚氛围排序</p>
+        <p>© 2026 迪丽热巴粉丝收藏站</p>
     </div>
-    
     <script>
-const photoData = [
-  { file: 'reba_lemeitu_4.jpg', title: '甜酷芭比', desc: '玫粉套装 · 冷艳甜美', score: 90 },
-  { file: 'wallhaven_001.jpg', title: '粉色花仙子', desc: '4K超清 · 鲜花造型', score: 90 },
-  { file: 'wallhaven_002.jpg', title: '鲜花抹胸', desc: '4K超清 · 花裙写真', score: 90 },
-  { file: 'wallhaven_006.jpg', title: '白色抹胸', desc: '4K超清 · 花仙子', score: 90 },
-  { file: 'auto_reba_022.jpg', title: '黑金女王', desc: '丝绒质感 · 钻饰肩袖 · 冷艳坐姿', score: 80 },
-  { file: 'auto_reba_024.jpg', title: '晨光私语', desc: '丝缎露背 · 慵懒姿态 · 柔和光影', score: 80 },
-  { file: 'auto_reba_025.jpg', title: '暗夜玫瑰', desc: '金属耳饰 · 红唇深邃 · 神秘紫调', score: 80 },
-  { file: 'auto_reba_027.jpg', title: '江景微醺', desc: '丝绒吊带 · 城市天际 · 飘逸长发', score: 80 },
-  { file: 'auto_reba_029.jpg', title: '星海梦境', desc: '薄纱层叠 · 银线刺绣 · 静谧蓝调', score: 80 },
-  { file: 'auto_reba_030.jpg', title: '格纹雅痞', desc: '西装廓形 · 复古格纹 · 随性倚坐', score: 80 },
-  { file: 'reba_sexy_1.jpg', title: '深V吊带', desc: '优雅性感 · 红唇金饰', score: 80 },
-  { file: 'sexy_reba_002.jpg', title: '钻光璀璨', desc: '银色钻饰抹胸 · 蓝黑挑染发 · 优雅坐姿', score: 80 },
-  { file: 'sexy_reba_013.jpg', title: '红丝绒上海', desc: '红色丝绒吊带裙 · 上海天际线 · 东方明珠', score: 80 },
-  { file: 'sexy_reba_014.jpg', title: '黑纱魅影', desc: '黑色丝绒幕布 · 卡其工装裤 · 金色高跟', score: 80 },
-  { file: 'sexy_reba_020.jpg', title: '露肩花裙', desc: '白色露肩上衣 · 黑底粉花裙 · Alexander Wang', score: 80 },
-  { file: 'auto_reba_026.jpg', title: '人鱼泪光', desc: '渐变亮片 · 流苏耳坠 · 梦幻发饰', score: 73 },
-  { file: 'auto_reba_031.jpg', title: '甜酷红心', desc: '皮衣质感 · 毛绒心形 · 俏皮混搭', score: 73 },
-  { file: 'auto_reba_035.jpg', title: '酷飒甜心', desc: '黑色皮衣 · 红心耳饰 · 慵懒卷发', score: 73 },
-  { file: 'auto_reba_037.jpg', title: '花间精灵', desc: '红裙印花 · 躺卧姿态 · 慵懒风情', score: 73 },
-  { file: 'auto_reba_039.jpg', title: '红裙女王', desc: '修身鱼尾 · 宝石腰链 · 高贵冷艳', score: 73 },
-  { file: 'auto_reba_040.jpg', title: '亮片闪耀', desc: '粉紫亮片 · 垫肩深V · 妩媚动人', score: 73 },
-  { file: 'auto_reba_038.jpg', title: '酷飒双辫', desc: '拳击辫 · 皮质上衣 · 凌厉眼神', score: 65 },
-  { file: 'auto_reba_042.jpg', title: '金鹰女神', desc: '金色战袍 · 皇冠加冕 · 舞台光芒', score: 65 },
-  { file: 'auto_reba_043.jpg', title: '逆光温柔', desc: '侧颜轮廓 · 裸粉长裙 · 珍珠耳饰', score: 65 },
-  { file: 'auto_reba_045.jpg', title: '碧蓝仙裙', desc: '高马尾 · 水钻吊带 · 侧颜杀', score: 65 },
-  { file: 'auto_reba_046.jpg', title: '烈焰红裙', desc: '宝石肩带 · 腰链点缀 · 优雅站姿', score: 65 },
-  { file: 'auto_reba_050.jpg', title: '街头回眸', desc: '灰色夹克 · 慵懒卷发 · 集装箱背景', score: 65 },
-  { file: 'auto_reba_051.jpg', title: '花漾甜心', desc: '丸子头 · 印花外套 · 阳光氛围', score: 65 },
-  { file: 'auto_reba_054.jpg', title: '复古名伶', desc: '黑色丝绒裙 · 网纱面纱 · 宫廷长桌', score: 65 },
-  { file: 'auto_reba_055.jpg', title: '红韵', desc: '复古红唇 · 格纹长裙 · 慵懒姿态', score: 65 },
-  { file: 'auto_reba_056.jpg', title: '春漾', desc: '清新印花 · 温柔长发 · 明媚眼神', score: 65 },
-  { file: 'auto_reba_057.jpg', title: '星璨', desc: '亮片外套 · 精致珠宝 · 梦幻光影', score: 65 },
-  { file: 'auto_reba_059.jpg', title: '鎏金', desc: '金色刺绣 · 卢浮宫外 · 优雅侧颜', score: 65 },
-  { file: 'auto_reba_061.jpg', title: '晴空', desc: '高马尾辫 · 蓝白配饰 · 活力清新', score: 65 },
-  { file: 'auto_reba_063.jpg', title: '灰调', desc: '立体褶皱 · 艺术造型 · 简约背景', score: 65 },
-  { file: 'auto_reba_064.jpg', title: '夜魅', desc: '黑色纱衣 · 烟雾缭绕 · 神秘冷艳', score: 65 },
-  { file: 'auto_reba_065.jpg', title: '人鱼公主', desc: '渐变蓝裙 · 亮片闪耀 · 奖杯在握', score: 65 },
-  { file: 'auto_reba_066.jpg', title: '慵懒午后', desc: '毛绒外套 · 金环耳饰 · 微卷长发', score: 65 },
-  { file: 'auto_reba_067.jpg', title: '红韵摩登', desc: '丝绒红裙 · 黑丝高跟 · 复古风情', score: 65 },
-  { file: 'auto_reba_068.jpg', title: '暖阳浅笑', desc: '驼色大衣 · 丸子头 · 回眸温柔', score: 65 },
-  { file: 'auto_reba_069.jpg', title: '优雅侧颜', desc: '珍珠白裙 · 银杏耳坠 · 卷发如瀑', score: 65 },
-  { file: 'auto_reba_070.jpg', title: '海边映画', desc: '三格拼图 · 落日余晖 · 清新自然', score: 65 },
-  { file: 'auto_reba_074.jpg', title: '红衣魅影', desc: '三格连拍 · 光影朦胧 · 冷艳凝视', score: 65 },
-  { file: 'auto_reba_075.jpg', title: '元气马尾', desc: '白色T恤 · 彩色发夹 · 甜美邻家', score: 65 },
-  { file: 'auto_reba_076.jpg', title: '珠光晚宴', desc: '黑色抹胸 · 珍珠项链 · 举杯浅笑', score: 65 },
-  { file: 'auto_reba_077.jpg', title: '金辉时刻', desc: '金色亮片裙 · 深V吊带 · 手持滑板', score: 65 },
-  { file: 'auto_reba_078.jpg', title: '清新代言', desc: '白色T恤 · 高马尾 · 品牌活动', score: 65 },
-  { file: 'auto_reba_084.jpg', title: '明黄风情', desc: '黄色吊带裙 · 湿发造型 · 慵懒坐姿', score: 65 },
-  { file: 'auto_reba_085.jpg', title: '鎏金闪耀', desc: '金色亮片裙 · 露背设计 · 逆光轮廓', score: 65 },
-  { file: 'auto_reba_086.jpg', title: '纯白仙姿', desc: '白色抹胸裙 · 蛇形耳饰 · 清冷气质', score: 65 },
-  { file: 'auto_reba_088.jpg', title: '落日余晖', desc: '海天一色 · 吊带轻盈 · 长发随风', score: 65 },
-  { file: 'auto_reba_089.jpg', title: '俏皮丸子', desc: '嘟嘴卖萌 · 卫衣休闲 · 暮色温柔', score: 65 },
-  { file: 'auto_reba_090.jpg', title: '亮片璀璨', desc: '短裙修身 · 长腿吸睛 · 气场全开', score: 65 },
-  { file: 'auto_reba_092.jpg', title: '紫韵东方', desc: '旗袍优雅 · 兰花相伴 · 温婉动人', score: 65 },
-  { file: 'auto_reba_093.jpg', title: '高马尾', desc: '侧颜精致 · 耳饰独特 · 笑容明媚', score: 65 },
-  { file: 'auto_reba_100.jpg', title: '薄荷仙子', desc: '浅绿纱裙 · 清透妆容 · 高马尾辫', score: 65 },
-  { file: 'baidu_reba_002.jpg', title: '银绣华服', desc: '银色刺绣礼服 · 优雅端庄 · 红唇黑长发', score: 65 },
-  { file: 'baidu_reba_004.jpg', title: '冬日暖阳', desc: '米色贝雷帽 · 毛绒外套 · 温暖甜美', score: 65 },
-  { file: 'baidu_reba_009.jpg', title: '静谧蓝调', desc: '蓝底闭眼 · 金色首饰 · 宁静优雅', score: 65 },
-  { file: 'baidu_reba_010.jpg', title: '红丝绒魅影', desc: '红色丝绒吊带裙 · 上海天际线 · 性感妩媚', score: 65 },
-  { file: 'baidu_reba_011.jpg', title: '奢华时刻', desc: '黑色吊带裙 · 金表配饰 · 侧颜优雅', score: 65 },
-  { file: 'baidu_reba_012.jpg', title: '湖畔清风', desc: '户外湖边 · 彩色编织背心 · 清新自然', score: 65 },
-  { file: 'batch3_reba_004.jpg', title: '豹纹酷girl', desc: '豹纹帽子 · 黑色背心 · 酷飒时尚', score: 65 },
-  { file: 'multi_reba_022.jpg', title: '兰香佳人', desc: '粉色兰花 · 优雅侧颜 · 温柔气质', score: 65 },
-  { file: 'new_reba_018.jpg', title: '蓝银梦境', desc: '银色亮片抹胸裙 · 蓝黑渐变发 · 慵懒倚坐', score: 65 },
-  { file: 'new_reba_023.jpg', title: '银河长裙', desc: '银色吊带亮片长裙 · 优雅端庄 · 自信凝视', score: 65 },
-  { file: 'new_reba_042.jpg', title: '学院少女', desc: '白色学院风短裙 · V领上衣 · 清纯可爱', score: 65 },
-  { file: 'reba_hd_1.jpg', title: '蝴蝶仙子', desc: '梦幻翅膀 · 亮片礼服', score: 65 },
-  { file: 'weibo_reba_012.jpg', title: '温柔凝视', desc: '精致妆容 · 黑长直发 · 温柔微笑', score: 65 },
-];
-
-// 总计: 112 张照片，按评分从高到低排序
-
-
-        // 获取评分对应的样式类
-        function getScoreClass(score) {
-            if (score >= 90) return 'score-high';
-            if (score >= 70) return 'score-medium';
-            return 'score-low';
-        }
-
-        // 获取评分文字
-        function getScoreText(score) {
-            if (score >= 90) return '⭐⭐⭐⭐⭐ ' + score + '分';
-            if (score >= 80) return '⭐⭐⭐⭐ ' + score + '分';
-            if (score >= 70) return '⭐⭐⭐⭐ ' + score + '分';
-            if (score >= 60) return '⭐⭐⭐ ' + score + '分';
-            return '⭐⭐ ' + score + '分';
-        }
-
-        // 渲染画廊
+const photoData = [{"file": "auto_reba_042.jpg", "title": "迪丽热巴 14", "desc": "明艳动人", "score": 95}, {"file": "auto_reba_045.jpg", "title": "迪丽热巴 16", "desc": "明艳动人", "score": 95}, {"file": "auto_reba_051.jpg", "title": "迪丽热巴 19", "desc": "明艳动人", "score": 95}, {"file": "batch_0123.jpg", "title": "迪丽热巴 88", "desc": "明艳动人", "score": 95}, {"file": "batch_0182.jpg", "title": "迪丽热巴 100", "desc": "明艳动人", "score": 95}, {"file": "ettoday_3754_d.jpg", "title": "迪丽热巴 132", "desc": "明艳动人", "score": 95}, {"file": "ettoday_3760_d.jpg", "title": "迪丽热巴 146", "desc": "明艳动人", "score": 95}, {"file": "ettoday_3768_d.jpg", "title": "迪丽热巴 160", "desc": "明艳动人", "score": 95}, {"file": "extra_115.jpg", "title": "迪丽热巴 188", "desc": "明艳动人", "score": 95}, {"file": "ifeng_b349498fb9698e7_size162_w466_h600.jpg", "title": "迪丽热巴 193", "desc": "明艳动人", "score": 95}, {"file": "reba_sexy_1.jpg", "title": "迪丽热巴 207", "desc": "明艳动人", "score": 95}, {"file": "batch_0106.jpg", "title": "迪丽热巴 75", "desc": "明艳动人", "score": 94}, {"file": "batch_0122.jpg", "title": "迪丽热巴 87", "desc": "明艳动人", "score": 94}, {"file": "batch_0191.jpg", "title": "迪丽热巴 102", "desc": "明艳动人", "score": 94}, {"file": "ettoday_3751_e.jpg", "title": "迪丽热巴 128", "desc": "明艳动人", "score": 94}, {"file": "ettoday_3755_e.jpg", "title": "迪丽热巴 134", "desc": "明艳动人", "score": 94}, {"file": "ettoday_3766_e.jpg", "title": "迪丽热巴 157", "desc": "明艳动人", "score": 94}, {"file": "auto_reba_022.jpg", "title": "迪丽热巴 1", "desc": "明艳动人", "score": 93}, {"file": "auto_reba_056.jpg", "title": "迪丽热巴 22", "desc": "明艳动人", "score": 93}, {"file": "auto_reba_075.jpg", "title": "迪丽热巴 34", "desc": "明艳动人", "score": 93}, {"file": "ettoday_3764_e.jpg", "title": "迪丽热巴 152", "desc": "明艳动人", "score": 93}, {"file": "ifeng_8e9a75591a1f696_size119_w467_h600.jpg", "title": "迪丽热巴 192", "desc": "明艳动人", "score": 93}, {"file": "ifeng_e8bf94a10945ad3_size196_w980_h763.jpg", "title": "迪丽热巴 195", "desc": "明艳动人", "score": 93}, {"file": "batch_0147.jpg", "title": "迪丽热巴 89", "desc": "明艳动人", "score": 92}, {"file": "batch_0179.jpg", "title": "迪丽热巴 99", "desc": "明艳动人", "score": 92}, {"file": "ettoday_3749_d.jpg", "title": "迪丽热巴 122", "desc": "明艳动人", "score": 92}, {"file": "ettoday_3769_d.jpg", "title": "迪丽热巴 162", "desc": "明艳动人", "score": 92}, {"file": "new_d3738858.jpg", "title": "迪丽热巴 197", "desc": "明艳动人", "score": 92}, {"file": "auto_reba_076.jpg", "title": "迪丽热巴 35", "desc": "明艳动人", "score": 91}, {"file": "baidu_reba_009.jpg", "title": "迪丽热巴 49", "desc": "明艳动人", "score": 91}, {"file": "batch_0076.jpg", "title": "迪丽热巴 59", "desc": "明艳动人", "score": 91}, {"file": "batch_0091.jpg", "title": "迪丽热巴 69", "desc": "明艳动人", "score": 91}, {"file": "batch_0095.jpg", "title": "迪丽热巴 73", "desc": "明艳动人", "score": 91}, {"file": "ettoday_3759_e.jpg", "title": "迪丽热巴 144", "desc": "明艳动人", "score": 91}, {"file": "ettoday_3770_c.jpg", "title": "迪丽热巴 164", "desc": "明艳动人", "score": 91}, {"file": "ettoday_3779_e.jpg", "title": "迪丽热巴 184", "desc": "明艳动人", "score": 91}, {"file": "ettoday_3780_c.jpg", "title": "迪丽热巴 185", "desc": "明艳动人", "score": 91}, {"file": "new_d3739029.jpg", "title": "迪丽热巴 198", "desc": "明艳动人", "score": 91}, {"file": "reba_hd_1.jpg", "title": "迪丽热巴 205", "desc": "明艳动人", "score": 91}, {"file": "auto_reba_070.jpg", "title": "迪丽热巴 32", "desc": "明艳动人", "score": 90}, {"file": "baidu_reba_004.jpg", "title": "迪丽热巴 48", "desc": "明艳动人", "score": 90}, {"file": "ettoday_3768_e.jpg", "title": "迪丽热巴 161", "desc": "明艳动人", "score": 90}, {"file": "auto_reba_027.jpg", "title": "迪丽热巴 5", "desc": "明艳动人", "score": 89}, {"file": "auto_reba_038.jpg", "title": "迪丽热巴 11", "desc": "明艳动人", "score": 89}, {"file": "auto_reba_050.jpg", "title": "迪丽热巴 18", "desc": "明艳动人", "score": 89}, {"file": "auto_reba_089.jpg", "title": "迪丽热巴 42", "desc": "明艳动人", "score": 89}, {"file": "batch_0083.jpg", "title": "迪丽热巴 63", "desc": "明艳动人", "score": 89}, {"file": "batch_0197.jpg", "title": "迪丽热巴 105", "desc": "明艳动人", "score": 89}, {"file": "batch_0198.jpg", "title": "迪丽热巴 106", "desc": "明艳动人", "score": 89}, {"file": "ettoday_3759_d.jpg", "title": "迪丽热巴 143", "desc": "明艳动人", "score": 89}, {"file": "ettoday_3762_e.jpg", "title": "迪丽热巴 149", "desc": "明艳动人", "score": 89}, {"file": "ettoday_3767_e.jpg", "title": "迪丽热巴 159", "desc": "明艳动人", "score": 89}, {"file": "ettoday_3773_d.jpg", "title": "迪丽热巴 169", "desc": "明艳动人", "score": 89}, {"file": "sexy_reba_013.jpg", "title": "迪丽热巴 209", "desc": "明艳动人", "score": 89}, {"file": "auto_reba_026.jpg", "title": "迪丽热巴 4", "desc": "明艳动人", "score": 88}, {"file": "auto_reba_043.jpg", "title": "迪丽热巴 15", "desc": "明艳动人", "score": 88}, {"file": "auto_reba_059.jpg", "title": "迪丽热巴 23", "desc": "明艳动人", "score": 88}, {"file": "auto_reba_063.jpg", "title": "迪丽热巴 25", "desc": "明艳动人", "score": 88}, {"file": "auto_reba_084.jpg", "title": "迪丽热巴 38", "desc": "明艳动人", "score": 88}, {"file": "auto_reba_100.jpg", "title": "迪丽热巴 46", "desc": "明艳动人", "score": 88}, {"file": "ettoday_3756_d.jpg", "title": "迪丽热巴 135", "desc": "明艳动人", "score": 88}, {"file": "ettoday_3760_c.jpg", "title": "迪丽热巴 145", "desc": "明艳动人", "score": 88}, {"file": "ettoday_3772_e.jpg", "title": "迪丽热巴 168", "desc": "明艳动人", "score": 88}, {"file": "ettoday_3778_d.jpg", "title": "迪丽热巴 180", "desc": "明艳动人", "score": 88}, {"file": "extra_116.jpg", "title": "迪丽热巴 189", "desc": "明艳动人", "score": 88}, {"file": "new_e3741472.jpg", "title": "迪丽热巴 201", "desc": "明艳动人", "score": 88}, {"file": "baidu_reba_012.jpg", "title": "迪丽热巴 52", "desc": "明艳动人", "score": 87}, {"file": "batch3_reba_004.jpg", "title": "迪丽热巴 53", "desc": "明艳动人", "score": 87}, {"file": "batch_0071.jpg", "title": "迪丽热巴 54", "desc": "明艳动人", "score": 87}, {"file": "batch_0110.jpg", "title": "迪丽热巴 78", "desc": "明艳动人", "score": 87}, {"file": "batch_0173.jpg", "title": "迪丽热巴 94", "desc": "明艳动人", "score": 87}, {"file": "batch_0174.jpg", "title": "迪丽热巴 95", "desc": "明艳动人", "score": 87}, {"file": "ifeng_d086fdfee3a90f1_size187_w462_h600.jpg", "title": "迪丽热巴 194", "desc": "明艳动人", "score": 87}, {"file": "auto_reba_055.jpg", "title": "迪丽热巴 21", "desc": "明艳动人", "score": 86}, {"file": "auto_reba_085.jpg", "title": "迪丽热巴 39", "desc": "明艳动人", "score": 86}, {"file": "auto_reba_088.jpg", "title": "迪丽热巴 41", "desc": "明艳动人", "score": 86}, {"file": "batch_0079.jpg", "title": "迪丽热巴 60", "desc": "明艳动人", "score": 86}, {"file": "batch_0085.jpg", "title": "迪丽热巴 65", "desc": "明艳动人", "score": 86}, {"file": "batch_0176.jpg", "title": "迪丽热巴 97", "desc": "明艳动人", "score": 86}, {"file": "ettoday_3750_d.jpg", "title": "迪丽热巴 125", "desc": "明艳动人", "score": 86}, {"file": "ettoday_3757_e.jpg", "title": "迪丽热巴 139", "desc": "明艳动人", "score": 86}, {"file": "ettoday_3766_d.jpg", "title": "迪丽热巴 156", "desc": "明艳动人", "score": 86}, {"file": "ettoday_3775_e.jpg", "title": "迪丽热巴 175", "desc": "明艳动人", "score": 86}, {"file": "ettoday_3777_d.jpg", "title": "迪丽热巴 178", "desc": "明艳动人", "score": 86}, {"file": "ettoday_3778_e.jpg", "title": "迪丽热巴 181", "desc": "明艳动人", "score": 86}, {"file": "ettoday_3779_d.jpg", "title": "迪丽热巴 183", "desc": "明艳动人", "score": 86}, {"file": "auto_reba_040.jpg", "title": "迪丽热巴 13", "desc": "明艳动人", "score": 85}, {"file": "auto_reba_046.jpg", "title": "迪丽热巴 17", "desc": "明艳动人", "score": 85}, {"file": "auto_reba_086.jpg", "title": "迪丽热巴 40", "desc": "明艳动人", "score": 85}, {"file": "baidu_reba_002.jpg", "title": "迪丽热巴 47", "desc": "明艳动人", "score": 85}, {"file": "batch_0117.jpg", "title": "迪丽热巴 83", "desc": "明艳动人", "score": 85}, {"file": "batch_0196.jpg", "title": "迪丽热巴 104", "desc": "明艳动人", "score": 85}, {"file": "ettoday_3743_e.jpg", "title": "迪丽热巴 111", "desc": "明艳动人", "score": 85}, {"file": "ettoday_3760_e.jpg", "title": "迪丽热巴 147", "desc": "明艳动人", "score": 85}, {"file": "ettoday_3767_d.jpg", "title": "迪丽热巴 158", "desc": "明艳动人", "score": 85}, {"file": "ettoday_3780_e.jpg", "title": "迪丽热巴 187", "desc": "明艳动人", "score": 85}, {"file": "auto_reba_065.jpg", "title": "迪丽热巴 27", "desc": "明艳动人", "score": 84}, {"file": "batch_0111.jpg", "title": "迪丽热巴 79", "desc": "明艳动人", "score": 84}, {"file": "batch_0121.jpg", "title": "迪丽热巴 86", "desc": "明艳动人", "score": 84}, {"file": "batch_0171.jpg", "title": "迪丽热巴 92", "desc": "明艳动人", "score": 84}, {"file": "batch_0200.jpg", "title": "迪丽热巴 108", "desc": "明艳动人", "score": 84}, {"file": "ettoday_3751_d.jpg", "title": "迪丽热巴 127", "desc": "明艳动人", "score": 84}, {"file": "new_d3741202.jpg", "title": "迪丽热巴 200", "desc": "明艳动人", "score": 84}, {"file": "auto_reba_061.jpg", "title": "迪丽热巴 24", "desc": "明艳动人", "score": 83}, {"file": "auto_reba_064.jpg", "title": "迪丽热巴 26", "desc": "明艳动人", "score": 83}, {"file": "batch_0072.jpg", "title": "迪丽热巴 55", "desc": "明艳动人", "score": 83}, {"file": "batch_0075.jpg", "title": "迪丽热巴 58", "desc": "明艳动人", "score": 83}, {"file": "ettoday_3746_d.jpg", "title": "迪丽热巴 117", "desc": "明艳动人", "score": 83}, {"file": "ettoday_3770_d.jpg", "title": "迪丽热巴 165", "desc": "明艳动人", "score": 83}, {"file": "ettoday_3771_d.jpg", "title": "迪丽热巴 166", "desc": "明艳动人", "score": 83}, {"file": "new_reba_042.jpg", "title": "迪丽热巴 204", "desc": "明艳动人", "score": 83}, {"file": "auto_reba_024.jpg", "title": "迪丽热巴 2", "desc": "明艳动人", "score": 82}, {"file": "auto_reba_035.jpg", "title": "迪丽热巴 9", "desc": "明艳动人", "score": 82}, {"file": "batch_0170.jpg", "title": "迪丽热巴 91", "desc": "明艳动人", "score": 82}, {"file": "batch_0177.jpg", "title": "迪丽热巴 98", "desc": "明艳动人", "score": 82}, {"file": "ettoday_3744_e.jpg", "title": "迪丽热巴 113", "desc": "明艳动人", "score": 82}, {"file": "ettoday_3754_e.jpg", "title": "迪丽热巴 133", "desc": "明艳动人", "score": 82}, {"file": "ettoday_3763_e.jpg", "title": "迪丽热巴 151", "desc": "明艳动人", "score": 82}, {"file": "ettoday_3776_d.jpg", "title": "迪丽热巴 176", "desc": "明艳动人", "score": 82}, {"file": "reba_lemeitu_4.jpg", "title": "迪丽热巴 206", "desc": "明艳动人", "score": 82}, {"file": "wallhaven_001.jpg", "title": "迪丽热巴 212", "desc": "明艳动人", "score": 82}, {"file": "batch_0084.jpg", "title": "迪丽热巴 64", "desc": "明艳动人", "score": 81}, {"file": "ettoday_3745_e.jpg", "title": "迪丽热巴 116", "desc": "明艳动人", "score": 81}, {"file": "ettoday_3748_e.jpg", "title": "迪丽热巴 121", "desc": "明艳动人", "score": 81}, {"file": "ettoday_3754_c.jpg", "title": "迪丽热巴 131", "desc": "明艳动人", "score": 81}, {"file": "ettoday_3758_c.jpg", "title": "迪丽热巴 140", "desc": "明艳动人", "score": 81}, {"file": "auto_reba_025.jpg", "title": "迪丽热巴 3", "desc": "明艳动人", "score": 80}, {"file": "batch_0082.jpg", "title": "迪丽热巴 62", "desc": "明艳动人", "score": 80}, {"file": "ettoday_3777_e.jpg", "title": "迪丽热巴 179", "desc": "明艳动人", "score": 80}, {"file": "multi_reba_022.jpg", "title": "迪丽热巴 196", "desc": "明艳动人", "score": 80}, {"file": "new_reba_023.jpg", "title": "迪丽热巴 203", "desc": "明艳动人", "score": 80}, {"file": "sexy_reba_014.jpg", "title": "迪丽热巴 210", "desc": "明艳动人", "score": 80}, {"file": "auto_reba_069.jpg", "title": "迪丽热巴 31", "desc": "明艳动人", "score": 79}, {"file": "auto_reba_092.jpg", "title": "迪丽热巴 44", "desc": "明艳动人", "score": 79}, {"file": "batch_0113.jpg", "title": "迪丽热巴 81", "desc": "明艳动人", "score": 79}, {"file": "batch_0195.jpg", "title": "迪丽热巴 103", "desc": "明艳动人", "score": 79}, {"file": "ettoday_3745_c.jpg", "title": "迪丽热巴 114", "desc": "明艳动人", "score": 79}, {"file": "new_reba_018.jpg", "title": "迪丽热巴 202", "desc": "明艳动人", "score": 79}, {"file": "sexy_reba_002.jpg", "title": "迪丽热巴 208", "desc": "明艳动人", "score": 79}, {"file": "batch_0074.jpg", "title": "迪丽热巴 57", "desc": "明艳动人", "score": 78}, {"file": "batch_0081.jpg", "title": "迪丽热巴 61", "desc": "明艳动人", "score": 78}, {"file": "ettoday_3747_d.jpg", "title": "迪丽热巴 119", "desc": "明艳动人", "score": 78}, {"file": "ettoday_3757_d.jpg", "title": "迪丽热巴 138", "desc": "明艳动人", "score": 78}, {"file": "ettoday_3758_d.jpg", "title": "迪丽热巴 141", "desc": "明艳动人", "score": 78}, {"file": "ettoday_3765_c.jpg", "title": "迪丽热巴 153", "desc": "明艳动人", "score": 78}, {"file": "ettoday_3774_d.jpg", "title": "迪丽热巴 171", "desc": "明艳动人", "score": 78}, {"file": "auto_reba_074.jpg", "title": "迪丽热巴 33", "desc": "明艳动人", "score": 77}, {"file": "auto_reba_090.jpg", "title": "迪丽热巴 43", "desc": "明艳动人", "score": 77}, {"file": "batch_0073.jpg", "title": "迪丽热巴 56", "desc": "明艳动人", "score": 77}, {"file": "batch_0172.jpg", "title": "迪丽热巴 93", "desc": "明艳动人", "score": 77}, {"file": "ettoday_3746_e.jpg", "title": "迪丽热巴 118", "desc": "明艳动人", "score": 77}, {"file": "ettoday_3763_d.jpg", "title": "迪丽热巴 150", "desc": "明艳动人", "score": 77}, {"file": "ettoday_3765_d.jpg", "title": "迪丽热巴 154", "desc": "明艳动人", "score": 77}, {"file": "ettoday_3765_e.jpg", "title": "迪丽热巴 155", "desc": "明艳动人", "score": 77}, {"file": "ettoday_3775_c.jpg", "title": "迪丽热巴 173", "desc": "明艳动人", "score": 77}, {"file": "auto_reba_068.jpg", "title": "迪丽热巴 30", "desc": "明艳动人", "score": 76}, {"file": "auto_reba_077.jpg", "title": "迪丽热巴 36", "desc": "明艳动人", "score": 76}, {"file": "auto_reba_093.jpg", "title": "迪丽热巴 45", "desc": "明艳动人", "score": 76}, {"file": "batch_0088.jpg", "title": "迪丽热巴 67", "desc": "明艳动人", "score": 76}, {"file": "batch_0120.jpg", "title": "迪丽热巴 85", "desc": "明艳动人", "score": 76}, {"file": "ettoday_3743_d.jpg", "title": "迪丽热巴 110", "desc": "明艳动人", "score": 76}, {"file": "ettoday_3744_d.jpg", "title": "迪丽热巴 112", "desc": "明艳动人", "score": 76}, {"file": "ettoday_3753_e.jpg", "title": "迪丽热巴 130", "desc": "明艳动人", "score": 76}, {"file": "ettoday_3761_e.jpg", "title": "迪丽热巴 148", "desc": "明艳动人", "score": 76}, {"file": "wallhaven_002.jpg", "title": "迪丽热巴 213", "desc": "明艳动人", "score": 76}, {"file": "auto_reba_039.jpg", "title": "迪丽热巴 12", "desc": "明艳动人", "score": 75}, {"file": "auto_reba_054.jpg", "title": "迪丽热巴 20", "desc": "明艳动人", "score": 75}, {"file": "batch_0087.jpg", "title": "迪丽热巴 66", "desc": "明艳动人", "score": 75}, {"file": "batch_0092.jpg", "title": "迪丽热巴 70", "desc": "明艳动人", "score": 75}, {"file": "batch_0109.jpg", "title": "迪丽热巴 77", "desc": "明艳动人", "score": 75}, {"file": "batch_0112.jpg", "title": "迪丽热巴 80", "desc": "明艳动人", "score": 75}, {"file": "batch_0118.jpg", "title": "迪丽热巴 84", "desc": "明艳动人", "score": 75}, {"file": "ettoday_3747_e.jpg", "title": "迪丽热巴 120", "desc": "明艳动人", "score": 75}, {"file": "ettoday_3769_e.jpg", "title": "迪丽热巴 163", "desc": "明艳动人", "score": 75}, {"file": "extra_117.jpg", "title": "迪丽热巴 190", "desc": "明艳动人", "score": 75}, {"file": "new_d3741026.jpg", "title": "迪丽热巴 199", "desc": "明艳动人", "score": 75}, {"file": "auto_reba_037.jpg", "title": "迪丽热巴 10", "desc": "明艳动人", "score": 74}, {"file": "auto_reba_066.jpg", "title": "迪丽热巴 28", "desc": "明艳动人", "score": 74}, {"file": "batch_0089.jpg", "title": "迪丽热巴 68", "desc": "明艳动人", "score": 74}, {"file": "batch_0094.jpg", "title": "迪丽热巴 72", "desc": "明艳动人", "score": 74}, {"file": "batch_0107.jpg", "title": "迪丽热巴 76", "desc": "明艳动人", "score": 74}, {"file": "batch_0116.jpg", "title": "迪丽热巴 82", "desc": "明艳动人", "score": 74}, {"file": "ettoday_3745_d.jpg", "title": "迪丽热巴 115", "desc": "明艳动人", "score": 74}, {"file": "ettoday_3750_c.jpg", "title": "迪丽热巴 124", "desc": "明艳动人", "score": 74}, {"file": "ettoday_3757_c.jpg", "title": "迪丽热巴 137", "desc": "明艳动人", "score": 74}, {"file": "ettoday_3779_c.jpg", "title": "迪丽热巴 182", "desc": "明艳动人", "score": 74}, {"file": "ifeng_3cf5d2783dffe4d_size139_w467_h600.jpg", "title": "迪丽热巴 191", "desc": "明艳动人", "score": 74}, {"file": "sexy_reba_020.jpg", "title": "迪丽热巴 211", "desc": "明艳动人", "score": 74}, {"file": "weibo_reba_012.jpg", "title": "迪丽热巴 215", "desc": "明艳动人", "score": 74}, {"file": "auto_reba_029.jpg", "title": "迪丽热巴 6", "desc": "明艳动人", "score": 73}, {"file": "batch_0097.jpg", "title": "迪丽热巴 74", "desc": "明艳动人", "score": 73}, {"file": "batch_0168.jpg", "title": "迪丽热巴 90", "desc": "明艳动人", "score": 73}, {"file": "batch_0199.jpg", "title": "迪丽热巴 107", "desc": "明艳动人", "score": 73}, {"file": "ettoday_3774_e.jpg", "title": "迪丽热巴 172", "desc": "明艳动人", "score": 73}, {"file": "ettoday_3775_d.jpg", "title": "迪丽热巴 174", "desc": "明艳动人", "score": 73}, {"file": "auto_reba_078.jpg", "title": "迪丽热巴 37", "desc": "明艳动人", "score": 72}, {"file": "baidu_reba_011.jpg", "title": "迪丽热巴 51", "desc": "明艳动人", "score": 72}, {"file": "batch_0093.jpg", "title": "迪丽热巴 71", "desc": "明艳动人", "score": 72}, {"file": "batch_0202.jpg", "title": "迪丽热巴 109", "desc": "明艳动人", "score": 72}, {"file": "ettoday_3752_e.jpg", "title": "迪丽热巴 129", "desc": "明艳动人", "score": 72}, {"file": "ettoday_3773_e.jpg", "title": "迪丽热巴 170", "desc": "明艳动人", "score": 72}, {"file": "ettoday_3776_e.jpg", "title": "迪丽热巴 177", "desc": "明艳动人", "score": 72}, {"file": "auto_reba_031.jpg", "title": "迪丽热巴 8", "desc": "明艳动人", "score": 71}, {"file": "batch_0186.jpg", "title": "迪丽热巴 101", "desc": "明艳动人", "score": 71}, {"file": "auto_reba_030.jpg", "title": "迪丽热巴 7", "desc": "明艳动人", "score": 70}, {"file": "auto_reba_067.jpg", "title": "迪丽热巴 29", "desc": "明艳动人", "score": 70}, {"file": "baidu_reba_010.jpg", "title": "迪丽热巴 50", "desc": "明艳动人", "score": 70}, {"file": "batch_0175.jpg", "title": "迪丽热巴 96", "desc": "明艳动人", "score": 70}, {"file": "ettoday_3749_e.jpg", "title": "迪丽热巴 123", "desc": "明艳动人", "score": 70}, {"file": "ettoday_3750_e.jpg", "title": "迪丽热巴 126", "desc": "明艳动人", "score": 70}, {"file": "ettoday_3756_e.jpg", "title": "迪丽热巴 136", "desc": "明艳动人", "score": 70}, {"file": "ettoday_3758_e.jpg", "title": "迪丽热巴 142", "desc": "明艳动人", "score": 70}, {"file": "ettoday_3771_e.jpg", "title": "迪丽热巴 167", "desc": "明艳动人", "score": 70}, {"file": "ettoday_3780_d.jpg", "title": "迪丽热巴 186", "desc": "明艳动人", "score": 70}, {"file": "wallhaven_006.jpg", "title": "迪丽热巴 214", "desc": "明艳动人", "score": 70}];
         const gallery = document.getElementById('gallery');
-        
         photoData.forEach((photo, index) => {
             const card = document.createElement('div');
             card.className = 'photo-card';
-            
-            const scoreClass = getScoreClass(photo.score);
-            const scoreText = getScoreText(photo.score);
-            
             card.innerHTML = `
                 <div class="rank-number">${index + 1}</div>
-                <div class="score-tag ${scoreClass}">${scoreText}</div>
-                <img src="${photo.file}" alt="${photo.title}" loading="lazy" 
-                     onerror="this.style.display='none'">
+                <img src="${photo.file}" alt="${photo.title}" loading="lazy">
                 <div class="photo-info">
                     <h3>${photo.title}</h3>
                     <p>${photo.desc}</p>
