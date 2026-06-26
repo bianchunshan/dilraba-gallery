@@ -358,7 +358,7 @@
     <!-- 筛选栏 -->
     <div class="toolbar">
         <div class="toolbar-inner">
-            <button class="filter active" data-filter="all">全部 (148)</button><button class="filter" data-filter="sexy">🔥 性感私房 (89)</button><button class="filter" data-filter="auto">✨ 精选写真 (28)</button><button class="filter" data-filter="baidu">📸 百度收录 (6)</button><button class="filter" data-filter="new">🆕 最新添加 (18)</button><button class="filter" data-filter="wallpaper">🖥️ 高清壁纸 (3)</button><button class="filter" data-filter="weibo">📱 微博美图 (1)</button><button class="filter" data-filter="other">💕 其他珍藏 (3)</button>
+            <button class="filter active" data-filter="all">全部 (<span id="count-all">148</span>)</button><button class="filter" data-filter="sexy">🔥 性感私房 (<span id="count-sexy">89</span>)</button><button class="filter" data-filter="auto">✨ 精选写真 (<span id="count-auto">28</span>)</button><button class="filter" data-filter="baidu">📸 百度收录 (<span id="count-baidu">6</span>)</button><button class="filter" data-filter="new">🆕 最新添加 (<span id="count-new">18</span>)</button><button class="filter" data-filter="wallpaper">🖥️ 高清壁纸 (<span id="count-wallpaper">3</span>)</button><button class="filter" data-filter="weibo">📱 微博美图 (<span id="count-weibo">1</span>)</button><button class="filter" data-filter="other">💕 其他珍藏 (<span id="count-other">3</span>)</button>
         </div>
     </div>
     
@@ -2565,6 +2565,20 @@
             if (countEl) {
                 countEl.textContent = `共 ${photos.length} 张精选照片 💕`;
             }
+            
+            // 更新各分类计数
+            const counts = {};
+            photos.forEach(p => {
+                counts[p.category] = (counts[p.category] || 0) + 1;
+            });
+            
+            const allEl = document.getElementById('count-all');
+            if (allEl) allEl.textContent = photos.length;
+            
+            ['sexy', 'auto', 'baidu', 'new', 'wallpaper', 'weibo', 'other'].forEach(cat => {
+                const el = document.getElementById(`count-${cat}`);
+                if (el) el.textContent = counts[cat] || 0;
+            });
         }
         
         // 更新可见照片
