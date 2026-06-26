@@ -7,2691 +7,976 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #1a1a24;
-            --accent: #ff6b9d;
-            --accent-light: #ff9ff3;
-            --text-primary: #f0f0f5;
-            --text-secondary: #a0a0b0;
-            --border: rgba(255,255,255,0.08);
-        }
-        
+        :root { --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #1a1a24; --accent: #ff6b9d; --accent-light: #ff9ff3; --text-primary: #f0f0f5; --text-secondary: #a0a0b0; --border: rgba(255,255,255,0.08); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Noto Serif SC', -apple-system, BlinkMacSystemFont, serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        
-        /* 头部 */
-        .header {
-            text-align: center;
-            padding: 60px 20px 40px;
-            background: linear-gradient(180deg, rgba(255,107,157,0.1) 0%, transparent 100%);
-            position: relative;
-        }
-        
-        .header::before {
-            content: '✨';
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2rem;
-            animation: sparkle 2s ease-in-out infinite;
-        }
-        
-        @keyframes sparkle {
-            0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
-            50% { opacity: 1; transform: translateX(-50%) scale(1.2); }
-        }
-        
-        .header h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            background: linear-gradient(135deg, #ff6b9d, #ff9ff3, #feca57);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 12px;
-            letter-spacing: 2px;
-        }
-        
-        .header .subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-        
-        .header .count {
-            color: var(--accent);
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        
-        /* 筛选栏 */
-        .toolbar {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(10,10,15,0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 20px;
-        }
-        
-        .toolbar-inner {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        
-        .toolbar-inner::-webkit-scrollbar { display: none; }
-        
-        .filter {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            padding: 10px 20px;
-            border-radius: 999px;
-            cursor: pointer;
-            white-space: nowrap;
-            font-family: inherit;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .filter:hover {
-            border-color: var(--accent);
-            color: var(--text-primary);
-        }
-        
-        .filter.active {
-            background: linear-gradient(135deg, var(--accent), var(--accent-light));
-            color: white;
-            border-color: transparent;
-            box-shadow: 0 4px 20px rgba(255,107,157,0.4);
-        }
-        
-        /* 画廊 */
-        .gallery {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 30px 20px 60px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        
-        @media (min-width: 768px) {
-            .gallery { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
-        }
-        
-        @media (min-width: 1200px) {
-            .gallery { grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); }
-        }
-        
-        /* 照片卡片 */
-        .photo-card {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0;
-            animation: fadeIn 0.6s ease forwards;
-        }
-        
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-        
-        .photo-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: var(--accent);
-            box-shadow: 0 20px 60px rgba(255,107,157,0.3), 0 0 100px rgba(255,107,157,0.1);
-        }
-        
-        .photo-card.hidden { display: none; }
-        
-        .img-wrap {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            background: linear-gradient(135deg, #1a1a24, #2a2a3a);
-        }
-        
-        .img-wrap img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-        
-        .photo-card:hover .img-wrap img {
-            transform: scale(1.08);
-        }
-        
-        .overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7) 100%);
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding-bottom: 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .photo-card:hover .overlay {
-            opacity: 1;
-        }
-        
-        .view-icon {
-            font-size: 2rem;
-            filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
-        }
-        
-        /* Lightbox */
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            z-index: 1000;
-            background: rgba(0,0,0,0.95);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .lightbox.active {
-            display: flex;
-            opacity: 1;
-        }
-        
-        .lightbox-img {
-            max-width: 90vw;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 20px 80px rgba(0,0,0,0.5);
-        }
-        
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255,255,255,0.1);
-            border: none;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .lightbox-close:hover {
-            background: var(--accent);
-            transform: rotate(90deg);
-        }
-        
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.1);
-            border: none;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .lightbox-nav:hover {
-            background: var(--accent);
-        }
-        
-        .lightbox-prev { left: 20px; }
-        .lightbox-next { right: 20px; }
-        
-        .lightbox-counter {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.6);
-            padding: 8px 20px;
-            border-radius: 999px;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-        
-        /* 页脚 */
-        .footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-secondary);
-            border-top: 1px solid var(--border);
-            font-size: 0.9rem;
-        }
-        
-        .footer .heart {
-            color: var(--accent);
-            animation: heartbeat 1.5s ease-in-out infinite;
-            display: inline-block;
-        }
-        
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-        
-        /* 加载动画 */
-        .loading {
-            position: fixed;
-            inset: 0;
-            background: var(--bg-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        
-        .loading.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .loading-text {
-            font-size: 1.5rem;
-            color: var(--accent);
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
-        }
+        body { font-family: "Noto Serif SC", -apple-system, BlinkMacSystemFont, serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; overflow-x: hidden; }
+        .header { text-align: center; padding: 60px 20px 40px; background: linear-gradient(180deg, rgba(255,107,157,0.1) 0%, transparent 100%); position: relative; }
+        .header h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; background: linear-gradient(135deg, #ff6b9d, #ff9ff3, #feca57); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; letter-spacing: 2px; }
+        .header .subtitle { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 8px; }
+        .header .count { color: var(--accent); font-size: 1rem; font-weight: 600; }
+        .gallery { max-width: 1400px; margin: 0 auto; padding: 30px 20px 60px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        @media (min-width: 768px) { .gallery { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); } }
+        @media (min-width: 1200px) { .gallery { grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); } }
+        .photo-card { position: relative; border-radius: 16px; overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .photo-card:hover { transform: translateY(-8px) scale(1.02); border-color: var(--accent); box-shadow: 0 20px 60px rgba(255,107,157,0.3), 0 0 100px rgba(255,107,157,0.1); }
+        .img-wrap { position: relative; width: 100%; overflow: hidden; background: linear-gradient(135deg, #1a1a24, #2a2a3a); }
+        .img-wrap img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .photo-card:hover .img-wrap img { transform: scale(1.08); }
+        .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7) 100%); display: flex; align-items: flex-end; justify-content: center; padding-bottom: 20px; opacity: 0; transition: opacity 0.3s ease; }
+        .photo-card:hover .overlay { opacity: 1; }
+        .view-icon { font-size: 2rem; filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5)); }
+        .lightbox { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.95); display: none; align-items: center; justify-content: center; }
+        .lightbox.active { display: flex; }
+        .lightbox-img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 8px; }
+        .lightbox-close { position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.1); border: none; color: white; width: 50px; height: 50px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; }
+        .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: white; width: 60px; height: 60px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; }
+        .lightbox-prev { left: 20px; } .lightbox-next { right: 20px; }
+        .footer { text-align: center; padding: 40px 20px; color: var(--text-secondary); border-top: 1px solid var(--border); font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <!-- 加载画面 -->
-    <div class="loading" id="loading">
-        <div class="loading-text">💕 正在加载热巴的美照...</div>
-    </div>
-    
-    <!-- 头部 -->
-    <header class="header">
+    <div class="header">
         <h1>迪丽热巴写真画廊</h1>
         <p class="subtitle">山哥的专属收藏 · 每一张都是心动</p>
-        <p class="count" id="photo-count">加载中...</p>
-    </header>
-    
-    <!-- 筛选栏 -->
-    <div class="toolbar">
-        <div class="toolbar-inner">
-            <button class="filter active" data-filter="all">全部 (<span id="count-all">148</span>)</button><button class="filter" data-filter="sexy">🔥 性感私房 (<span id="count-sexy">89</span>)</button><button class="filter" data-filter="auto">✨ 精选写真 (<span id="count-auto">28</span>)</button><button class="filter" data-filter="baidu">📸 百度收录 (<span id="count-baidu">6</span>)</button><button class="filter" data-filter="new">🆕 最新添加 (<span id="count-new">18</span>)</button><button class="filter" data-filter="wallpaper">🖥️ 高清壁纸 (<span id="count-wallpaper">3</span>)</button><button class="filter" data-filter="weibo">📱 微博美图 (<span id="count-weibo">1</span>)</button><button class="filter" data-filter="other">💕 其他珍藏 (<span id="count-other">3</span>)</button>
-        </div>
+        <p class="count">共 152 张精选美照</p>
     </div>
-    
-    <!-- 画廊 -->
     <main class="gallery" id="gallery">
-        
-        <div class="photo-card" data-category="auto" data-index="0">
+        <div class="photo-card" data-index="0">
             <div class="img-wrap" style="padding-bottom: 113.8%">
-                <img src="auto_reba_025.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_025.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="1">
+        <div class="photo-card" data-index="1">
             <div class="img-wrap" style="padding-bottom: 145.5%">
-                <img src="auto_reba_026.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_026.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="2">
+        <div class="photo-card" data-index="2">
             <div class="img-wrap" style="padding-bottom: 141.5%">
-                <img src="auto_reba_029.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_029.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="3">
+        <div class="photo-card" data-index="3">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="auto_reba_030.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_030.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="4">
+        <div class="photo-card" data-index="4">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="auto_reba_035.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_035.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="5">
+        <div class="photo-card" data-index="5">
             <div class="img-wrap" style="padding-bottom: 66.7%">
-                <img src="auto_reba_037.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_037.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="6">
+        <div class="photo-card" data-index="6">
             <div class="img-wrap" style="padding-bottom: 139.9%">
-                <img src="auto_reba_038.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_038.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="7">
+        <div class="photo-card" data-index="7">
             <div class="img-wrap" style="padding-bottom: 177.8%">
-                <img src="auto_reba_040.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_040.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="8">
+        <div class="photo-card" data-index="8">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="auto_reba_043.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_043.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="9">
+        <div class="photo-card" data-index="9">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="auto_reba_045.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_045.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="10">
+        <div class="photo-card" data-index="10">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="auto_reba_046.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_046.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="11">
+        <div class="photo-card" data-index="11">
             <div class="img-wrap" style="padding-bottom: 139.9%">
-                <img src="auto_reba_050.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_050.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="12">
+        <div class="photo-card" data-index="12">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="auto_reba_059.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_059.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="13">
-            <div class="img-wrap" style="padding-bottom: 119.0%">
-                <img src="auto_reba_063.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="auto" data-index="14">
-            <div class="img-wrap" style="padding-bottom: 216.7%">
-                <img src="auto_reba_064.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="auto" data-index="15">
+        <div class="photo-card" data-index="13">
             <div class="img-wrap" style="padding-bottom: 175.8%">
-                <img src="auto_reba_066.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_066.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="16">
+        <div class="photo-card" data-index="14">
             <div class="img-wrap" style="padding-bottom: 190.6%">
-                <img src="auto_reba_067.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_067.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="17">
-            <div class="img-wrap" style="padding-bottom: 222.3%">
-                <img src="auto_reba_069.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="auto" data-index="18">
+        <div class="photo-card" data-index="15">
             <div class="img-wrap" style="padding-bottom: 66.7%">
-                <img src="auto_reba_075.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_075.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="19">
+        <div class="photo-card" data-index="16">
             <div class="img-wrap" style="padding-bottom: 177.5%">
-                <img src="auto_reba_076.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_076.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="20">
+        <div class="photo-card" data-index="17">
             <div class="img-wrap" style="padding-bottom: 140.0%">
-                <img src="auto_reba_077.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_077.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="21">
+        <div class="photo-card" data-index="18">
             <div class="img-wrap" style="padding-bottom: 140.0%">
-                <img src="auto_reba_078.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_078.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="22">
-            <div class="img-wrap" style="padding-bottom: 222.3%">
-                <img src="auto_reba_084.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="auto" data-index="23">
+        <div class="photo-card" data-index="19">
             <div class="img-wrap" style="padding-bottom: 145.9%">
-                <img src="auto_reba_085.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_085.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="24">
+        <div class="photo-card" data-index="20">
             <div class="img-wrap" style="padding-bottom: 133.3%">
-                <img src="auto_reba_086.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_086.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="25">
+        <div class="photo-card" data-index="21">
             <div class="img-wrap" style="padding-bottom: 177.8%">
-                <img src="auto_reba_089.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_089.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="26">
+        <div class="photo-card" data-index="22">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="auto_reba_090.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_090.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="auto" data-index="27">
+        <div class="photo-card" data-index="23">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="auto_reba_093.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/auto_reba_093.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="baidu" data-index="28">
-            <div class="img-wrap" style="padding-bottom: 149.9%">
-                <img src="baidu_reba_002.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="baidu" data-index="29">
-            <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="baidu_reba_004.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="baidu" data-index="30">
-            <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="baidu_reba_009.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="baidu" data-index="31">
-            <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="baidu_reba_010.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="baidu" data-index="32">
-            <div class="img-wrap" style="padding-bottom: 138.5%">
-                <img src="baidu_reba_011.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="baidu" data-index="33">
-            <div class="img-wrap" style="padding-bottom: 216.9%">
-                <img src="baidu_reba_012.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="new" data-index="34">
-            <div class="img-wrap" style="padding-bottom: 131.2%">
-                <img src="dilraba_new_005.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="new" data-index="35">
-            <div class="img-wrap" style="padding-bottom: 128.5%">
-                <img src="dilraba_new_007.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="new" data-index="36">
-            <div class="img-wrap" style="padding-bottom: 133.3%">
-                <img src="dilraba_new_008.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="new" data-index="37">
-            <div class="img-wrap" style="padding-bottom: 166.7%">
-                <img src="dilraba_new_009.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="new" data-index="38">
+        <div class="photo-card" data-index="24">
             <div class="img-wrap" style="padding-bottom: 75.0%">
-                <img src="dilraba_new_010.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/dilraba_new_010.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="new" data-index="39">
+        <div class="photo-card" data-index="25">
             <div class="img-wrap" style="padding-bottom: 133.3%">
-                <img src="dilraba_new_012.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/dilraba_new_012.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="new" data-index="40">
-            <div class="img-wrap" style="padding-bottom: 133.2%">
-                <img src="dilraba_new_013.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="new" data-index="41">
+        <div class="photo-card" data-index="26">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="dilraba_new_014.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/dilraba_new_014.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="new" data-index="42">
-            <div class="img-wrap" style="padding-bottom: 75.0%">
-                <img src="dilraba_new_016.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="new" data-index="43">
-            <div class="img-wrap" style="padding-bottom: 56.1%">
-                <img src="dilraba_new_017.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="new" data-index="44">
-            <div class="img-wrap" style="padding-bottom: 65.4%">
-                <img src="dilraba_new_018.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="new" data-index="45">
-            <div class="img-wrap" style="padding-bottom: 61.2%">
-                <img src="dilraba_new_020.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="new" data-index="46">
+        <div class="photo-card" data-index="27">
             <div class="img-wrap" style="padding-bottom: 133.2%">
-                <img src="dilraba_new_022.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/dilraba_new_022.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="new" data-index="47">
-            <div class="img-wrap" style="padding-bottom: 150.2%">
-                <img src="dilraba_new_023.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="new" data-index="48">
+        <div class="photo-card" data-index="28">
             <div class="img-wrap" style="padding-bottom: 70.4%">
-                <img src="dilraba_new_025.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/dilraba_new_025.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="other" data-index="49">
+        <div class="photo-card" data-index="29">
             <div class="img-wrap" style="padding-bottom: 138.5%">
-                <img src="multi_reba_022.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/multi_reba_022.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="new" data-index="50">
+        <div class="photo-card" data-index="30">
             <div class="img-wrap" style="padding-bottom: 133.4%">
-                <img src="new_reba_018.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/new_reba_018.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="new" data-index="51">
+        <div class="photo-card" data-index="31">
             <div class="img-wrap" style="padding-bottom: 150.1%">
-                <img src="new_reba_023.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/new_reba_023.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="new" data-index="52">
+        <div class="photo-card" data-index="32">
             <div class="img-wrap" style="padding-bottom: 138.5%">
-                <img src="new_reba_042.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/new_reba_042.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="other" data-index="53">
+        <div class="photo-card" data-index="33">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="reba_026.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/reba_026.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="wallpaper" data-index="54">
+        <div class="photo-card" data-index="34">
             <div class="img-wrap" style="padding-bottom: 56.2%">
-                <img src="reba_hd_1.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/reba_hd_1.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="other" data-index="55">
-            <div class="img-wrap" style="padding-bottom: 177.8%">
-                <img src="reba_sexy_1.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="56">
+        <div class="photo-card" data-index="35">
             <div class="img-wrap" style="padding-bottom: 120.6%">
-                <img src="sexy_reba_002.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_002.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="57">
+        <div class="photo-card" data-index="36">
             <div class="img-wrap" style="padding-bottom: 150.1%">
-                <img src="sexy_reba_020.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_020.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="58">
+        <div class="photo-card" data-index="37">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_021.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_021.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="59">
+        <div class="photo-card" data-index="38">
             <div class="img-wrap" style="padding-bottom: 131.2%">
-                <img src="sexy_reba_022.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_022.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="60">
+        <div class="photo-card" data-index="39">
             <div class="img-wrap" style="padding-bottom: 138.9%">
-                <img src="sexy_reba_024.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_024.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="61">
-            <div class="img-wrap" style="padding-bottom: 128.4%">
-                <img src="sexy_reba_026.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="62">
-            <div class="img-wrap" style="padding-bottom: 131.2%">
-                <img src="sexy_reba_033.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="63">
-            <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_034.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="64">
-            <div class="img-wrap" style="padding-bottom: 66.7%">
-                <img src="sexy_reba_037.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="65">
-            <div class="img-wrap" style="padding-bottom: 146.8%">
-                <img src="sexy_reba_041.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="66">
+        <div class="photo-card" data-index="40">
             <div class="img-wrap" style="padding-bottom: 126.7%">
-                <img src="sexy_reba_043.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_043.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="67">
-            <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_051.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="68">
-            <div class="img-wrap" style="padding-bottom: 145.7%">
-                <img src="sexy_reba_054.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="69">
+        <div class="photo-card" data-index="41">
             <div class="img-wrap" style="padding-bottom: 146.0%">
-                <img src="sexy_reba_055.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_055.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="70">
-            <div class="img-wrap" style="padding-bottom: 125.0%">
-                <img src="sexy_reba_056.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="71">
+        <div class="photo-card" data-index="42">
             <div class="img-wrap" style="padding-bottom: 148.6%">
-                <img src="sexy_reba_057.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_057.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="72">
+        <div class="photo-card" data-index="43">
             <div class="img-wrap" style="padding-bottom: 133.2%">
-                <img src="sexy_reba_059.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_059.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="73">
-            <div class="img-wrap" style="padding-bottom: 192.2%">
-                <img src="sexy_reba_060.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="74">
-            <div class="img-wrap" style="padding-bottom: 135.7%">
-                <img src="sexy_reba_061.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="75">
-            <div class="img-wrap" style="padding-bottom: 131.1%">
-                <img src="sexy_reba_062.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="76">
-            <div class="img-wrap" style="padding-bottom: 131.1%">
-                <img src="sexy_reba_065.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="77">
+        <div class="photo-card" data-index="44">
             <div class="img-wrap" style="padding-bottom: 131.2%">
-                <img src="sexy_reba_066.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_066.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="78">
+        <div class="photo-card" data-index="45">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_067.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_067.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="79">
-            <div class="img-wrap" style="padding-bottom: 140.0%">
-                <img src="sexy_reba_073.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="80">
-            <div class="img-wrap" style="padding-bottom: 140.0%">
-                <img src="sexy_reba_075.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="81">
+        <div class="photo-card" data-index="46">
             <div class="img-wrap" style="padding-bottom: 124.8%">
-                <img src="sexy_reba_078.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_078.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="82">
+        <div class="photo-card" data-index="47">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_080.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_080.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="83">
+        <div class="photo-card" data-index="48">
             <div class="img-wrap" style="padding-bottom: 125.0%">
-                <img src="sexy_reba_083.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_083.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="84">
+        <div class="photo-card" data-index="49">
             <div class="img-wrap" style="padding-bottom: 131.2%">
-                <img src="sexy_reba_084.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_084.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="85">
+        <div class="photo-card" data-index="50">
             <div class="img-wrap" style="padding-bottom: 177.8%">
-                <img src="sexy_reba_087.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_087.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="86">
+        <div class="photo-card" data-index="51">
             <div class="img-wrap" style="padding-bottom: 125.0%">
-                <img src="sexy_reba_088.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_088.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="87">
+        <div class="photo-card" data-index="52">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_090.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_090.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="88">
+        <div class="photo-card" data-index="53">
             <div class="img-wrap" style="padding-bottom: 125.1%">
-                <img src="sexy_reba_091.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_091.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="89">
+        <div class="photo-card" data-index="54">
             <div class="img-wrap" style="padding-bottom: 125.0%">
-                <img src="sexy_reba_093.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_093.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="90">
+        <div class="photo-card" data-index="55">
             <div class="img-wrap" style="padding-bottom: 162.2%">
-                <img src="sexy_reba_096.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_096.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="91">
+        <div class="photo-card" data-index="56">
             <div class="img-wrap" style="padding-bottom: 177.6%">
-                <img src="sexy_reba_097.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_097.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="92">
+        <div class="photo-card" data-index="57">
             <div class="img-wrap" style="padding-bottom: 149.9%">
-                <img src="sexy_reba_099.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_099.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="93">
+        <div class="photo-card" data-index="58">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_102.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_102.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="94">
+        <div class="photo-card" data-index="59">
             <div class="img-wrap" style="padding-bottom: 177.8%">
-                <img src="sexy_reba_104.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_104.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="95">
+        <div class="photo-card" data-index="60">
             <div class="img-wrap" style="padding-bottom: 150.1%">
-                <img src="sexy_reba_106.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_106.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="96">
+        <div class="photo-card" data-index="61">
             <div class="img-wrap" style="padding-bottom: 205.6%">
-                <img src="sexy_reba_107.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_107.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="97">
+        <div class="photo-card" data-index="62">
             <div class="img-wrap" style="padding-bottom: 133.3%">
-                <img src="sexy_reba_110.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_110.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="98">
-            <div class="img-wrap" style="padding-bottom: 131.2%">
-                <img src="sexy_reba_111.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="99">
+        <div class="photo-card" data-index="63">
             <div class="img-wrap" style="padding-bottom: 177.9%">
-                <img src="sexy_reba_113.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_113.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="100">
+        <div class="photo-card" data-index="64">
             <div class="img-wrap" style="padding-bottom: 177.7%">
-                <img src="sexy_reba_114.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_114.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="101">
+        <div class="photo-card" data-index="65">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_115.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_115.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="102">
+        <div class="photo-card" data-index="66">
             <div class="img-wrap" style="padding-bottom: 128.5%">
-                <img src="sexy_reba_116.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_116.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="103">
+        <div class="photo-card" data-index="67">
             <div class="img-wrap" style="padding-bottom: 149.9%">
-                <img src="sexy_reba_125.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_125.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="104">
-            <div class="img-wrap" style="padding-bottom: 149.9%">
-                <img src="sexy_reba_128.jpg" alt="迪丽热巴写真" loading="lazy">
-            </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
-        </div>
-        <div class="photo-card" data-category="sexy" data-index="105">
+        <div class="photo-card" data-index="68">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_135.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_135.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="106">
+        <div class="photo-card" data-index="69">
             <div class="img-wrap" style="padding-bottom: 177.8%">
-                <img src="sexy_reba_137.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_137.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="107">
+        <div class="photo-card" data-index="70">
             <div class="img-wrap" style="padding-bottom: 154.8%">
-                <img src="sexy_reba_138.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_138.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="108">
+        <div class="photo-card" data-index="71">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_139.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_139.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="109">
+        <div class="photo-card" data-index="72">
             <div class="img-wrap" style="padding-bottom: 100.1%">
-                <img src="sexy_reba_143.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_143.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="110">
+        <div class="photo-card" data-index="73">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_144.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_144.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="111">
+        <div class="photo-card" data-index="74">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_145.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_145.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="112">
+        <div class="photo-card" data-index="75">
             <div class="img-wrap" style="padding-bottom: 133.3%">
-                <img src="sexy_reba_147.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_147.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="113">
+        <div class="photo-card" data-index="76">
             <div class="img-wrap" style="padding-bottom: 86.4%">
-                <img src="sexy_reba_149.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_149.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="114">
+        <div class="photo-card" data-index="77">
             <div class="img-wrap" style="padding-bottom: 121.2%">
-                <img src="sexy_reba_150.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_150.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="115">
+        <div class="photo-card" data-index="78">
             <div class="img-wrap" style="padding-bottom: 125.0%">
-                <img src="sexy_reba_151.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_151.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="116">
+        <div class="photo-card" data-index="79">
             <div class="img-wrap" style="padding-bottom: 125.0%">
-                <img src="sexy_reba_152.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_152.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="117">
+        <div class="photo-card" data-index="80">
             <div class="img-wrap" style="padding-bottom: 159.9%">
-                <img src="sexy_reba_165.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_165.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="118">
+        <div class="photo-card" data-index="81">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_169.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_169.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="119">
+        <div class="photo-card" data-index="82">
             <div class="img-wrap" style="padding-bottom: 177.8%">
-                <img src="sexy_reba_171.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_171.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="120">
+        <div class="photo-card" data-index="83">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_190.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_190.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="121">
+        <div class="photo-card" data-index="84">
             <div class="img-wrap" style="padding-bottom: 177.8%">
-                <img src="sexy_reba_191.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_191.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="122">
+        <div class="photo-card" data-index="85">
             <div class="img-wrap" style="padding-bottom: 161.7%">
-                <img src="sexy_reba_192.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_192.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="123">
+        <div class="photo-card" data-index="86">
             <div class="img-wrap" style="padding-bottom: 177.7%">
-                <img src="sexy_reba_193.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_193.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="124">
+        <div class="photo-card" data-index="87">
             <div class="img-wrap" style="padding-bottom: 133.3%">
-                <img src="sexy_reba_195.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_195.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="125">
+        <div class="photo-card" data-index="88">
             <div class="img-wrap" style="padding-bottom: 177.7%">
-                <img src="sexy_reba_199.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_199.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="126">
+        <div class="photo-card" data-index="89">
             <div class="img-wrap" style="padding-bottom: 129.6%">
-                <img src="sexy_reba_206.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_206.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="127">
+        <div class="photo-card" data-index="90">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_225.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_225.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="128">
+        <div class="photo-card" data-index="91">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_242.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_242.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="129">
+        <div class="photo-card" data-index="92">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_244.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_244.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="130">
+        <div class="photo-card" data-index="93">
             <div class="img-wrap" style="padding-bottom: 172.2%">
-                <img src="sexy_reba_245.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_245.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="131">
+        <div class="photo-card" data-index="94">
             <div class="img-wrap" style="padding-bottom: 125.0%">
-                <img src="sexy_reba_246.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_246.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="132">
+        <div class="photo-card" data-index="95">
             <div class="img-wrap" style="padding-bottom: 151.2%">
-                <img src="sexy_reba_249.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_249.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="133">
+        <div class="photo-card" data-index="96">
             <div class="img-wrap" style="padding-bottom: 170.1%">
-                <img src="sexy_reba_253.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_253.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="134">
+        <div class="photo-card" data-index="97">
             <div class="img-wrap" style="padding-bottom: 177.8%">
-                <img src="sexy_reba_254.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_254.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="135">
+        <div class="photo-card" data-index="98">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_255.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_255.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="136">
+        <div class="photo-card" data-index="99">
             <div class="img-wrap" style="padding-bottom: 177.8%">
-                <img src="sexy_reba_257.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_257.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="137">
+        <div class="photo-card" data-index="100">
             <div class="img-wrap" style="padding-bottom: 125.1%">
-                <img src="sexy_reba_258.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_258.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="138">
+        <div class="photo-card" data-index="101">
             <div class="img-wrap" style="padding-bottom: 150.0%">
-                <img src="sexy_reba_261.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_261.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="139">
+        <div class="photo-card" data-index="102">
             <div class="img-wrap" style="padding-bottom: 155.6%">
-                <img src="sexy_reba_262.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_262.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="140">
+        <div class="photo-card" data-index="103">
             <div class="img-wrap" style="padding-bottom: 177.8%">
-                <img src="sexy_reba_263.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_263.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="141">
+        <div class="photo-card" data-index="104">
             <div class="img-wrap" style="padding-bottom: 149.9%">
-                <img src="sexy_reba_266.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_266.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="142">
+        <div class="photo-card" data-index="105">
             <div class="img-wrap" style="padding-bottom: 177.7%">
-                <img src="sexy_reba_269.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_269.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="143">
+        <div class="photo-card" data-index="106">
             <div class="img-wrap" style="padding-bottom: 129.3%">
-                <img src="sexy_reba_275.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_275.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="sexy" data-index="144">
+        <div class="photo-card" data-index="107">
             <div class="img-wrap" style="padding-bottom: 177.8%">
-                <img src="sexy_reba_276.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/sexy_reba_276.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="wallpaper" data-index="145">
+        <div class="photo-card" data-index="108">
             <div class="img-wrap" style="padding-bottom: 71.4%">
-                <img src="wallhaven_002.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/wallhaven_002.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="wallpaper" data-index="146">
+        <div class="photo-card" data-index="109">
             <div class="img-wrap" style="padding-bottom: 131.3%">
-                <img src="wallhaven_006.jpg" alt="迪丽热巴写真" loading="lazy">
+                <img src="images/wallhaven_006.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
-            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
-        <div class="photo-card" data-category="weibo" data-index="147">
-            <div class="img-wrap" style="padding-bottom: 100.0%">
-                <img src="weibo_reba_012.jpg" alt="迪丽热巴写真" loading="lazy">
+        <div class="photo-card" data-index="110">
+            <div class="img-wrap" style="padding-bottom: 150.0%">
+                <img src="images/new_001.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
-            <div class="overlay">
-                <span class="view-icon">🔍</span>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="111">
+            <div class="img-wrap" style="padding-bottom: 167.5%">
+                <img src="images/new_002.jpg" alt="迪丽热巴写真" loading="lazy">
             </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="112">
+            <div class="img-wrap" style="padding-bottom: 132.4%">
+                <img src="images/new_003.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="113">
+            <div class="img-wrap" style="padding-bottom: 167.5%">
+                <img src="images/new_sexy_001.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="114">
+            <div class="img-wrap" style="padding-bottom: 120.5%">
+                <img src="images/new_sexy_002.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="115">
+            <div class="img-wrap" style="padding-bottom: 150.0%">
+                <img src="images/new_sexy_003.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="116">
+            <div class="img-wrap" style="padding-bottom: 135.3%">
+                <img src="images/new_sexy_004.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="117">
+            <div class="img-wrap" style="padding-bottom: 113.6%">
+                <img src="images/new_sexy_005.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="118">
+            <div class="img-wrap" style="padding-bottom: 176.4%">
+                <img src="images/new_sexy_007.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="119">
+            <div class="img-wrap" style="padding-bottom: 167.5%">
+                <img src="images/new_sexy_008.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="120">
+            <div class="img-wrap" style="padding-bottom: 131.2%">
+                <img src="images/new_sexy_009.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="121">
+            <div class="img-wrap" style="padding-bottom: 140.1%">
+                <img src="images/new_sexy_010.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="122">
+            <div class="img-wrap" style="padding-bottom: 66.7%">
+                <img src="images/new_sexy_012.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="123">
+            <div class="img-wrap" style="padding-bottom: 125.0%">
+                <img src="images/new_sexy_013.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="124">
+            <div class="img-wrap" style="padding-bottom: 140.0%">
+                <img src="images/new_sexy_014.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="125">
+            <div class="img-wrap" style="padding-bottom: 133.3%">
+                <img src="images/new_sexy_015.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="126">
+            <div class="img-wrap" style="padding-bottom: 148.0%">
+                <img src="images/new_sexy_016.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="127">
+            <div class="img-wrap" style="padding-bottom: 131.2%">
+                <img src="images/batch_001.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="128">
+            <div class="img-wrap" style="padding-bottom: 140.0%">
+                <img src="images/batch_002.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="129">
+            <div class="img-wrap" style="padding-bottom: 175.8%">
+                <img src="images/batch_003.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="130">
+            <div class="img-wrap" style="padding-bottom: 177.8%">
+                <img src="images/batch_004.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="131">
+            <div class="img-wrap" style="padding-bottom: 62.3%">
+                <img src="images/batch_005.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="132">
+            <div class="img-wrap" style="padding-bottom: 139.6%">
+                <img src="images/batch_006.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="133">
+            <div class="img-wrap" style="padding-bottom: 222.2%">
+                <img src="images/batch_008.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="134">
+            <div class="img-wrap" style="padding-bottom: 222.2%">
+                <img src="images/batch_009.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="135">
+            <div class="img-wrap" style="padding-bottom: 167.5%">
+                <img src="images/batch_010.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="136">
+            <div class="img-wrap" style="padding-bottom: 120.5%">
+                <img src="images/batch_011.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="137">
+            <div class="img-wrap" style="padding-bottom: 135.3%">
+                <img src="images/batch_012.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="138">
+            <div class="img-wrap" style="padding-bottom: 113.6%">
+                <img src="images/batch_013.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="139">
+            <div class="img-wrap" style="padding-bottom: 176.4%">
+                <img src="images/batch_014.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="140">
+            <div class="img-wrap" style="padding-bottom: 167.5%">
+                <img src="images/batch_015.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="141">
+            <div class="img-wrap" style="padding-bottom: 131.2%">
+                <img src="images/batch_016.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="142">
+            <div class="img-wrap" style="padding-bottom: 140.1%">
+                <img src="images/batch_017.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="143">
+            <div class="img-wrap" style="padding-bottom: 111.5%">
+                <img src="images/batch_018.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="144">
+            <div class="img-wrap" style="padding-bottom: 148.0%">
+                <img src="images/batch_019.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="145">
+            <div class="img-wrap" style="padding-bottom: 150.0%">
+                <img src="images/batch_020.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="146">
+            <div class="img-wrap" style="padding-bottom: 222.2%">
+                <img src="images/batch_023.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="147">
+            <div class="img-wrap" style="padding-bottom: 222.2%">
+                <img src="images/batch_024.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="148">
+            <div class="img-wrap" style="padding-bottom: 213.6%">
+                <img src="images/batch_025.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="149">
+            <div class="img-wrap" style="padding-bottom: 222.3%">
+                <img src="images/batch_026.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="150">
+            <div class="img-wrap" style="padding-bottom: 127.7%">
+                <img src="images/batch_027.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
+        </div>
+        <div class="photo-card" data-index="151">
+            <div class="img-wrap" style="padding-bottom: 113.6%">
+                <img src="images/batch_028.jpg" alt="迪丽热巴写真" loading="lazy">
+            </div>
+            <div class="overlay"><span class="view-icon">🔍</span></div>
         </div>
     </main>
-    
-    <!-- Lightbox -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-        <button class="lightbox-nav lightbox-prev" onclick="navigate(-1)">‹</button>
-        <img class="lightbox-img" id="lightbox-img" src="" alt="迪丽热巴">
-        <button class="lightbox-nav lightbox-next" onclick="navigate(1)">›</button>
-        <div class="lightbox-counter" id="lightbox-counter"></div>
+        <button class="lightbox-nav lightbox-prev" onclick="prevImage()">◀</button>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="">
+        <button class="lightbox-nav lightbox-next" onclick="nextImage()">▶</button>
     </div>
-    
-    <!-- 页脚 -->
-    <footer class="footer">
-        <p>© 2026 迪丽热巴粉丝收藏站 | Made with <span class="heart">💕</span> for 山哥</p>
-    </footer>
-    
+    <div class="footer">
+        <p>💕 为山哥精心收藏 · 迪丽热巴专属画廊</p>
+    </div>
     <script>
-        // 照片数据
-        const photos = [
-  {
-    "file": "auto_reba_025.jpg",
-    "category": "elegant",
-    "width": 1080,
-    "height": 1229
-  },
-  {
-    "file": "auto_reba_026.jpg",
-    "category": "elegant",
-    "width": 2048,
-    "height": 2980
-  },
-  {
-    "file": "auto_reba_029.jpg",
-    "category": "elegant",
-    "width": 1024,
-    "height": 1449
-  },
-  {
-    "file": "auto_reba_030.jpg",
-    "category": "elegant",
-    "width": 800,
-    "height": 1200
-  },
-  {
-    "file": "auto_reba_035.jpg",
-    "category": "elegant",
-    "width": 2048,
-    "height": 3072
-  },
-  {
-    "file": "auto_reba_037.jpg",
-    "category": "elegant",
-    "width": 2048,
-    "height": 1365
-  },
-  {
-    "file": "auto_reba_038.jpg",
-    "category": "elegant",
-    "width": 700,
-    "height": 979
-  },
-  {
-    "file": "auto_reba_040.jpg",
-    "category": "elegant",
-    "width": 1080,
-    "height": 1920
-  },
-  {
-    "file": "auto_reba_043.jpg",
-    "category": "elegant",
-    "width": 800,
-    "height": 1200
-  },
-  {
-    "file": "auto_reba_045.jpg",
-    "category": "elegant",
-    "width": 2048,
-    "height": 3073
-  },
-  {
-    "file": "auto_reba_046.jpg",
-    "category": "elegant",
-    "width": 1024,
-    "height": 1536
-  },
-  {
-    "file": "auto_reba_050.jpg",
-    "category": "elegant",
-    "width": 1024,
-    "height": 1433
-  },
-  {
-    "file": "auto_reba_059.jpg",
-    "category": "elegant",
-    "width": 1024,
-    "height": 1536
-  },
-  {
-    "file": "auto_reba_063.jpg",
-    "category": "elegant",
-    "width": 690,
-    "height": 821
-  },
-  {
-    "file": "auto_reba_064.jpg",
-    "category": "elegant",
-    "width": 690,
-    "height": 1495
-  },
-  {
-    "file": "auto_reba_066.jpg",
-    "category": "elegant",
-    "width": 1080,
-    "height": 1899
-  },
-  {
-    "file": "auto_reba_067.jpg",
-    "category": "elegant",
-    "width": 1080,
-    "height": 2059
-  },
-  {
-    "file": "auto_reba_075.jpg",
-    "category": "elegant",
-    "width": 1200,
-    "height": 800
-  },
-  {
-    "file": "auto_reba_076.jpg",
-    "category": "elegant",
-    "width": 1080,
-    "height": 1917
-  },
-  {
-    "file": "auto_reba_077.jpg",
-    "category": "elegant",
-    "width": 1024,
-    "height": 1434
-  },
-  {
-    "file": "auto_reba_078.jpg",
-    "category": "elegant",
-    "width": 857,
-    "height": 1200
-  },
-  {
-    "file": "auto_reba_085.jpg",
-    "category": "elegant",
-    "width": 700,
-    "height": 1021
-  },
-  {
-    "file": "auto_reba_086.jpg",
-    "category": "elegant",
-    "width": 1280,
-    "height": 1706
-  },
-  {
-    "file": "auto_reba_089.jpg",
-    "category": "elegant",
-    "width": 1080,
-    "height": 1920
-  },
-  {
-    "file": "auto_reba_090.jpg",
-    "category": "elegant",
-    "width": 700,
-    "height": 1050
-  },
-  {
-    "file": "auto_reba_093.jpg",
-    "category": "elegant",
-    "width": 1024,
-    "height": 1536
-  },
-  {
-    "file": "dilraba_new_008.jpg",
-    "category": "elegant",
-    "width": 690,
-    "height": 920
-  },
-  {
-    "file": "dilraba_new_009.jpg",
-    "category": "sexy",
-    "width": 690,
-    "height": 1150
-  },
-  {
-    "file": "dilraba_new_010.jpg",
-    "category": "elegant",
-    "width": 1707,
-    "height": 1280
-  },
-  {
-    "file": "dilraba_new_012.jpg",
-    "category": "elegant",
-    "width": 1920,
-    "height": 2560
-  },
-  {
-    "file": "dilraba_new_014.jpg",
-    "category": "elegant",
-    "width": 750,
-    "height": 1125
-  },
-  {
-    "file": "dilraba_new_022.jpg",
-    "category": "elegant",
-    "width": 800,
-    "height": 1066
-  },
-  {
-    "file": "dilraba_new_025.jpg",
-    "category": "elegant",
-    "width": 1024,
-    "height": 721
-  },
-  {
-    "file": "multi_reba_022.jpg",
-    "category": "other",
-    "width": 2000,
-    "height": 2769
-  },
-  {
-    "file": "new_reba_018.jpg",
-    "category": "elegant",
-    "width": 772,
-    "height": 1030
-  },
-  {
-    "file": "new_reba_023.jpg",
-    "category": "elegant",
-    "width": 950,
-    "height": 1426
-  },
-  {
-    "file": "new_reba_042.jpg",
-    "category": "elegant",
-    "width": 2000,
-    "height": 2769
-  },
-  {
-    "file": "reba_026.jpg",
-    "category": "other",
-    "width": 1024,
-    "height": 1536
-  },
-  {
-    "file": "reba_hd_1.jpg",
-    "category": "elegant",
-    "width": 1920,
-    "height": 1080
-  },
-  {
-    "file": "reba_sexy_1.jpg",
-    "category": "other",
-    "width": 690,
-    "height": 1227
-  },
-  {
-    "file": "sexy_reba_002.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1302
-  },
-  {
-    "file": "sexy_reba_020.jpg",
-    "category": "sexy",
-    "width": 908,
-    "height": 1363
-  },
-  {
-    "file": "sexy_reba_021.jpg",
-    "category": "sexy",
-    "width": 950,
-    "height": 1425
-  },
-  {
-    "file": "sexy_reba_022.jpg",
-    "category": "sexy",
-    "width": 1920,
-    "height": 2519
-  },
-  {
-    "file": "sexy_reba_024.jpg",
-    "category": "sexy",
-    "width": 1843,
-    "height": 2560
-  },
-  {
-    "file": "sexy_reba_043.jpg",
-    "category": "sexy",
-    "width": 1242,
-    "height": 1574
-  },
-  {
-    "file": "sexy_reba_054.jpg",
-    "category": "sexy",
-    "width": 690,
-    "height": 1005
-  },
-  {
-    "file": "sexy_reba_055.jpg",
-    "category": "sexy",
-    "width": 1754,
-    "height": 2560
-  },
-  {
-    "file": "sexy_reba_057.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1605
-  },
-  {
-    "file": "sexy_reba_059.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1439
-  },
-  {
-    "file": "sexy_reba_060.jpg",
-    "category": "sexy",
-    "width": 690,
-    "height": 1326
-  },
-  {
-    "file": "sexy_reba_066.jpg",
-    "category": "sexy",
-    "width": 1125,
-    "height": 1476
-  },
-  {
-    "file": "sexy_reba_067.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1620
-  },
-  {
-    "file": "sexy_reba_075.jpg",
-    "category": "sexy",
-    "width": 690,
-    "height": 966
-  },
-  {
-    "file": "sexy_reba_078.jpg",
-    "category": "sexy",
-    "width": 1024,
-    "height": 1278
-  },
-  {
-    "file": "sexy_reba_080.jpg",
-    "category": "sexy",
-    "width": 1024,
-    "height": 1536
-  },
-  {
-    "file": "sexy_reba_083.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1350
-  },
-  {
-    "file": "sexy_reba_084.jpg",
-    "category": "sexy",
-    "width": 1300,
-    "height": 1706
-  },
-  {
-    "file": "sexy_reba_087.jpg",
-    "category": "sexy",
-    "width": 720,
-    "height": 1280
-  },
-  {
-    "file": "sexy_reba_088.jpg",
-    "category": "sexy",
-    "width": 960,
-    "height": 1200
-  },
-  {
-    "file": "sexy_reba_090.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1620
-  },
-  {
-    "file": "sexy_reba_091.jpg",
-    "category": "sexy",
-    "width": 1049,
-    "height": 1312
-  },
-  {
-    "file": "sexy_reba_093.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1350
-  },
-  {
-    "file": "sexy_reba_096.jpg",
-    "category": "sexy",
-    "width": 1024,
-    "height": 1661
-  },
-  {
-    "file": "sexy_reba_097.jpg",
-    "category": "sexy",
-    "width": 736,
-    "height": 1307
-  },
-  {
-    "file": "sexy_reba_099.jpg",
-    "category": "sexy",
-    "width": 1366,
-    "height": 2048
-  },
-  {
-    "file": "sexy_reba_102.jpg",
-    "category": "sexy",
-    "width": 1200,
-    "height": 1800
-  },
-  {
-    "file": "sexy_reba_104.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1920
-  },
-  {
-    "file": "sexy_reba_106.jpg",
-    "category": "sexy",
-    "width": 1364,
-    "height": 2048
-  },
-  {
-    "file": "sexy_reba_107.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 2220
-  },
-  {
-    "file": "sexy_reba_110.jpg",
-    "category": "sexy",
-    "width": 2160,
-    "height": 2880
-  },
-  {
-    "file": "sexy_reba_111.jpg",
-    "category": "sexy",
-    "width": 656,
-    "height": 861
-  },
-  {
-    "file": "sexy_reba_113.jpg",
-    "category": "sexy",
-    "width": 1438,
-    "height": 2558
-  },
-  {
-    "file": "sexy_reba_114.jpg",
-    "category": "sexy",
-    "width": 736,
-    "height": 1308
-  },
-  {
-    "file": "sexy_reba_115.jpg",
-    "category": "sexy",
-    "width": 1024,
-    "height": 1536
-  },
-  {
-    "file": "sexy_reba_116.jpg",
-    "category": "sexy",
-    "width": 1024,
-    "height": 1316
-  },
-  {
-    "file": "sexy_reba_125.jpg",
-    "category": "sexy",
-    "width": 1366,
-    "height": 2048
-  },
-  {
-    "file": "sexy_reba_128.jpg",
-    "category": "sexy",
-    "width": 683,
-    "height": 1024
-  },
-  {
-    "file": "sexy_reba_135.jpg",
-    "category": "sexy",
-    "width": 800,
-    "height": 1200
-  },
-  {
-    "file": "sexy_reba_137.jpg",
-    "category": "sexy",
-    "width": 720,
-    "height": 1280
-  },
-  {
-    "file": "sexy_reba_138.jpg",
-    "category": "sexy",
-    "width": 1107,
-    "height": 1714
-  },
-  {
-    "file": "sexy_reba_139.jpg",
-    "category": "sexy",
-    "width": 2000,
-    "height": 3000
-  },
-  {
-    "file": "sexy_reba_143.jpg",
-    "category": "sexy",
-    "width": 1332,
-    "height": 1333
-  },
-  {
-    "file": "sexy_reba_144.jpg",
-    "category": "sexy",
-    "width": 2000,
-    "height": 3000
-  },
-  {
-    "file": "sexy_reba_145.jpg",
-    "category": "sexy",
-    "width": 736,
-    "height": 1104
-  },
-  {
-    "file": "sexy_reba_147.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1440
-  },
-  {
-    "file": "sexy_reba_149.jpg",
-    "category": "sexy",
-    "width": 856,
-    "height": 740
-  },
-  {
-    "file": "sexy_reba_150.jpg",
-    "category": "sexy",
-    "width": 740,
-    "height": 897
-  },
-  {
-    "file": "sexy_reba_151.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1350
-  },
-  {
-    "file": "sexy_reba_152.jpg",
-    "category": "sexy",
-    "width": 740,
-    "height": 925
-  },
-  {
-    "file": "sexy_reba_165.jpg",
-    "category": "sexy",
-    "width": 736,
-    "height": 1177
-  },
-  {
-    "file": "sexy_reba_169.jpg",
-    "category": "sexy",
-    "width": 1120,
-    "height": 1680
-  },
-  {
-    "file": "sexy_reba_171.jpg",
-    "category": "sexy",
-    "width": 828,
-    "height": 1472
-  },
-  {
-    "file": "sexy_reba_190.jpg",
-    "category": "sexy",
-    "width": 1024,
-    "height": 1536
-  },
-  {
-    "file": "sexy_reba_191.jpg",
-    "category": "sexy",
-    "width": 720,
-    "height": 1280
-  },
-  {
-    "file": "sexy_reba_192.jpg",
-    "category": "sexy",
-    "width": 1200,
-    "height": 1940
-  },
-  {
-    "file": "sexy_reba_193.jpg",
-    "category": "sexy",
-    "width": 912,
-    "height": 1621
-  },
-  {
-    "file": "sexy_reba_195.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1440
-  },
-  {
-    "file": "sexy_reba_199.jpg",
-    "category": "sexy",
-    "width": 1024,
-    "height": 1820
-  },
-  {
-    "file": "sexy_reba_206.jpg",
-    "category": "sexy",
-    "width": 926,
-    "height": 1200
-  },
-  {
-    "file": "sexy_reba_225.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1620
-  },
-  {
-    "file": "sexy_reba_242.jpg",
-    "category": "sexy",
-    "width": 884,
-    "height": 1326
-  },
-  {
-    "file": "sexy_reba_244.jpg",
-    "category": "sexy",
-    "width": 960,
-    "height": 1440
-  },
-  {
-    "file": "sexy_reba_245.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1860
-  },
-  {
-    "file": "sexy_reba_246.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1350
-  },
-  {
-    "file": "sexy_reba_249.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1633
-  },
-  {
-    "file": "sexy_reba_253.jpg",
-    "category": "sexy",
-    "width": 1200,
-    "height": 2041
-  },
-  {
-    "file": "sexy_reba_254.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1920
-  },
-  {
-    "file": "sexy_reba_255.jpg",
-    "category": "sexy",
-    "width": 1200,
-    "height": 1800
-  },
-  {
-    "file": "sexy_reba_257.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1920
-  },
-  {
-    "file": "sexy_reba_258.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1351
-  },
-  {
-    "file": "sexy_reba_261.jpg",
-    "category": "sexy",
-    "width": 768,
-    "height": 1152
-  },
-  {
-    "file": "sexy_reba_262.jpg",
-    "category": "sexy",
-    "width": 1200,
-    "height": 1867
-  },
-  {
-    "file": "sexy_reba_263.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1920
-  },
-  {
-    "file": "sexy_reba_266.jpg",
-    "category": "sexy",
-    "width": 736,
-    "height": 1103
-  },
-  {
-    "file": "sexy_reba_269.jpg",
-    "category": "sexy",
-    "width": 736,
-    "height": 1308
-  },
-  {
-    "file": "sexy_reba_275.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1396
-  },
-  {
-    "file": "sexy_reba_276.jpg",
-    "category": "sexy",
-    "width": 1200,
-    "height": 2133
-  },
-  {
-    "file": "wallhaven_002.jpg",
-    "category": "elegant",
-    "width": 3359,
-    "height": 2399
-  },
-  {
-    "file": "wallhaven_006.jpg",
-    "category": "elegant",
-    "width": 3263,
-    "height": 4283
-  },
-  {
-    "file": "new_001.jpg",
-    "category": "elegant",
-    "width": 1201,
-    "height": 1802
-  },
-  {
-    "file": "new_002.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1809
-  },
-  {
-    "file": "new_003.jpg",
-    "category": "elegant",
-    "width": 1075,
-    "height": 1423
-  },
-  {
-    "file": "new_sexy_001.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1809
-  },
-  {
-    "file": "new_sexy_002.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1301
-  },
-  {
-    "file": "new_sexy_003.jpg",
-    "category": "sexy",
-    "width": 2048,
-    "height": 3073
-  },
-  {
-    "file": "new_sexy_004.jpg",
-    "category": "sexy",
-    "width": 2000,
-    "height": 2707
-  },
-  {
-    "file": "new_sexy_005.jpg",
-    "category": "sexy",
-    "width": 2000,
-    "height": 2272
-  },
-  {
-    "file": "new_sexy_007.jpg",
-    "category": "sexy",
-    "width": 1440,
-    "height": 2540
-  },
-  {
-    "file": "new_sexy_008.jpg",
-    "category": "sexy",
-    "width": 2048,
-    "height": 3430
-  },
-  {
-    "file": "new_sexy_009.jpg",
-    "category": "sexy",
-    "width": 1024,
-    "height": 1344
-  },
-  {
-    "file": "new_sexy_010.jpg",
-    "category": "sexy",
-    "width": 1142,
-    "height": 1600
-  },
-  {
-    "file": "new_sexy_012.jpg",
-    "category": "sexy",
-    "width": 2048,
-    "height": 1366
-  },
-  {
-    "file": "new_sexy_013.jpg",
-    "category": "sexy",
-    "width": 2048,
-    "height": 2560
-  },
-  {
-    "file": "new_sexy_014.jpg",
-    "category": "sexy",
-    "width": 1024,
-    "height": 1434
-  },
-  {
-    "file": "new_sexy_015.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1440
-  },
-  {
-    "file": "new_sexy_016.jpg",
-    "category": "sexy",
-    "width": 2000,
-    "height": 2960
-  },
-  {
-    "file": "batch_001.jpg",
-    "category": "sexy",
-    "width": 1024,
-    "height": 1344
-  },
-  {
-    "file": "batch_002.jpg",
-    "category": "sexy",
-    "width": 950,
-    "height": 1330
-  },
-  {
-    "file": "batch_003.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1899
-  },
-  {
-    "file": "batch_004.jpg",
-    "category": "sexy",
-    "width": 1275,
-    "height": 2267
-  },
-  {
-    "file": "batch_005.jpg",
-    "category": "sexy",
-    "width": 1526,
-    "height": 951
-  },
-  {
-    "file": "batch_006.jpg",
-    "category": "sexy",
-    "width": 1024,
-    "height": 1429
-  },
-  {
-    "file": "batch_008.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 2400
-  },
-  {
-    "file": "batch_009.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 2400
-  },
-  {
-    "file": "batch_010.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1809
-  },
-  {
-    "file": "batch_011.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 1301
-  },
-  {
-    "file": "batch_012.jpg",
-    "category": "sexy",
-    "width": 2000,
-    "height": 2707
-  },
-  {
-    "file": "batch_013.jpg",
-    "category": "sexy",
-    "width": 2000,
-    "height": 2272
-  },
-  {
-    "file": "batch_014.jpg",
-    "category": "sexy",
-    "width": 1440,
-    "height": 2540
-  },
-  {
-    "file": "batch_015.jpg",
-    "category": "sexy",
-    "width": 2048,
-    "height": 3430
-  },
-  {
-    "file": "batch_016.jpg",
-    "category": "sexy",
-    "width": 1024,
-    "height": 1344
-  },
-  {
-    "file": "batch_017.jpg",
-    "category": "sexy",
-    "width": 1142,
-    "height": 1600
-  },
-  {
-    "file": "batch_018.jpg",
-    "category": "sexy",
-    "width": 2000,
-    "height": 2229
-  },
-  {
-    "file": "batch_019.jpg",
-    "category": "sexy",
-    "width": 2000,
-    "height": 2960
-  },
-  {
-    "file": "batch_020.jpg",
-    "category": "sexy",
-    "width": 2048,
-    "height": 3073
-  },
-  {
-    "file": "batch_023.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 2400
-  },
-  {
-    "file": "batch_024.jpg",
-    "category": "sexy",
-    "width": 1080,
-    "height": 2400
-  },
-  {
-    "file": "batch_025.jpg",
-    "category": "sexy",
-    "width": 700,
-    "height": 1495
-  },
-  {
-    "file": "batch_026.jpg",
-    "category": "sexy",
-    "width": 700,
-    "height": 1556
-  },
-  {
-    "file": "batch_027.jpg",
-    "category": "sexy",
-    "width": 750,
-    "height": 958
-  },
-  {
-    "file": "batch_028.jpg",
-    "category": "sexy",
-    "width": 700,
-    "height": 795
-  }
-];
-        let currentIndex = 0;
-        let currentFilter = 'all';
-        let visiblePhotos = [];
-        
-        // 初始化
-        document.addEventListener('DOMContentLoaded', () => {
-            updateVisiblePhotos();
-            setupFilters();
-            setupCards();
-            setupKeyboard();
-            updatePhotoCount();
-            
-            // 隐藏加载动画
-            setTimeout(() => {
-                document.getElementById('loading').classList.add('hidden');
-            }, 500);
-        });
-        
-        // 更新照片总数显示
-        function updatePhotoCount() {
-            const countEl = document.getElementById('photo-count');
-            if (countEl) {
-                countEl.textContent = `共 ${photos.length} 张精选照片 💕`;
-            }
-            
-            // 更新各分类计数
-            const counts = {};
-            photos.forEach(p => {
-                counts[p.category] = (counts[p.category] || 0) + 1;
-            });
-            
-            const allEl = document.getElementById('count-all');
-            if (allEl) allEl.textContent = photos.length;
-            
-            ['sexy', 'auto', 'baidu', 'new', 'wallpaper', 'weibo', 'other'].forEach(cat => {
-                const el = document.getElementById(`count-${cat}`);
-                if (el) el.textContent = counts[cat] || 0;
-            });
-        }
-        
-        // 更新可见照片
-        function updateVisiblePhotos() {
-            visiblePhotos = currentFilter === 'all' 
-                ? photos 
-                : photos.filter(p => p.category === currentFilter);
-        }
-        
-        // 设置筛选器
-        function setupFilters() {
-            document.querySelectorAll('.filter').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    currentFilter = btn.dataset.filter;
-                    filterPhotos();
-                });
-            });
-        }
-        
-        // 筛选照片
-        function filterPhotos() {
-            const cards = document.querySelectorAll('.photo-card');
-            cards.forEach(card => {
-                const category = card.dataset.category;
-                if (currentFilter === 'all' || category === currentFilter) {
-                    card.classList.remove('hidden');
-                    // 重新触发动画
-                    card.style.animation = 'none';
-                    card.offsetHeight; // 触发重排
-                    card.style.animation = 'fadeIn 0.6s ease forwards';
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-            updateVisiblePhotos();
-        }
-        
-        // 设置卡片点击
-        function setupCards() {
-            document.querySelectorAll('.photo-card').forEach(card => {
-                card.addEventListener('click', () => {
-                    const file = card.querySelector('img').src;
-                    const index = parseInt(card.dataset.index);
-                    openLightbox(file, index);
-                });
-            });
-        }
-        
-        // 打开 Lightbox
-        function openLightbox(src, index) {
-            currentIndex = index;
-            const lightbox = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            img.src = src;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            updateCounter();
-        }
-        
-        // 关闭 Lightbox
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        
-        // 导航
-        function navigate(direction) {
-            if (visiblePhotos.length === 0) return;
-            
-            // 找到当前在 visiblePhotos 中的索引
-            const currentSrc = document.getElementById('lightbox-img').src;
-            const currentFile = currentSrc.split('/').pop();
-            let visibleIndex = visiblePhotos.findIndex(p => p.file === currentFile);
-            
-            if (visibleIndex === -1) visibleIndex = 0;
-            
-            visibleIndex += direction;
-            if (visibleIndex < 0) visibleIndex = visiblePhotos.length - 1;
-            if (visibleIndex >= visiblePhotos.length) visibleIndex = 0;
-            
-            const photo = visiblePhotos[visibleIndex];
-            document.getElementById('lightbox-img').src = photo.file;
-            currentIndex = photos.findIndex(p => p.file === photo.file);
-            updateCounter();
-        }
-        
-        // 更新计数器
-        function updateCounter() {
-            const currentSrc = document.getElementById('lightbox-img').src;
-            const currentFile = currentSrc.split('/').pop();
-            const visibleIndex = visiblePhotos.findIndex(p => p.file === currentFile);
-            document.getElementById('lightbox-counter').textContent = 
-                `${visibleIndex + 1} / ${visiblePhotos.length}`;
-        }
-        
-        // 键盘控制
-        function setupKeyboard() {
-            document.addEventListener('keydown', (e) => {
-                const lightbox = document.getElementById('lightbox');
-                if (!lightbox.classList.contains('active')) return;
-                
-                if (e.key === 'Escape') closeLightbox();
-                if (e.key === 'ArrowLeft') navigate(-1);
-                if (e.key === 'ArrowRight') navigate(1);
-            });
-        }
-        
-        // 点击背景关闭
-        document.getElementById('lightbox').addEventListener('click', (e) => {
-            if (e.target.id === 'lightbox') closeLightbox();
-        });
+    const photos = ["auto_reba_025.jpg", "auto_reba_026.jpg", "auto_reba_029.jpg", "auto_reba_030.jpg", "auto_reba_035.jpg", "auto_reba_037.jpg", "auto_reba_038.jpg", "auto_reba_040.jpg", "auto_reba_043.jpg", "auto_reba_045.jpg", "auto_reba_046.jpg", "auto_reba_050.jpg", "auto_reba_059.jpg", "auto_reba_066.jpg", "auto_reba_067.jpg", "auto_reba_075.jpg", "auto_reba_076.jpg", "auto_reba_077.jpg", "auto_reba_078.jpg", "auto_reba_085.jpg", "auto_reba_086.jpg", "auto_reba_089.jpg", "auto_reba_090.jpg", "auto_reba_093.jpg", "dilraba_new_010.jpg", "dilraba_new_012.jpg", "dilraba_new_014.jpg", "dilraba_new_022.jpg", "dilraba_new_025.jpg", "multi_reba_022.jpg", "new_reba_018.jpg", "new_reba_023.jpg", "new_reba_042.jpg", "reba_026.jpg", "reba_hd_1.jpg", "sexy_reba_002.jpg", "sexy_reba_020.jpg", "sexy_reba_021.jpg", "sexy_reba_022.jpg", "sexy_reba_024.jpg", "sexy_reba_043.jpg", "sexy_reba_055.jpg", "sexy_reba_057.jpg", "sexy_reba_059.jpg", "sexy_reba_066.jpg", "sexy_reba_067.jpg", "sexy_reba_078.jpg", "sexy_reba_080.jpg", "sexy_reba_083.jpg", "sexy_reba_084.jpg", "sexy_reba_087.jpg", "sexy_reba_088.jpg", "sexy_reba_090.jpg", "sexy_reba_091.jpg", "sexy_reba_093.jpg", "sexy_reba_096.jpg", "sexy_reba_097.jpg", "sexy_reba_099.jpg", "sexy_reba_102.jpg", "sexy_reba_104.jpg", "sexy_reba_106.jpg", "sexy_reba_107.jpg", "sexy_reba_110.jpg", "sexy_reba_113.jpg", "sexy_reba_114.jpg", "sexy_reba_115.jpg", "sexy_reba_116.jpg", "sexy_reba_125.jpg", "sexy_reba_135.jpg", "sexy_reba_137.jpg", "sexy_reba_138.jpg", "sexy_reba_139.jpg", "sexy_reba_143.jpg", "sexy_reba_144.jpg", "sexy_reba_145.jpg", "sexy_reba_147.jpg", "sexy_reba_149.jpg", "sexy_reba_150.jpg", "sexy_reba_151.jpg", "sexy_reba_152.jpg", "sexy_reba_165.jpg", "sexy_reba_169.jpg", "sexy_reba_171.jpg", "sexy_reba_190.jpg", "sexy_reba_191.jpg", "sexy_reba_192.jpg", "sexy_reba_193.jpg", "sexy_reba_195.jpg", "sexy_reba_199.jpg", "sexy_reba_206.jpg", "sexy_reba_225.jpg", "sexy_reba_242.jpg", "sexy_reba_244.jpg", "sexy_reba_245.jpg", "sexy_reba_246.jpg", "sexy_reba_249.jpg", "sexy_reba_253.jpg", "sexy_reba_254.jpg", "sexy_reba_255.jpg", "sexy_reba_257.jpg", "sexy_reba_258.jpg", "sexy_reba_261.jpg", "sexy_reba_262.jpg", "sexy_reba_263.jpg", "sexy_reba_266.jpg", "sexy_reba_269.jpg", "sexy_reba_275.jpg", "sexy_reba_276.jpg", "wallhaven_002.jpg", "wallhaven_006.jpg", "new_001.jpg", "new_002.jpg", "new_003.jpg", "new_sexy_001.jpg", "new_sexy_002.jpg", "new_sexy_003.jpg", "new_sexy_004.jpg", "new_sexy_005.jpg", "new_sexy_007.jpg", "new_sexy_008.jpg", "new_sexy_009.jpg", "new_sexy_010.jpg", "new_sexy_012.jpg", "new_sexy_013.jpg", "new_sexy_014.jpg", "new_sexy_015.jpg", "new_sexy_016.jpg", "batch_001.jpg", "batch_002.jpg", "batch_003.jpg", "batch_004.jpg", "batch_005.jpg", "batch_006.jpg", "batch_008.jpg", "batch_009.jpg", "batch_010.jpg", "batch_011.jpg", "batch_012.jpg", "batch_013.jpg", "batch_014.jpg", "batch_015.jpg", "batch_016.jpg", "batch_017.jpg", "batch_018.jpg", "batch_019.jpg", "batch_020.jpg", "batch_023.jpg", "batch_024.jpg", "batch_025.jpg", "batch_026.jpg", "batch_027.jpg", "batch_028.jpg"];
+    let currentIndex = 0;
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    document.querySelectorAll(".photo-card").forEach((card, idx) => {
+        card.addEventListener("click", () => openLightbox(idx));
+    });
+    function openLightbox(idx) { currentIndex = idx; lightboxImg.src = "images/" + photos[idx]; lightbox.classList.add("active"); }
+    function closeLightbox() { lightbox.classList.remove("active"); }
+    function nextImage() { currentIndex = (currentIndex + 1) % photos.length; lightboxImg.src = "images/" + photos[currentIndex]; }
+    function prevImage() { currentIndex = (currentIndex - 1 + photos.length) % photos.length; lightboxImg.src = "images/" + photos[currentIndex]; }
+    lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); if (e.key === "ArrowRight") nextImage(); if (e.key === "ArrowLeft") prevImage(); });
     </script>
 </body>
 </html>
