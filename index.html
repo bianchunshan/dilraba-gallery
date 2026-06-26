@@ -352,7 +352,7 @@
     <header class="header">
         <h1>迪丽热巴写真画廊</h1>
         <p class="subtitle">山哥的专属收藏 · 每一张都是心动</p>
-        <p class="count">共 148 张精选照片 💕</p>
+        <p class="count" id="photo-count">加载中...</p>
     </header>
     
     <!-- 筛选栏 -->
@@ -2551,12 +2551,21 @@
             setupFilters();
             setupCards();
             setupKeyboard();
+            updatePhotoCount();
             
-            // 隐藏加载画面
+            // 隐藏加载动画
             setTimeout(() => {
                 document.getElementById('loading').classList.add('hidden');
             }, 500);
         });
+        
+        // 更新照片总数显示
+        function updatePhotoCount() {
+            const countEl = document.getElementById('photo-count');
+            if (countEl) {
+                countEl.textContent = `共 ${photos.length} 张精选照片 💕`;
+            }
+        }
         
         // 更新可见照片
         function updateVisiblePhotos() {
