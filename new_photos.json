@@ -12,8 +12,7 @@
       0.1229,
       0.6289,
       "reba_gpt2x3_0131.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0134.jpg",
@@ -28,8 +27,7 @@
       0.1266,
       0.4421,
       "reba_gpt2x3_0134.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0259.jpg",
@@ -44,8 +42,7 @@
       0.1307,
       0.9857,
       "reba_gpt2x3_0259.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0149.jpg",
@@ -60,8 +57,7 @@
       0.1321,
       0.4904,
       "reba_gpt2x3_0149.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0070.jpg",
@@ -76,40 +72,7 @@
       0.1388,
       0.5838,
       "reba_gpt2x3_0070.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
-  },
-  {
-    "filename": "reba_gpt2x3_0163.jpg",
-    "src": "images/reba_gpt2x3_0163.jpg",
-    "category": "curated",
-    "sexiness_score": 5.5,
-    "original_index": 156,
-    "rank": 6,
-    "clothing_color": "金/黄",
-    "color_sort_key": [
-      1,
-      0.1435,
-      0.4465,
-      "reba_gpt2x3_0163.jpg"
-    ],
-    "user_restored_original_after_face_feedback": true
-  },
-  {
-    "filename": "reba_gpt2x3_0198.jpg",
-    "src": "images/reba_gpt2x3_0198.jpg",
-    "category": "curated",
-    "sexiness_score": 8.0,
-    "original_index": 190,
-    "rank": 7,
-    "clothing_color": "金/黄",
-    "color_sort_key": [
-      1,
-      0.1437,
-      0.7121,
-      "reba_gpt2x3_0198.jpg"
-    ],
-    "user_restored_original_after_face_feedback": true
+    ]
   },
   {
     "filename": "reba_gpt2x3_0246.jpg",
@@ -117,15 +80,14 @@
     "category": "curated",
     "sexiness_score": 9.0,
     "original_index": 235,
-    "rank": 8,
+    "rank": 6,
     "clothing_color": "金/黄",
     "color_sort_key": [
       1,
       0.1664,
       0.3865,
       "reba_gpt2x3_0246.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0039.jpg",
@@ -133,15 +95,14 @@
     "category": "curated",
     "sexiness_score": 8.6,
     "original_index": 36,
-    "rank": 9,
+    "rank": 7,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0465,
       0.8039,
       "reba_gpt2x3_0039.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0169.jpg",
@@ -149,15 +110,14 @@
     "category": "curated",
     "sexiness_score": 5.5,
     "original_index": 161,
-    "rank": 10,
+    "rank": 8,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.047,
       0.7199,
       "reba_gpt2x3_0169.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0119.jpg",
@@ -165,15 +125,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 114,
-    "rank": 11,
+    "rank": 9,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0472,
       0.6966,
       "reba_gpt2x3_0119.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0295.jpg",
@@ -181,15 +140,14 @@
     "category": "curated",
     "sexiness_score": 8.4,
     "original_index": 280,
-    "rank": 12,
+    "rank": 10,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0475,
       0.6994,
       "reba_gpt2x3_0295.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0037.jpg",
@@ -197,15 +155,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 34,
-    "rank": 13,
+    "rank": 11,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0481,
       0.6767,
       "reba_gpt2x3_0037.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0229.jpg",
@@ -213,15 +170,14 @@
     "category": "curated",
     "sexiness_score": 7.8,
     "original_index": 218,
-    "rank": 14,
+    "rank": 12,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0481,
       0.7982,
       "reba_gpt2x3_0229.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0006.jpg",
@@ -229,15 +185,14 @@
     "category": "curated",
     "sexiness_score": 8.2,
     "original_index": 5,
-    "rank": 15,
+    "rank": 13,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0483,
       0.6838,
       "reba_gpt2x3_0006.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0017.jpg",
@@ -245,15 +200,14 @@
     "category": "curated",
     "sexiness_score": 7.4,
     "original_index": 16,
-    "rank": 16,
+    "rank": 14,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0484,
       0.7531,
       "reba_gpt2x3_0017.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0196.jpg",
@@ -261,15 +215,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 188,
-    "rank": 17,
+    "rank": 15,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0486,
       0.677,
       "reba_gpt2x3_0196.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0175.jpg",
@@ -277,15 +230,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 167,
-    "rank": 18,
+    "rank": 16,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0488,
       0.7061,
       "reba_gpt2x3_0175.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0125.jpg",
@@ -293,15 +245,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 120,
-    "rank": 19,
+    "rank": 17,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0497,
       0.859,
       "reba_gpt2x3_0125.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0074.jpg",
@@ -309,15 +260,14 @@
     "category": "curated",
     "sexiness_score": 5.0,
     "original_index": 70,
-    "rank": 20,
+    "rank": 18,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0502,
       0.719,
       "reba_gpt2x3_0074.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0081.jpg",
@@ -325,15 +275,14 @@
     "category": "curated",
     "sexiness_score": 5.0,
     "original_index": 76,
-    "rank": 21,
+    "rank": 19,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0503,
       0.7231,
       "reba_gpt2x3_0081.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0047.jpg",
@@ -341,15 +290,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 44,
-    "rank": 22,
+    "rank": 20,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0508,
       0.7241,
       "reba_gpt2x3_0047.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0280.jpg",
@@ -357,15 +305,14 @@
     "category": "curated",
     "sexiness_score": 6.0,
     "original_index": 265,
-    "rank": 23,
+    "rank": 21,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0508,
       0.6831,
       "reba_gpt2x3_0280.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0112.jpg",
@@ -373,15 +320,14 @@
     "category": "curated",
     "sexiness_score": 8.4,
     "original_index": 107,
-    "rank": 24,
+    "rank": 22,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0517,
       0.524,
       "reba_gpt2x3_0112.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0275.jpg",
@@ -389,15 +335,14 @@
     "category": "curated",
     "sexiness_score": 5.2,
     "original_index": 260,
-    "rank": 25,
+    "rank": 23,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0518,
       0.5348,
       "reba_gpt2x3_0275.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0052.jpg",
@@ -405,15 +350,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 49,
-    "rank": 26,
+    "rank": 24,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.052,
       0.7578,
       "reba_gpt2x3_0052.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0126.jpg",
@@ -421,15 +365,14 @@
     "category": "curated",
     "sexiness_score": 5.5,
     "original_index": 121,
-    "rank": 27,
+    "rank": 25,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0522,
       0.7652,
       "reba_gpt2x3_0126.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0234.jpg",
@@ -437,15 +380,14 @@
     "category": "curated",
     "sexiness_score": 7.4,
     "original_index": 223,
-    "rank": 28,
+    "rank": 26,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0524,
       0.8048,
       "reba_gpt2x3_0234.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0236.jpg",
@@ -453,15 +395,14 @@
     "category": "curated",
     "sexiness_score": 7.8,
     "original_index": 225,
-    "rank": 29,
+    "rank": 27,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0531,
       0.8093,
       "reba_gpt2x3_0236.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0061.jpg",
@@ -469,15 +410,14 @@
     "category": "curated",
     "sexiness_score": 4.5,
     "original_index": 58,
-    "rank": 30,
+    "rank": 28,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0532,
       0.8064,
       "reba_gpt2x3_0061.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0223.jpg",
@@ -485,15 +425,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 213,
-    "rank": 31,
+    "rank": 29,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0533,
       0.7477,
       "reba_gpt2x3_0223.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0106.jpg",
@@ -501,15 +440,14 @@
     "category": "curated",
     "sexiness_score": 7.7,
     "original_index": 101,
-    "rank": 32,
+    "rank": 30,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0538,
       0.7514,
       "reba_gpt2x3_0106.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0098.jpg",
@@ -517,15 +455,14 @@
     "category": "curated",
     "sexiness_score": 7.8,
     "original_index": 93,
-    "rank": 33,
+    "rank": 31,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.054,
       0.6525,
       "reba_gpt2x3_0098.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0158.jpg",
@@ -533,15 +470,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 151,
-    "rank": 34,
+    "rank": 32,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.055,
       0.7678,
       "reba_gpt2x3_0158.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0226.jpg",
@@ -549,15 +485,14 @@
     "category": "curated",
     "sexiness_score": 7.3,
     "original_index": 216,
-    "rank": 35,
+    "rank": 33,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.055,
       0.7046,
       "reba_gpt2x3_0226.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0128.jpg",
@@ -565,15 +500,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 123,
-    "rank": 36,
+    "rank": 34,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0552,
       0.4688,
       "reba_gpt2x3_0128.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0028.jpg",
@@ -581,15 +515,14 @@
     "category": "curated",
     "sexiness_score": 9.1,
     "original_index": 27,
-    "rank": 37,
+    "rank": 35,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0553,
       0.8174,
       "reba_gpt2x3_0028.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0118.jpg",
@@ -597,15 +530,14 @@
     "category": "curated",
     "sexiness_score": 7.8,
     "original_index": 113,
-    "rank": 38,
+    "rank": 36,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.056,
       0.6558,
       "reba_gpt2x3_0118.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0145.jpg",
@@ -613,15 +545,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 139,
-    "rank": 39,
+    "rank": 37,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0573,
       0.4419,
       "reba_gpt2x3_0145.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0094.jpg",
@@ -629,15 +560,14 @@
     "category": "curated",
     "sexiness_score": 8.1,
     "original_index": 89,
-    "rank": 40,
+    "rank": 38,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0575,
       0.81,
       "reba_gpt2x3_0094.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0307.jpg",
@@ -645,15 +575,14 @@
     "category": "curated",
     "sexiness_score": 3.5,
     "original_index": 291,
-    "rank": 41,
+    "rank": 39,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0575,
       0.7904,
       "reba_gpt2x3_0307.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0132.jpg",
@@ -661,15 +590,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 127,
-    "rank": 42,
+    "rank": 40,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0575,
       0.6796,
       "reba_gpt2x3_0132.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0105.jpg",
@@ -677,15 +605,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 100,
-    "rank": 43,
+    "rank": 41,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0579,
       0.7651,
       "reba_gpt2x3_0105.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0093.jpg",
@@ -693,15 +620,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 88,
-    "rank": 44,
+    "rank": 42,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.058,
       0.6851,
       "reba_gpt2x3_0093.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0161.jpg",
@@ -709,31 +635,14 @@
     "category": "curated",
     "sexiness_score": 9.0,
     "original_index": 154,
-    "rank": 45,
+    "rank": 43,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0588,
       0.7867,
       "reba_gpt2x3_0161.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
-  },
-  {
-    "filename": "reba_gpt2x3_0124.jpg",
-    "src": "images/reba_gpt2x3_0124.jpg",
-    "category": "curated",
-    "sexiness_score": 8.7,
-    "original_index": 119,
-    "rank": 46,
-    "clothing_color": "橙/棕",
-    "color_sort_key": [
-      2,
-      0.0589,
-      0.7143,
-      "reba_gpt2x3_0124.jpg"
-    ],
-    "user_restored_original_after_face_feedback": true
+    ]
   },
   {
     "filename": "reba_gpt2x3_0162.jpg",
@@ -741,15 +650,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 155,
-    "rank": 47,
+    "rank": 44,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0592,
       0.7772,
       "reba_gpt2x3_0162.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0001.jpg",
@@ -757,15 +665,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 1,
-    "rank": 48,
+    "rank": 45,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0643,
       0.484,
       "reba_gpt2x3_0001.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0281.jpg",
@@ -773,15 +680,14 @@
     "category": "curated",
     "sexiness_score": 6.7,
     "original_index": 266,
-    "rank": 49,
+    "rank": 46,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0659,
       0.7129,
       "reba_gpt2x3_0281.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0183.jpg",
@@ -789,15 +695,14 @@
     "category": "curated",
     "sexiness_score": 6.0,
     "original_index": 175,
-    "rank": 50,
+    "rank": 47,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0663,
       0.816,
       "reba_gpt2x3_0183.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0252.jpg",
@@ -805,15 +710,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 241,
-    "rank": 51,
+    "rank": 48,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0671,
       0.6239,
       "reba_gpt2x3_0252.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0207.jpg",
@@ -821,15 +725,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 199,
-    "rank": 52,
+    "rank": 49,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0674,
       0.7816,
       "reba_gpt2x3_0207.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0021.jpg",
@@ -837,15 +740,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 20,
-    "rank": 53,
+    "rank": 50,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0697,
       0.8584,
       "reba_gpt2x3_0021.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0244.jpg",
@@ -853,15 +755,14 @@
     "category": "curated",
     "sexiness_score": 8.8,
     "original_index": 233,
-    "rank": 54,
+    "rank": 51,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0713,
       0.654,
       "reba_gpt2x3_0244.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0203.jpg",
@@ -869,15 +770,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 195,
-    "rank": 55,
+    "rank": 52,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0725,
       0.6206,
       "reba_gpt2x3_0203.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0262.jpg",
@@ -885,15 +785,14 @@
     "category": "curated",
     "sexiness_score": 5.2,
     "original_index": 249,
-    "rank": 56,
+    "rank": 53,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0726,
       0.8812,
       "reba_gpt2x3_0262.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0122.jpg",
@@ -901,15 +800,14 @@
     "category": "curated",
     "sexiness_score": 7.4,
     "original_index": 117,
-    "rank": 57,
+    "rank": 54,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0728,
       0.792,
       "reba_gpt2x3_0122.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0121.jpg",
@@ -917,15 +815,14 @@
     "category": "curated",
     "sexiness_score": 7.3,
     "original_index": 116,
-    "rank": 58,
+    "rank": 55,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0732,
       0.3589,
       "reba_gpt2x3_0121.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0320.jpg",
@@ -933,15 +830,14 @@
     "category": "curated",
     "sexiness_score": 9.0,
     "original_index": 304,
-    "rank": 59,
+    "rank": 56,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0752,
       0.8044,
       "reba_gpt2x3_0320.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0139.jpg",
@@ -949,15 +845,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 133,
-    "rank": 60,
+    "rank": 57,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0772,
       0.5393,
       "reba_gpt2x3_0139.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0055.jpg",
@@ -965,15 +860,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 52,
-    "rank": 61,
+    "rank": 58,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0802,
       0.514,
       "reba_gpt2x3_0055.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0313.jpg",
@@ -981,31 +875,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 297,
-    "rank": 62,
+    "rank": 59,
     "clothing_color": "橙/棕",
     "color_sort_key": [
       2,
       0.0836,
       0.3495,
       "reba_gpt2x3_0313.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
-  },
-  {
-    "filename": "reba_gpt2x3_0027.jpg",
-    "src": "images/reba_gpt2x3_0027.jpg",
-    "category": "curated",
-    "sexiness_score": 6.9,
-    "original_index": 26,
-    "rank": 63,
-    "clothing_color": "橙/棕",
-    "color_sort_key": [
-      2,
-      0.0887,
-      0.6932,
-      "reba_gpt2x3_0027.jpg"
-    ],
-    "user_restored_original_after_face_feedback": true
+    ]
   },
   {
     "filename": "reba_gpt2x3_0318.jpg",
@@ -1013,15 +890,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 302,
-    "rank": 64,
+    "rank": 60,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.01,
       0.2888,
       "reba_gpt2x3_0318.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0007.jpg",
@@ -1029,15 +905,14 @@
     "category": "curated",
     "sexiness_score": 8.8,
     "original_index": 6,
-    "rank": 65,
+    "rank": 61,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.0213,
       0.5263,
       "reba_gpt2x3_0007.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0110.jpg",
@@ -1045,15 +920,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 105,
-    "rank": 66,
+    "rank": 62,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.0267,
       0.4963,
       "reba_gpt2x3_0110.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0085.jpg",
@@ -1061,15 +935,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 80,
-    "rank": 67,
+    "rank": 63,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.0344,
       0.7786,
       "reba_gpt2x3_0085.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0289.jpg",
@@ -1077,15 +950,14 @@
     "category": "curated",
     "sexiness_score": 8.2,
     "original_index": 274,
-    "rank": 68,
+    "rank": 64,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.0363,
       0.7099,
       "reba_gpt2x3_0289.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0170.jpg",
@@ -1093,15 +965,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 162,
-    "rank": 69,
+    "rank": 65,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.0494,
       0.6978,
       "reba_gpt2x3_0170.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0267.jpg",
@@ -1109,15 +980,14 @@
     "category": "curated",
     "sexiness_score": 5.3,
     "original_index": 254,
-    "rank": 70,
+    "rank": 66,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.0499,
       0.7639,
       "reba_gpt2x3_0267.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0065.jpg",
@@ -1125,15 +995,14 @@
     "category": "curated",
     "sexiness_score": 4.0,
     "original_index": 62,
-    "rank": 71,
+    "rank": 67,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.0712,
       0.755,
       "reba_gpt2x3_0065.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0117.jpg",
@@ -1141,15 +1010,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 112,
-    "rank": 72,
+    "rank": 68,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.0799,
       0.6953,
       "reba_gpt2x3_0117.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0253.jpg",
@@ -1157,15 +1025,14 @@
     "category": "curated",
     "sexiness_score": 9.2,
     "original_index": 242,
-    "rank": 73,
+    "rank": 69,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.1701,
       0.4119,
       "reba_gpt2x3_0253.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0291.jpg",
@@ -1173,15 +1040,14 @@
     "category": "curated",
     "sexiness_score": 7.1,
     "original_index": 276,
-    "rank": 74,
+    "rank": 70,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.2614,
       0.5156,
       "reba_gpt2x3_0291.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0185.jpg",
@@ -1189,15 +1055,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 177,
-    "rank": 75,
+    "rank": 71,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.3724,
       0.6617,
       "reba_gpt2x3_0185.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0114.jpg",
@@ -1205,15 +1070,14 @@
     "category": "curated",
     "sexiness_score": 8.3,
     "original_index": 109,
-    "rank": 76,
+    "rank": 72,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.3992,
       0.4882,
       "reba_gpt2x3_0114.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0194.jpg",
@@ -1221,15 +1085,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 186,
-    "rank": 77,
+    "rank": 73,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.4306,
       0.4068,
       "reba_gpt2x3_0194.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0202.jpg",
@@ -1237,15 +1100,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 194,
-    "rank": 78,
+    "rank": 74,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.4706,
       0.5243,
       "reba_gpt2x3_0202.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0174.jpg",
@@ -1253,15 +1115,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 166,
-    "rank": 79,
+    "rank": 75,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.4882,
       0.5719,
       "reba_gpt2x3_0174.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0315.jpg",
@@ -1269,15 +1130,14 @@
     "category": "curated",
     "sexiness_score": 9.2,
     "original_index": 299,
-    "rank": 80,
+    "rank": 76,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.5287,
       0.4918,
       "reba_gpt2x3_0315.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0276.jpg",
@@ -1285,15 +1145,14 @@
     "category": "curated",
     "sexiness_score": 4.6,
     "original_index": 261,
-    "rank": 81,
+    "rank": 77,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.6515,
       0.5033,
       "reba_gpt2x3_0276.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0279.jpg",
@@ -1301,15 +1160,14 @@
     "category": "curated",
     "sexiness_score": 7.7,
     "original_index": 264,
-    "rank": 82,
+    "rank": 78,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.6643,
       0.449,
       "reba_gpt2x3_0279.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0057.jpg",
@@ -1317,15 +1175,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 54,
-    "rank": 83,
+    "rank": 79,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.7179,
       0.4402,
       "reba_gpt2x3_0057.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0322.jpg",
@@ -1333,15 +1190,14 @@
     "category": "curated",
     "sexiness_score": 5.5,
     "original_index": 306,
-    "rank": 84,
+    "rank": 80,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.7535,
       0.4523,
       "reba_gpt2x3_0322.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0113.jpg",
@@ -1349,15 +1205,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 108,
-    "rank": 85,
+    "rank": 81,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.7742,
       0.4708,
       "reba_gpt2x3_0113.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0031.jpg",
@@ -1365,15 +1220,14 @@
     "category": "curated",
     "sexiness_score": 8.4,
     "original_index": 29,
-    "rank": 86,
+    "rank": 82,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.7773,
       0.4264,
       "reba_gpt2x3_0031.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0303.jpg",
@@ -1381,15 +1235,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 288,
-    "rank": 87,
+    "rank": 83,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.7886,
       0.3683,
       "reba_gpt2x3_0303.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0294.jpg",
@@ -1397,15 +1250,14 @@
     "category": "curated",
     "sexiness_score": 7.3,
     "original_index": 279,
-    "rank": 88,
+    "rank": 84,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.8087,
       0.4144,
       "reba_gpt2x3_0294.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0278.jpg",
@@ -1413,15 +1265,14 @@
     "category": "curated",
     "sexiness_score": 5.6,
     "original_index": 263,
-    "rank": 89,
+    "rank": 85,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.8608,
       0.3569,
       "reba_gpt2x3_0278.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0015.jpg",
@@ -1429,15 +1280,14 @@
     "category": "curated",
     "sexiness_score": 8.3,
     "original_index": 14,
-    "rank": 90,
+    "rank": 86,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.8692,
       0.3631,
       "reba_gpt2x3_0015.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0144.jpg",
@@ -1445,15 +1295,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 138,
-    "rank": 91,
+    "rank": 87,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.8767,
       0.4109,
       "reba_gpt2x3_0144.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0187.jpg",
@@ -1461,15 +1310,14 @@
     "category": "curated",
     "sexiness_score": 5.5,
     "original_index": 179,
-    "rank": 92,
+    "rank": 88,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.8826,
       0.4621,
       "reba_gpt2x3_0187.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0255.jpg",
@@ -1477,15 +1325,14 @@
     "category": "curated",
     "sexiness_score": 8.6,
     "original_index": 244,
-    "rank": 93,
+    "rank": 89,
     "clothing_color": "红",
     "color_sort_key": [
       3,
       0.8965,
       0.3816,
       "reba_gpt2x3_0255.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0212.jpg",
@@ -1493,15 +1340,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 204,
-    "rank": 94,
+    "rank": 90,
     "clothing_color": "粉",
     "color_sort_key": [
       4,
       0.8856,
       0.8129,
       "reba_gpt2x3_0212.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0156.jpg",
@@ -1509,15 +1355,14 @@
     "category": "curated",
     "sexiness_score": 4.5,
     "original_index": 149,
-    "rank": 95,
+    "rank": 91,
     "clothing_color": "粉",
     "color_sort_key": [
       4,
       0.8872,
       0.7152,
       "reba_gpt2x3_0156.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0148.jpg",
@@ -1525,15 +1370,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 142,
-    "rank": 96,
+    "rank": 92,
     "clothing_color": "粉",
     "color_sort_key": [
       4,
       0.9024,
       0.7444,
       "reba_gpt2x3_0148.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0033.jpg",
@@ -1541,15 +1385,14 @@
     "category": "curated",
     "sexiness_score": 6.0,
     "original_index": 31,
-    "rank": 97,
+    "rank": 93,
     "clothing_color": "粉",
     "color_sort_key": [
       4,
       0.9305,
       0.8171,
       "reba_gpt2x3_0033.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0260.jpg",
@@ -1557,15 +1400,14 @@
     "category": "curated",
     "sexiness_score": 5.8,
     "original_index": 247,
-    "rank": 98,
+    "rank": 94,
     "clothing_color": "粉",
     "color_sort_key": [
       4,
       0.9337,
       0.6014,
       "reba_gpt2x3_0260.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0265.jpg",
@@ -1573,15 +1415,14 @@
     "category": "curated",
     "sexiness_score": 8.7,
     "original_index": 252,
-    "rank": 99,
+    "rank": 95,
     "clothing_color": "粉",
     "color_sort_key": [
       4,
       0.9526,
       0.4256,
       "reba_gpt2x3_0265.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0186.jpg",
@@ -1589,15 +1430,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 178,
-    "rank": 100,
+    "rank": 96,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5805,
       0.905,
       "reba_gpt2x3_0186.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0184.jpg",
@@ -1605,15 +1445,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 176,
-    "rank": 101,
+    "rank": 97,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5849,
       0.8433,
       "reba_gpt2x3_0184.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0097.jpg",
@@ -1621,15 +1460,14 @@
     "category": "curated",
     "sexiness_score": 7.2,
     "original_index": 92,
-    "rank": 102,
+    "rank": 98,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5852,
       0.9043,
       "reba_gpt2x3_0097.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0311.jpg",
@@ -1637,15 +1475,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 295,
-    "rank": 103,
+    "rank": 99,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5868,
       0.6332,
       "reba_gpt2x3_0311.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0218.jpg",
@@ -1653,15 +1490,14 @@
     "category": "curated",
     "sexiness_score": 5.5,
     "original_index": 208,
-    "rank": 104,
+    "rank": 100,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5869,
       0.5218,
       "reba_gpt2x3_0218.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0206.jpg",
@@ -1669,15 +1505,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 198,
-    "rank": 105,
+    "rank": 101,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.588,
       0.6221,
       "reba_gpt2x3_0206.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0086.jpg",
@@ -1685,31 +1520,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 81,
-    "rank": 106,
+    "rank": 102,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.589,
       0.899,
       "reba_gpt2x3_0086.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
-  },
-  {
-    "filename": "reba_gpt2x3_0316.jpg",
-    "src": "images/reba_gpt2x3_0316.jpg",
-    "category": "curated",
-    "sexiness_score": 9.0,
-    "original_index": 300,
-    "rank": 107,
-    "clothing_color": "蓝",
-    "color_sort_key": [
-      6,
-      0.5899,
-      0.6047,
-      "reba_gpt2x3_0316.jpg"
-    ],
-    "user_restored_original_after_face_feedback": true
+    ]
   },
   {
     "filename": "reba_gpt2x3_0277.jpg",
@@ -1717,15 +1535,14 @@
     "category": "curated",
     "sexiness_score": 6.4,
     "original_index": 262,
-    "rank": 108,
+    "rank": 103,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.59,
       0.8681,
       "reba_gpt2x3_0277.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0036.jpg",
@@ -1733,15 +1550,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 33,
-    "rank": 109,
+    "rank": 104,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5902,
       0.8337,
       "reba_gpt2x3_0036.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0142.jpg",
@@ -1749,15 +1565,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 136,
-    "rank": 110,
+    "rank": 105,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5908,
       0.8663,
       "reba_gpt2x3_0142.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0092.jpg",
@@ -1765,15 +1580,14 @@
     "category": "curated",
     "sexiness_score": 7.8,
     "original_index": 87,
-    "rank": 111,
+    "rank": 106,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5909,
       0.8715,
       "reba_gpt2x3_0092.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0016.jpg",
@@ -1781,15 +1595,14 @@
     "category": "curated",
     "sexiness_score": 7.8,
     "original_index": 15,
-    "rank": 112,
+    "rank": 107,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5911,
       0.6996,
       "reba_gpt2x3_0016.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0008.jpg",
@@ -1797,15 +1610,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 7,
-    "rank": 113,
+    "rank": 108,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5917,
       0.8822,
       "reba_gpt2x3_0008.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0044.jpg",
@@ -1813,15 +1625,14 @@
     "category": "curated",
     "sexiness_score": 5.5,
     "original_index": 41,
-    "rank": 114,
+    "rank": 109,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5935,
       0.575,
       "reba_gpt2x3_0044.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0219.jpg",
@@ -1829,15 +1640,14 @@
     "category": "curated",
     "sexiness_score": 4.8,
     "original_index": 209,
-    "rank": 115,
+    "rank": 110,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5936,
       0.8336,
       "reba_gpt2x3_0219.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0164.jpg",
@@ -1845,31 +1655,14 @@
     "category": "curated",
     "sexiness_score": 5.0,
     "original_index": 157,
-    "rank": 116,
+    "rank": 111,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5946,
       0.66,
       "reba_gpt2x3_0164.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
-  },
-  {
-    "filename": "reba_gpt2x3_0235.jpg",
-    "src": "images/reba_gpt2x3_0235.jpg",
-    "category": "curated",
-    "sexiness_score": 9.0,
-    "original_index": 224,
-    "rank": 117,
-    "clothing_color": "蓝",
-    "color_sort_key": [
-      6,
-      0.5952,
-      0.8892,
-      "reba_gpt2x3_0235.jpg"
-    ],
-    "user_restored_original_after_face_feedback": true
+    ]
   },
   {
     "filename": "reba_gpt2x3_0025.jpg",
@@ -1877,15 +1670,14 @@
     "category": "curated",
     "sexiness_score": 8.1,
     "original_index": 24,
-    "rank": 118,
+    "rank": 112,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5964,
       0.8539,
       "reba_gpt2x3_0025.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0167.jpg",
@@ -1893,15 +1685,14 @@
     "category": "curated",
     "sexiness_score": 6.0,
     "original_index": 159,
-    "rank": 119,
+    "rank": 113,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5994,
       0.9001,
       "reba_gpt2x3_0167.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0287.jpg",
@@ -1909,15 +1700,14 @@
     "category": "curated",
     "sexiness_score": 4.7,
     "original_index": 272,
-    "rank": 120,
+    "rank": 114,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5995,
       0.8423,
       "reba_gpt2x3_0287.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0261.jpg",
@@ -1925,15 +1715,14 @@
     "category": "curated",
     "sexiness_score": 4.8,
     "original_index": 248,
-    "rank": 121,
+    "rank": 115,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.5998,
       0.9038,
       "reba_gpt2x3_0261.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0213.jpg",
@@ -1941,15 +1730,14 @@
     "category": "curated",
     "sexiness_score": 6.8,
     "original_index": 205,
-    "rank": 122,
+    "rank": 116,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6023,
       0.89,
       "reba_gpt2x3_0213.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0284.jpg",
@@ -1957,15 +1745,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 269,
-    "rank": 123,
+    "rank": 117,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6065,
       0.8661,
       "reba_gpt2x3_0284.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0045.jpg",
@@ -1973,15 +1760,14 @@
     "category": "curated",
     "sexiness_score": 4.0,
     "original_index": 42,
-    "rank": 124,
+    "rank": 118,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6071,
       0.8241,
       "reba_gpt2x3_0045.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0224.jpg",
@@ -1989,15 +1775,14 @@
     "category": "curated",
     "sexiness_score": 5.8,
     "original_index": 214,
-    "rank": 125,
+    "rank": 119,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6084,
       0.8755,
       "reba_gpt2x3_0224.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0054.jpg",
@@ -2005,15 +1790,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 51,
-    "rank": 126,
+    "rank": 120,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6093,
       0.5407,
       "reba_gpt2x3_0054.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0130.jpg",
@@ -2021,15 +1805,14 @@
     "category": "curated",
     "sexiness_score": 5.0,
     "original_index": 125,
-    "rank": 127,
+    "rank": 121,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6111,
       0.8142,
       "reba_gpt2x3_0130.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0317.jpg",
@@ -2037,15 +1820,14 @@
     "category": "curated",
     "sexiness_score": 4.5,
     "original_index": 301,
-    "rank": 128,
+    "rank": 122,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6118,
       0.8358,
       "reba_gpt2x3_0317.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0297.jpg",
@@ -2053,15 +1835,14 @@
     "category": "curated",
     "sexiness_score": 5.5,
     "original_index": 282,
-    "rank": 129,
+    "rank": 123,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6123,
       0.8529,
       "reba_gpt2x3_0297.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0189.jpg",
@@ -2069,15 +1850,14 @@
     "category": "curated",
     "sexiness_score": 5.5,
     "original_index": 181,
-    "rank": 130,
+    "rank": 124,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6145,
       0.7742,
       "reba_gpt2x3_0189.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0324.jpg",
@@ -2085,15 +1865,14 @@
     "category": "curated",
     "sexiness_score": 4.5,
     "original_index": 308,
-    "rank": 131,
+    "rank": 125,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6152,
       0.6807,
       "reba_gpt2x3_0324.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0288.jpg",
@@ -2101,15 +1880,14 @@
     "category": "curated",
     "sexiness_score": 5.1,
     "original_index": 273,
-    "rank": 132,
+    "rank": 126,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6165,
       0.8909,
       "reba_gpt2x3_0288.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0298.jpg",
@@ -2117,15 +1895,14 @@
     "category": "curated",
     "sexiness_score": 4.5,
     "original_index": 283,
-    "rank": 133,
+    "rank": 127,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6174,
       0.7275,
       "reba_gpt2x3_0298.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0300.jpg",
@@ -2133,15 +1910,14 @@
     "category": "curated",
     "sexiness_score": 8.8,
     "original_index": 285,
-    "rank": 134,
+    "rank": 128,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6186,
       0.8814,
       "reba_gpt2x3_0300.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0191.jpg",
@@ -2149,15 +1925,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 183,
-    "rank": 135,
+    "rank": 129,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6196,
       0.86,
       "reba_gpt2x3_0191.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0020.jpg",
@@ -2165,15 +1940,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 19,
-    "rank": 136,
+    "rank": 130,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6214,
       0.8821,
       "reba_gpt2x3_0020.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0150.jpg",
@@ -2181,15 +1955,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 144,
-    "rank": 137,
+    "rank": 131,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6219,
       0.8541,
       "reba_gpt2x3_0150.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0305.jpg",
@@ -2197,15 +1970,14 @@
     "category": "curated",
     "sexiness_score": 3.0,
     "original_index": 290,
-    "rank": 138,
+    "rank": 132,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6223,
       0.8903,
       "reba_gpt2x3_0305.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0282.jpg",
@@ -2213,15 +1985,14 @@
     "category": "curated",
     "sexiness_score": 4.9,
     "original_index": 267,
-    "rank": 139,
+    "rank": 133,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6233,
       0.868,
       "reba_gpt2x3_0282.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0241.jpg",
@@ -2229,15 +2000,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 230,
-    "rank": 140,
+    "rank": 134,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6254,
       0.8662,
       "reba_gpt2x3_0241.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0129.jpg",
@@ -2245,15 +2015,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 124,
-    "rank": 141,
+    "rank": 135,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6316,
       0.82,
       "reba_gpt2x3_0129.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0151.jpg",
@@ -2261,15 +2030,14 @@
     "category": "curated",
     "sexiness_score": 4.0,
     "original_index": 145,
-    "rank": 142,
+    "rank": 136,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6326,
       0.9354,
       "reba_gpt2x3_0151.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0051.jpg",
@@ -2277,15 +2045,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 48,
-    "rank": 143,
+    "rank": 137,
     "clothing_color": "蓝",
     "color_sort_key": [
       6,
       0.6479,
       0.8855,
       "reba_gpt2x3_0051.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0075.jpg",
@@ -2293,15 +2060,14 @@
     "category": "curated",
     "sexiness_score": 4.0,
     "original_index": 71,
-    "rank": 144,
+    "rank": 138,
     "clothing_color": "青/绿",
     "color_sort_key": [
       7,
       0.5088,
       0.3967,
       "reba_gpt2x3_0075.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0018.jpg",
@@ -2309,15 +2075,14 @@
     "category": "curated",
     "sexiness_score": 7.2,
     "original_index": 17,
-    "rank": 145,
+    "rank": 139,
     "clothing_color": "青/绿",
     "color_sort_key": [
       7,
       0.5433,
       0.6467,
       "reba_gpt2x3_0018.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0314.jpg",
@@ -2325,15 +2090,14 @@
     "category": "curated",
     "sexiness_score": 6.0,
     "original_index": 298,
-    "rank": 146,
+    "rank": 140,
     "clothing_color": "青/绿",
     "color_sort_key": [
       7,
       0.5622,
       0.9091,
       "reba_gpt2x3_0314.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0208.jpg",
@@ -2341,15 +2105,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 200,
-    "rank": 147,
+    "rank": 141,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.0791,
       0.0787,
       "reba_gpt2x3_0208.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0227.jpg",
@@ -2357,15 +2120,14 @@
     "category": "curated",
     "sexiness_score": 4.8,
     "original_index": 217,
-    "rank": 148,
+    "rank": 142,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.0889,
       0.1421,
       "reba_gpt2x3_0227.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0005.jpg",
@@ -2373,15 +2135,14 @@
     "category": "curated",
     "sexiness_score": 6.8,
     "original_index": 4,
-    "rank": 149,
+    "rank": 143,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.097,
       0.1422,
       "reba_gpt2x3_0005.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0225.jpg",
@@ -2389,31 +2150,14 @@
     "category": "curated",
     "sexiness_score": 6.8,
     "original_index": 215,
-    "rank": 150,
+    "rank": 144,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.1157,
       0.0721,
       "reba_gpt2x3_0225.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
-  },
-  {
-    "filename": "reba_gpt2x3_0176.jpg",
-    "src": "images/reba_gpt2x3_0176.jpg",
-    "category": "curated",
-    "sexiness_score": 8.5,
-    "original_index": 168,
-    "rank": 151,
-    "clothing_color": "黑/深色",
-    "color_sort_key": [
-      8,
-      0.1275,
-      0.113,
-      "reba_gpt2x3_0176.jpg"
-    ],
-    "user_restored_original_after_face_feedback": true
+    ]
   },
   {
     "filename": "reba_gpt2x3_0089.jpg",
@@ -2421,15 +2165,14 @@
     "category": "curated",
     "sexiness_score": 7.6,
     "original_index": 84,
-    "rank": 152,
+    "rank": 145,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.1449,
       0.0758,
       "reba_gpt2x3_0089.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0200.jpg",
@@ -2437,31 +2180,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 192,
-    "rank": 153,
+    "rank": 146,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.1541,
       0.0282,
       "reba_gpt2x3_0200.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
-  },
-  {
-    "filename": "reba_gpt2x3_0239.jpg",
-    "src": "images/reba_gpt2x3_0239.jpg",
-    "category": "curated",
-    "sexiness_score": 9.1,
-    "original_index": 228,
-    "rank": 154,
-    "clothing_color": "黑/深色",
-    "color_sort_key": [
-      8,
-      0.1679,
-      0.0524,
-      "reba_gpt2x3_0239.jpg"
-    ],
-    "user_restored_original_after_face_feedback": true
+    ]
   },
   {
     "filename": "reba_gpt2x3_0160.jpg",
@@ -2469,31 +2195,14 @@
     "category": "curated",
     "sexiness_score": 5.5,
     "original_index": 153,
-    "rank": 155,
+    "rank": 147,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.1899,
       0.1009,
       "reba_gpt2x3_0160.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
-  },
-  {
-    "filename": "reba_gpt2x3_0049.jpg",
-    "src": "images/reba_gpt2x3_0049.jpg",
-    "category": "curated",
-    "sexiness_score": 8.5,
-    "original_index": 46,
-    "rank": 156,
-    "clothing_color": "黑/深色",
-    "color_sort_key": [
-      8,
-      0.2359,
-      0.0527,
-      "reba_gpt2x3_0049.jpg"
-    ],
-    "user_restored_original_after_face_feedback": true
+    ]
   },
   {
     "filename": "reba_gpt2x3_0127.jpg",
@@ -2501,15 +2210,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 122,
-    "rank": 157,
+    "rank": 148,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.2518,
       0.0292,
       "reba_gpt2x3_0127.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0209.jpg",
@@ -2517,15 +2225,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 201,
-    "rank": 158,
+    "rank": 149,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.266,
       0.0849,
       "reba_gpt2x3_0209.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0072.jpg",
@@ -2533,15 +2240,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 68,
-    "rank": 159,
+    "rank": 150,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.3085,
       0.1026,
       "reba_gpt2x3_0072.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0046.jpg",
@@ -2549,15 +2255,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 43,
-    "rank": 160,
+    "rank": 151,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.3097,
       0.0596,
       "reba_gpt2x3_0046.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0076.jpg",
@@ -2565,15 +2270,14 @@
     "category": "curated",
     "sexiness_score": 4.5,
     "original_index": 72,
-    "rank": 161,
+    "rank": 152,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.3181,
       0.1759,
       "reba_gpt2x3_0076.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0087.jpg",
@@ -2581,15 +2285,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 82,
-    "rank": 162,
+    "rank": 153,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.3683,
       0.0394,
       "reba_gpt2x3_0087.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0043.jpg",
@@ -2597,15 +2300,14 @@
     "category": "curated",
     "sexiness_score": 7.3,
     "original_index": 40,
-    "rank": 163,
+    "rank": 154,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.3843,
       0.069,
       "reba_gpt2x3_0043.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0084.jpg",
@@ -2613,15 +2315,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 79,
-    "rank": 164,
+    "rank": 155,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.3961,
       0.0811,
       "reba_gpt2x3_0084.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0088.jpg",
@@ -2629,15 +2330,14 @@
     "category": "curated",
     "sexiness_score": 6.6,
     "original_index": 83,
-    "rank": 165,
+    "rank": 156,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4046,
       0.0815,
       "reba_gpt2x3_0088.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0048.jpg",
@@ -2645,15 +2345,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 45,
-    "rank": 166,
+    "rank": 157,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4123,
       0.0643,
       "reba_gpt2x3_0048.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0038.jpg",
@@ -2661,15 +2360,14 @@
     "category": "curated",
     "sexiness_score": 6.3,
     "original_index": 35,
-    "rank": 167,
+    "rank": 158,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.415,
       0.0764,
       "reba_gpt2x3_0038.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0146.jpg",
@@ -2677,15 +2375,14 @@
     "category": "curated",
     "sexiness_score": 5.5,
     "original_index": 140,
-    "rank": 168,
+    "rank": 159,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4208,
       0.0492,
       "reba_gpt2x3_0146.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0082.jpg",
@@ -2693,15 +2390,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 77,
-    "rank": 169,
+    "rank": 160,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4449,
       0.0579,
       "reba_gpt2x3_0082.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0274.jpg",
@@ -2709,15 +2405,14 @@
     "category": "curated",
     "sexiness_score": 5.8,
     "original_index": 259,
-    "rank": 170,
+    "rank": 161,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4534,
       0.2163,
       "reba_gpt2x3_0274.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0192.jpg",
@@ -2725,15 +2420,14 @@
     "category": "curated",
     "sexiness_score": 5.5,
     "original_index": 184,
-    "rank": 171,
+    "rank": 162,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4616,
       0.1723,
       "reba_gpt2x3_0192.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0165.jpg",
@@ -2741,15 +2435,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 158,
-    "rank": 172,
+    "rank": 163,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4676,
       0.1136,
       "reba_gpt2x3_0165.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0019.jpg",
@@ -2757,15 +2450,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 18,
-    "rank": 173,
+    "rank": 164,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4711,
       0.0964,
       "reba_gpt2x3_0019.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0205.jpg",
@@ -2773,15 +2465,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 197,
-    "rank": 174,
+    "rank": 165,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4843,
       0.091,
       "reba_gpt2x3_0205.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0188.jpg",
@@ -2789,15 +2480,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 180,
-    "rank": 175,
+    "rank": 166,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4849,
       0.0343,
       "reba_gpt2x3_0188.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0155.jpg",
@@ -2805,15 +2495,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 148,
-    "rank": 176,
+    "rank": 167,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4862,
       0.0879,
       "reba_gpt2x3_0155.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0211.jpg",
@@ -2821,15 +2510,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 203,
-    "rank": 177,
+    "rank": 168,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4899,
       0.0257,
       "reba_gpt2x3_0211.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0083.jpg",
@@ -2837,15 +2525,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 78,
-    "rank": 178,
+    "rank": 169,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.492,
       0.1467,
       "reba_gpt2x3_0083.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0064.jpg",
@@ -2853,15 +2540,14 @@
     "category": "curated",
     "sexiness_score": 4.5,
     "original_index": 61,
-    "rank": 179,
+    "rank": 170,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.492,
       0.1856,
       "reba_gpt2x3_0064.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0299.jpg",
@@ -2869,15 +2555,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 284,
-    "rank": 180,
+    "rank": 171,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4968,
       0.034,
       "reba_gpt2x3_0299.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0066.jpg",
@@ -2885,15 +2570,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 63,
-    "rank": 181,
+    "rank": 172,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.4997,
       0.0813,
       "reba_gpt2x3_0066.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0154.jpg",
@@ -2901,15 +2585,14 @@
     "category": "curated",
     "sexiness_score": 5.0,
     "original_index": 147,
-    "rank": 182,
+    "rank": 173,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5005,
       0.1124,
       "reba_gpt2x3_0154.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0323.jpg",
@@ -2917,15 +2600,14 @@
     "category": "curated",
     "sexiness_score": 7.8,
     "original_index": 307,
-    "rank": 183,
+    "rank": 174,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5078,
       0.0786,
       "reba_gpt2x3_0323.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0091.jpg",
@@ -2933,15 +2615,14 @@
     "category": "curated",
     "sexiness_score": 7.1,
     "original_index": 86,
-    "rank": 184,
+    "rank": 175,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5094,
       0.0406,
       "reba_gpt2x3_0091.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0058.jpg",
@@ -2949,15 +2630,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 55,
-    "rank": 185,
+    "rank": 176,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5137,
       0.0648,
       "reba_gpt2x3_0058.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0136.jpg",
@@ -2965,15 +2645,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 131,
-    "rank": 186,
+    "rank": 177,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5215,
       0.1036,
       "reba_gpt2x3_0136.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0120.jpg",
@@ -2981,15 +2660,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 115,
-    "rank": 187,
+    "rank": 178,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5215,
       0.0663,
       "reba_gpt2x3_0120.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0107.jpg",
@@ -2997,15 +2675,14 @@
     "category": "curated",
     "sexiness_score": 8.8,
     "original_index": 102,
-    "rank": 188,
+    "rank": 179,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5222,
       0.1985,
       "reba_gpt2x3_0107.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0111.jpg",
@@ -3013,15 +2690,14 @@
     "category": "curated",
     "sexiness_score": 8.2,
     "original_index": 106,
-    "rank": 189,
+    "rank": 180,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5291,
       0.0512,
       "reba_gpt2x3_0111.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0077.jpg",
@@ -3029,15 +2705,14 @@
     "category": "curated",
     "sexiness_score": 5.0,
     "original_index": 73,
-    "rank": 190,
+    "rank": 181,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5354,
       0.0962,
       "reba_gpt2x3_0077.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0143.jpg",
@@ -3045,15 +2720,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 137,
-    "rank": 191,
+    "rank": 182,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5423,
       0.0495,
       "reba_gpt2x3_0143.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0201.jpg",
@@ -3061,15 +2735,14 @@
     "category": "curated",
     "sexiness_score": 9.0,
     "original_index": 193,
-    "rank": 192,
+    "rank": 183,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5453,
       0.1203,
       "reba_gpt2x3_0201.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0050.jpg",
@@ -3077,15 +2750,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 47,
-    "rank": 193,
+    "rank": 184,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5461,
       0.0741,
       "reba_gpt2x3_0050.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0250.jpg",
@@ -3093,15 +2765,14 @@
     "category": "curated",
     "sexiness_score": 9.2,
     "original_index": 239,
-    "rank": 194,
+    "rank": 185,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5463,
       0.0764,
       "reba_gpt2x3_0250.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0319.jpg",
@@ -3109,15 +2780,14 @@
     "category": "curated",
     "sexiness_score": 8.3,
     "original_index": 303,
-    "rank": 195,
+    "rank": 186,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5491,
       0.0659,
       "reba_gpt2x3_0319.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0137.jpg",
@@ -3125,15 +2795,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 132,
-    "rank": 196,
+    "rank": 187,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5505,
       0.0975,
       "reba_gpt2x3_0137.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0309.jpg",
@@ -3141,15 +2810,14 @@
     "category": "curated",
     "sexiness_score": 7.0,
     "original_index": 293,
-    "rank": 197,
+    "rank": 188,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5524,
       0.0924,
       "reba_gpt2x3_0309.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0326.jpg",
@@ -3157,15 +2825,14 @@
     "category": "curated",
     "sexiness_score": 9.3,
     "original_index": 309,
-    "rank": 198,
+    "rank": 189,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5547,
       0.1613,
       "reba_gpt2x3_0326.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0220.jpg",
@@ -3173,15 +2840,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 210,
-    "rank": 199,
+    "rank": 190,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5582,
       0.0264,
       "reba_gpt2x3_0220.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0115.jpg",
@@ -3189,15 +2855,14 @@
     "category": "curated",
     "sexiness_score": 6.3,
     "original_index": 110,
-    "rank": 200,
+    "rank": 191,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5595,
       0.0402,
       "reba_gpt2x3_0115.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0042.jpg",
@@ -3205,15 +2870,14 @@
     "category": "curated",
     "sexiness_score": 7.8,
     "original_index": 39,
-    "rank": 201,
+    "rank": 192,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5668,
       0.124,
       "reba_gpt2x3_0042.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0240.jpg",
@@ -3221,15 +2885,14 @@
     "category": "curated",
     "sexiness_score": 6.6,
     "original_index": 229,
-    "rank": 202,
+    "rank": 193,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5696,
       0.0427,
       "reba_gpt2x3_0240.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0247.jpg",
@@ -3237,15 +2900,14 @@
     "category": "curated",
     "sexiness_score": 7.6,
     "original_index": 236,
-    "rank": 203,
+    "rank": 194,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5701,
       0.1103,
       "reba_gpt2x3_0247.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0199.jpg",
@@ -3253,15 +2915,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 191,
-    "rank": 204,
+    "rank": 195,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5726,
       0.0713,
       "reba_gpt2x3_0199.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0312.jpg",
@@ -3269,15 +2930,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 296,
-    "rank": 205,
+    "rank": 196,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5816,
       0.0444,
       "reba_gpt2x3_0312.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0152.jpg",
@@ -3285,15 +2945,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 146,
-    "rank": 206,
+    "rank": 197,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5849,
       0.1024,
       "reba_gpt2x3_0152.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0062.jpg",
@@ -3301,15 +2960,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 59,
-    "rank": 207,
+    "rank": 198,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5872,
       0.0624,
       "reba_gpt2x3_0062.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0140.jpg",
@@ -3317,15 +2975,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 134,
-    "rank": 208,
+    "rank": 199,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.588,
       0.0587,
       "reba_gpt2x3_0140.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0030.jpg",
@@ -3333,15 +2990,14 @@
     "category": "curated",
     "sexiness_score": 8.6,
     "original_index": 28,
-    "rank": 209,
+    "rank": 200,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5925,
       0.068,
       "reba_gpt2x3_0030.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0123.jpg",
@@ -3349,15 +3005,14 @@
     "category": "curated",
     "sexiness_score": 8.6,
     "original_index": 118,
-    "rank": 210,
+    "rank": 201,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5941,
       0.0655,
       "reba_gpt2x3_0123.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0159.jpg",
@@ -3365,15 +3020,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 152,
-    "rank": 211,
+    "rank": 202,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5944,
       0.0564,
       "reba_gpt2x3_0159.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0327.jpg",
@@ -3381,15 +3035,14 @@
     "category": "curated",
     "sexiness_score": 4.5,
     "original_index": 310,
-    "rank": 212,
+    "rank": 203,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5946,
       0.1112,
       "reba_gpt2x3_0327.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0238.jpg",
@@ -3397,15 +3050,14 @@
     "category": "curated",
     "sexiness_score": 6.8,
     "original_index": 227,
-    "rank": 213,
+    "rank": 204,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5951,
       0.0861,
       "reba_gpt2x3_0238.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0308.jpg",
@@ -3413,15 +3065,14 @@
     "category": "curated",
     "sexiness_score": 5.0,
     "original_index": 292,
-    "rank": 214,
+    "rank": 205,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5954,
       0.1315,
       "reba_gpt2x3_0308.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0067.jpg",
@@ -3429,15 +3080,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 64,
-    "rank": 215,
+    "rank": 206,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.5967,
       0.0958,
       "reba_gpt2x3_0067.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0102.jpg",
@@ -3445,15 +3095,14 @@
     "category": "curated",
     "sexiness_score": 6.0,
     "original_index": 97,
-    "rank": 216,
+    "rank": 207,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6025,
       0.059,
       "reba_gpt2x3_0102.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0080.jpg",
@@ -3461,15 +3110,14 @@
     "category": "curated",
     "sexiness_score": 5.0,
     "original_index": 75,
-    "rank": 217,
+    "rank": 208,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6041,
       0.0868,
       "reba_gpt2x3_0080.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0108.jpg",
@@ -3477,15 +3125,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 103,
-    "rank": 218,
+    "rank": 209,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6069,
       0.0586,
       "reba_gpt2x3_0108.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0099.jpg",
@@ -3493,15 +3140,14 @@
     "category": "curated",
     "sexiness_score": 5.8,
     "original_index": 94,
-    "rank": 219,
+    "rank": 210,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6082,
       0.098,
       "reba_gpt2x3_0099.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0215.jpg",
@@ -3509,15 +3155,14 @@
     "category": "curated",
     "sexiness_score": 5.8,
     "original_index": 207,
-    "rank": 220,
+    "rank": 211,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6117,
       0.0457,
       "reba_gpt2x3_0215.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0190.jpg",
@@ -3525,15 +3170,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 182,
-    "rank": 221,
+    "rank": 212,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6119,
       0.1969,
       "reba_gpt2x3_0190.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0321.jpg",
@@ -3541,15 +3185,14 @@
     "category": "curated",
     "sexiness_score": 5.0,
     "original_index": 305,
-    "rank": 222,
+    "rank": 213,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.613,
       0.0885,
       "reba_gpt2x3_0321.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0269.jpg",
@@ -3557,31 +3200,14 @@
     "category": "curated",
     "sexiness_score": 5.0,
     "original_index": 256,
-    "rank": 223,
+    "rank": 214,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6134,
       0.1078,
       "reba_gpt2x3_0269.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
-  },
-  {
-    "filename": "reba_gpt2x3_0032.jpg",
-    "src": "images/reba_gpt2x3_0032.jpg",
-    "category": "curated",
-    "sexiness_score": 7.7,
-    "original_index": 30,
-    "rank": 224,
-    "clothing_color": "黑/深色",
-    "color_sort_key": [
-      8,
-      0.618,
-      0.0367,
-      "reba_gpt2x3_0032.jpg"
-    ],
-    "user_restored_original_after_face_feedback": true
+    ]
   },
   {
     "filename": "reba_gpt2x3_0233.jpg",
@@ -3589,15 +3215,14 @@
     "category": "curated",
     "sexiness_score": 7.3,
     "original_index": 222,
-    "rank": 225,
+    "rank": 215,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6185,
       0.0927,
       "reba_gpt2x3_0233.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0242.jpg",
@@ -3605,15 +3230,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 231,
-    "rank": 226,
+    "rank": 216,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6217,
       0.0642,
       "reba_gpt2x3_0242.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0197.jpg",
@@ -3621,15 +3245,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 189,
-    "rank": 227,
+    "rank": 217,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6228,
       0.0659,
       "reba_gpt2x3_0197.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0193.jpg",
@@ -3637,15 +3260,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 185,
-    "rank": 228,
+    "rank": 218,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6254,
       0.1347,
       "reba_gpt2x3_0193.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0264.jpg",
@@ -3653,15 +3275,14 @@
     "category": "curated",
     "sexiness_score": 7.6,
     "original_index": 251,
-    "rank": 229,
+    "rank": 219,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6266,
       0.0977,
       "reba_gpt2x3_0264.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0204.jpg",
@@ -3669,15 +3290,14 @@
     "category": "curated",
     "sexiness_score": 5.5,
     "original_index": 196,
-    "rank": 230,
+    "rank": 220,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6273,
       0.0636,
       "reba_gpt2x3_0204.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0026.jpg",
@@ -3685,15 +3305,14 @@
     "category": "curated",
     "sexiness_score": 8.7,
     "original_index": 25,
-    "rank": 231,
+    "rank": 221,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6368,
       0.07,
       "reba_gpt2x3_0026.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0116.jpg",
@@ -3701,15 +3320,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 111,
-    "rank": 232,
+    "rank": 222,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6397,
       0.0281,
       "reba_gpt2x3_0116.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0232.jpg",
@@ -3717,15 +3335,14 @@
     "category": "curated",
     "sexiness_score": 8.4,
     "original_index": 221,
-    "rank": 233,
+    "rank": 223,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6409,
       0.0515,
       "reba_gpt2x3_0232.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0171.jpg",
@@ -3733,15 +3350,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 163,
-    "rank": 234,
+    "rank": 224,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6413,
       0.0851,
       "reba_gpt2x3_0171.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0012.jpg",
@@ -3749,15 +3365,14 @@
     "category": "curated",
     "sexiness_score": 7.6,
     "original_index": 11,
-    "rank": 235,
+    "rank": 225,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6452,
       0.0225,
       "reba_gpt2x3_0012.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0268.jpg",
@@ -3765,15 +3380,14 @@
     "category": "curated",
     "sexiness_score": 6.2,
     "original_index": 255,
-    "rank": 236,
+    "rank": 226,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6499,
       0.0408,
       "reba_gpt2x3_0268.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0002.jpg",
@@ -3781,15 +3395,14 @@
     "category": "curated",
     "sexiness_score": 6.5,
     "original_index": 2,
-    "rank": 237,
+    "rank": 227,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6549,
       0.0768,
       "reba_gpt2x3_0002.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0078.jpg",
@@ -3797,15 +3410,14 @@
     "category": "curated",
     "sexiness_score": 4.5,
     "original_index": 74,
-    "rank": 238,
+    "rank": 228,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6571,
       0.113,
       "reba_gpt2x3_0078.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0135.jpg",
@@ -3813,15 +3425,14 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 130,
-    "rank": 239,
+    "rank": 229,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6679,
       0.0452,
       "reba_gpt2x3_0135.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0013.jpg",
@@ -3829,15 +3440,14 @@
     "category": "curated",
     "sexiness_score": 8.4,
     "original_index": 12,
-    "rank": 240,
+    "rank": 230,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6819,
       0.0967,
       "reba_gpt2x3_0013.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0103.jpg",
@@ -3845,15 +3455,14 @@
     "category": "curated",
     "sexiness_score": 5.5,
     "original_index": 98,
-    "rank": 241,
+    "rank": 231,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.6853,
       0.2906,
       "reba_gpt2x3_0103.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0172.jpg",
@@ -3861,15 +3470,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 164,
-    "rank": 242,
+    "rank": 232,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.7031,
       0.0663,
       "reba_gpt2x3_0172.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0293.jpg",
@@ -3877,31 +3485,14 @@
     "category": "curated",
     "sexiness_score": 8.8,
     "original_index": 278,
-    "rank": 243,
+    "rank": 233,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.7134,
       0.0789,
       "reba_gpt2x3_0293.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
-  },
-  {
-    "filename": "reba_gpt2x3_0101.jpg",
-    "src": "images/reba_gpt2x3_0101.jpg",
-    "category": "curated",
-    "sexiness_score": 6.5,
-    "original_index": 96,
-    "rank": 244,
-    "clothing_color": "黑/深色",
-    "color_sort_key": [
-      8,
-      0.7136,
-      0.0708,
-      "reba_gpt2x3_0101.jpg"
-    ],
-    "user_restored_original_after_face_feedback": true
+    ]
   },
   {
     "filename": "reba_gpt2x3_0302.jpg",
@@ -3909,31 +3500,14 @@
     "category": "curated",
     "sexiness_score": 7.5,
     "original_index": 287,
-    "rank": 245,
+    "rank": 234,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.7192,
       0.1017,
       "reba_gpt2x3_0302.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
-  },
-  {
-    "filename": "reba_gpt2x3_0041.jpg",
-    "src": "images/reba_gpt2x3_0041.jpg",
-    "category": "curated",
-    "sexiness_score": 6.2,
-    "original_index": 38,
-    "rank": 246,
-    "clothing_color": "黑/深色",
-    "color_sort_key": [
-      8,
-      0.7599,
-      0.0774,
-      "reba_gpt2x3_0041.jpg"
-    ],
-    "user_restored_original_after_face_feedback": true
+    ]
   },
   {
     "filename": "reba_gpt2x3_0271.jpg",
@@ -3941,15 +3515,14 @@
     "category": "curated",
     "sexiness_score": 5.4,
     "original_index": 257,
-    "rank": 247,
+    "rank": 235,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.7972,
       0.1029,
       "reba_gpt2x3_0271.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0180.jpg",
@@ -3957,15 +3530,14 @@
     "category": "curated",
     "sexiness_score": 8.0,
     "original_index": 172,
-    "rank": 248,
+    "rank": 236,
     "clothing_color": "黑/深色",
     "color_sort_key": [
       8,
       0.9097,
       0.0755,
       "reba_gpt2x3_0180.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   },
   {
     "filename": "reba_gpt2x3_0133.jpg",
@@ -3973,14 +3545,13 @@
     "category": "curated",
     "sexiness_score": 8.5,
     "original_index": 128,
-    "rank": 249,
+    "rank": 237,
     "clothing_color": "灰/其他",
     "color_sort_key": [
       9,
       0.4946,
       0.6107,
       "reba_gpt2x3_0133.jpg"
-    ],
-    "user_restored_original_after_face_feedback": false
+    ]
   }
 ]
