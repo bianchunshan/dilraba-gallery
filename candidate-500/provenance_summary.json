@@ -1,0 +1,10 @@
+{
+  "created": "20260701_153843",
+  "count": 500,
+  "source_counts": {
+    "historical_restore_candidates_vision": 234,
+    "staging_300": 266
+  },
+  "current_gallery_count": 205,
+  "dedupe": "sha256 + ahash/dhash against current 205 and within candidate set"
+}
