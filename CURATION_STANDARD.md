@@ -54,6 +54,7 @@
 3. Vision 按本标准筛选：只输出 KEEP/DELETE。
 4. 对 KEEP 做哈希去重和同服装复核。
 5. 入库前再次生成最终 sheet 复核。
-6. 更新 `images/`、`new_photos.json`、`index.html`。
-7. 验证 JSON 数量 = 图片数量 = HTML 引用数量。
-8. Git commit + push。
+6. 更新 `images/`、`new_photos.json`。
+7. 运行 `python3 generate_thumbs.py` 与 `python3 build_gallery.py`。
+8. 运行 `python3 verify_gallery.py`（JSON = images = HTML = thumbs）。
+9. Git commit + push。`candidate-500-v2/` 不纳入 Pages 发布。
